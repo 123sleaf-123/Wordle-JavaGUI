@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Wordle.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InputFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Wordle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WordleLogic.java" afterDir="false" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="完成了Wordle程序的核心逻辑处理器类型WordleLogic的算法设计与实现，并在主类Wordle中完成了测试，算法逻辑正常.&#10;&#10;WordleLogic有两个私有构造方法和一个公共构造方法（初始化输入），公共构造方法会调用带单参数私有构造方法来初始化与目标词汇和结果有关的变量，然后调用核心逻辑logicCore方法来实现判断和结果输出">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +16,25 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/master" />
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -66,6 +75,14 @@
       <option name="presentableId" value="Default" />
       <updated>1653575895986</updated>
     </task>
+    <task id="LOCAL-00001" summary="完成了Wordle程序的核心逻辑处理器类型WordleLogic的算法设计与实现，并在主类Wordle中完成了测试，算法逻辑正常.&#10;&#10;WordleLogic有两个私有构造方法和一个公共构造方法（初始化输入），公共构造方法会调用带单参数私有构造方法来初始化与目标词汇和结果有关的变量，然后调用核心逻辑logicCore方法来实现判断和结果输出">
+      <created>1653665042774</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653665042774</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,5 +95,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="完成了Wordle程序的核心逻辑处理器类型WordleLogic的算法设计与实现，并在主类Wordle中完成了测试，算法逻辑正常.&#10;&#10;WordleLogic有两个私有构造方法和一个公共构造方法（初始化输入），公共构造方法会调用带单参数私有构造方法来初始化与目标词汇和结果有关的变量，然后调用核心逻辑logicCore方法来实现判断和结果输出" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了Wordle程序的核心逻辑处理器类型WordleLogic的算法设计与实现，并在主类Wordle中完成了测试，算法逻辑正常.&#10;&#10;WordleLogic有两个私有构造方法和一个公共构造方法（初始化输入），公共构造方法会调用带单参数私有构造方法来初始化与目标词汇和结果有关的变量，然后调用核心逻辑logicCore方法来实现判断和结果输出" />
   </component>
 </project>
