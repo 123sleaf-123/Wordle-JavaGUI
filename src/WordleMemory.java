@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @description Memory manager of Wordle.
  **/
 public class WordleMemory {
-    private ArrayList<String> dictionary = new ArrayList<String>();
+    private ArrayList<String> dictionary = new ArrayList<>();
     private String guess;
 
     private char[] input;
@@ -25,10 +25,11 @@ public class WordleMemory {
         try {
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
-            String str = br.readLine();
-            while (str != null) {
+            String str;
+            do {
                 str = br.readLine();
-            }
+                dictionary.add(str);
+            } while (str != null);
         } catch (IOException e) {
             System.out.println("Error");
             System.exit(-1);
