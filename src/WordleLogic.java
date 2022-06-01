@@ -18,7 +18,7 @@ public class WordleLogic {
     /**
      * A private constructor that call the method to get a random wordle.
      */
-    public WordleLogic() {
+    private WordleLogic() {
 
     }
 

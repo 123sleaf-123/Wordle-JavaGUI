@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="修改了一下README.me">
-      <change afterPath="$PROJECT_DIR$/src/WordleFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WordleMemory.java" afterDir="false" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="思维混乱中">
+      <change afterPath="$PROJECT_DIR$/src/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JStyleLabel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Panels/StartPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WordleMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wordle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wordle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordleLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordleMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleMemory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +59,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;last_opened_file_path&quot;: &quot;E:/课件/大二/下/Java/MiniProject/Wordle/resources&quot;
   }
@@ -64,9 +72,16 @@
       <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\README_IMGs" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WordleMemory">
+  <component name="RunManager" selected="Application.Panels.StartPanel">
     <configuration name="InputFilter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="InputFilter" />
+      <module name="Wordle" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Panels.StartPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Panels.StartPanel" />
       <module name="Wordle" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -88,9 +103,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Panels.StartPanel" />
+        <item itemvalue="Application.Wordle" />
         <item itemvalue="Application.WordleMemory" />
         <item itemvalue="Application.InputFilter" />
-        <item itemvalue="Application.Wordle" />
       </list>
     </recent_temporary>
   </component>
@@ -117,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653666051884</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="思维混乱中">
+      <created>1653712480917</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653712480917</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +157,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完成了Wordle程序的核心逻辑处理器类型WordleLogic的算法设计与实现，并在主类Wordle中完成了测试，算法逻辑正常.&#10;&#10;WordleLogic有两个私有构造方法和一个公共构造方法（初始化输入），公共构造方法会调用带单参数私有构造方法来初始化与目标词汇和结果有关的变量，然后调用核心逻辑logicCore方法来实现判断和结果输出" />
     <MESSAGE value="修改了一下README.me" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了一下README.me" />
+    <MESSAGE value="思维混乱中" />
+    <option name="LAST_COMMIT_MESSAGE" value="思维混乱中" />
   </component>
 </project>

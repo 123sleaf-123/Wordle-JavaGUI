@@ -13,8 +13,12 @@ public class WordleMemory {
     private ArrayList<String> dictionary = new ArrayList<String>();
     private String guess;
 
-    public WordleMemory() {
+    private char[] input;
+    private int idx = 0;
+
+    public WordleMemory(int size) {
         this.queryWords();
+        this.input = new char[size];
     }
     public void queryWords() {
         File f = new File("resources/dictionary.txt");
@@ -31,6 +35,11 @@ public class WordleMemory {
         }
     }
 
+    public void update(InputFilter filter) {
+        this.idx = filter.getIdx();
+        this.input = filter.getInput();
+    }
+
     public ArrayList<String> getDictionary() {
         return dictionary;
     }
@@ -39,9 +48,4 @@ public class WordleMemory {
         this.dictionary = dictionary;
     }
 
-    public static void main(String[] args) {
-        WordleMemory m = new WordleMemory();
-        m.queryWords();
-        System.out.println(m.getDictionary());
-    }
 }

@@ -10,25 +10,34 @@
 public abstract class InputFilter{
     private char[] input;
     private int idx = 0;
+    private WordleMemory ifToMemory;
 
-    public InputFilter(int size) {
+    public InputFilter(int size, WordleMemory memory) {
         this.input = new char[size];
+        this.ifToMemory = memory;
     }
 
-    public void inputCheck(char c) {
+    public void inputProcess(char c) {
         if (c >= 'a' && c <= 'z') {
-            if (this.idx < 5) this.input[(this.idx)++] = (char) (c - 32);
+            if (this.idx < this.input.length) this.input[(this.idx)++] = (char) (c - 32);
         } else if (c >= 'A' && c <= 'Z') {
-            if (this.idx < 5) this.input[(this.idx)++] = c;
+            if (this.idx < this.input.length) this.input[(this.idx)++] = c;
         } else if (c == '\n') {
-            if (this.idx == 5)
+            if (this.idx == this.input.length)
                 if (IsAWord()) return;
                 else ErrorNotAWord();
             else ErrorNotEnoughChar();
         } else if (c == '\b') {
             if (this.idx >= 0) this.input[this.idx--] = 0;
         }
-        System.out.println(this.input);
+        ifToMemory.update(this);
+    }
+
+    /**
+     * The method to ask GameController to refresh the WordleFrame.
+     */
+    public void refreshRequest() {
+
     }
 
     public char[] getInput() {
@@ -47,9 +56,15 @@ public abstract class InputFilter{
         this.idx = idx;
     }
 
-    public abstract boolean IsAWord();
+    public boolean IsAWord() {
+        return true;
+    }
 
-    public abstract void ErrorNotAWord();
+    public void ErrorNotAWord() {
 
-    public abstract void ErrorNotEnoughChar();
+    }
+
+    public void ErrorNotEnoughChar() {
+
+    }
 }
