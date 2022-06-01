@@ -20,7 +20,7 @@ public class GamePanel extends JPanel implements KeyListener {
     private InputFilter inputFilter;
 
     private JStyleLabel[][] table = new JStyleLabel[6][5];
-    private int size = 5;
+    private int size = 5, currentRow = 0;
 
     public GamePanel() {
         initPanel();
@@ -37,6 +37,7 @@ public class GamePanel extends JPanel implements KeyListener {
 //        System.out.println(e.getKeyChar());
         System.out.println("Pressed " + e.getKeyChar() + '\n' + this);
         inputFilter.inputProcess(e.getKeyChar());
+        refresh();
     }
 
     @Override
@@ -47,7 +48,7 @@ public class GamePanel extends JPanel implements KeyListener {
     /**
      * Initialisation of GamePanel class
      */
-    public void initPanel() {
+    private void initPanel() {
         inputFilter = new InputFilter(size);
         this.addKeyListener(this);
         this.setLayout(new GridLayout(6, 5, 1, 1));
@@ -58,5 +59,16 @@ public class GamePanel extends JPanel implements KeyListener {
             }
         }
         this.setSize(600, 400);
+    }
+
+    private void actionDependOnInput(int actionCode) {
+
+    }
+
+    private void refresh() {
+        char[] curInput = inputFilter.getInput();
+        for (int i = 0; i < 5; i++) {
+            table[currentRow][i].setText(String.valueOf(curInput[i]));
+        }
     }
 }
