@@ -2,8 +2,7 @@ import Panels.*;
 
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +13,7 @@ import java.util.ArrayList;
  * @version 1.0
  * @description The Frame of Wordle.
  **/
-public class WordleFrame extends JFrame implements ActionListener {
+public class WordleFrame extends JFrame implements ActionListener, KeyListener {
     JButton startBtn = new JButton("Start");
     JButton quitBtn = new JButton("Quit");
     StartPanel startPanel = new StartPanel(startBtn, quitBtn);
@@ -35,6 +34,21 @@ public class WordleFrame extends JFrame implements ActionListener {
         if (e.getSource() == this.quitBtn) gameQuit();
     }
 
+    @Override
+    public void keyReleased(KeyEvent e) {
+//        System.out.println("Released");
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+//        System.out.println("Pressed");
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        System.out.println("Typed");
+    }
+
     public void initFrame() {
         this.setSize(600, 400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,6 +58,7 @@ public class WordleFrame extends JFrame implements ActionListener {
 
         startBtn.addActionListener(this);
         quitBtn.addActionListener(this);
+        this.addKeyListener(this);
     }
 
     public void gameStart() {

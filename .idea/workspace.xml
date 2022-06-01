@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="思维混乱中">
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="这是啥呢？">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JStyleLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/JStyleLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/StartPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/StartPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wordle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wordle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,12 +28,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
-      </GitPushTagMode>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
   </component>
@@ -141,7 +132,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654069577222</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="完成了开始界面和游戏界面的设置&#10;&#10;构架是先有主页面WordleFrame，主页面包含了开始界面startPanel、游戏界面gamePanel，以及开始界面的开始按钮和退出按钮。&#10;监听由主界面负责。&#10;开始界面类StartPanel和游戏界面类GamePanel现在都在Panels包里面了。&#10;特质标签类JStyleLabel现在在Components类里面了。&#10;&#10;注意：游戏界面现在没有被监听">
+      <created>1654071101005</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654071101005</updated>
+    </task>
+    <task id="LOCAL-00006" summary="这是啥呢？">
+      <created>1654071140300</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654071140300</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +164,8 @@
     <MESSAGE value="完成了Wordle程序的核心逻辑处理器类型WordleLogic的算法设计与实现，并在主类Wordle中完成了测试，算法逻辑正常.&#10;&#10;WordleLogic有两个私有构造方法和一个公共构造方法（初始化输入），公共构造方法会调用带单参数私有构造方法来初始化与目标词汇和结果有关的变量，然后调用核心逻辑logicCore方法来实现判断和结果输出" />
     <MESSAGE value="修改了一下README.me" />
     <MESSAGE value="思维混乱中" />
-    <option name="LAST_COMMIT_MESSAGE" value="思维混乱中" />
+    <MESSAGE value="完成了开始界面和游戏界面的设置&#10;&#10;构架是先有主页面WordleFrame，主页面包含了开始界面startPanel、游戏界面gamePanel，以及开始界面的开始按钮和退出按钮。&#10;监听由主界面负责。&#10;开始界面类StartPanel和游戏界面类GamePanel现在都在Panels包里面了。&#10;特质标签类JStyleLabel现在在Components类里面了。&#10;&#10;注意：游戏界面现在没有被监听" />
+    <MESSAGE value="这是啥呢？" />
+    <option name="LAST_COMMIT_MESSAGE" value="这是啥呢？" />
   </component>
 </project>
