@@ -13,11 +13,11 @@ import java.awt.event.*;
  * @description The Frame of Wordle.
  **/
 public class WordleFrame extends JFrame implements ActionListener, KeyListener {
-    private JButton startBtn = new JButton("Start");
-    private JButton quitBtn = new JButton("Quit");
+    private final JButton startBtn = new JButton("Start");
+    private final JButton quitBtn = new JButton("Quit");
 
-    private StartPanel startPanel = new StartPanel(startBtn, quitBtn);
-    private GamePanel gamePanel = new GamePanel();
+    private final StartPanel startPanel = new StartPanel(startBtn, quitBtn);
+    private final GamePanel gamePanel = new GamePanel();
 
     public WordleFrame() {
         initFrame();
@@ -65,7 +65,6 @@ public class WordleFrame extends JFrame implements ActionListener, KeyListener {
 
     public void gameStart() {
         startPanel.setVisible(false);
-        WordleMemory memory = new WordleMemory();
         this.setContentPane(gamePanel);
         gamePanel.setVisible(true);
         gamePanel.requestFocusInWindow();
