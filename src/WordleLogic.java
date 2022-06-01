@@ -49,7 +49,7 @@ public class WordleLogic {
      * A public constructor method to invoke another private constructor,
      * to initialise the instance variables.
      * Then, it invoke the logicCore to do the Wordle core logic processing.
-     * @param input A valid input filtered by InputFilter class.
+     * @param input A valid input filtered by Supportor.InputFilter class.
      */
     public WordleLogic(char[] input) {
         this(input.length);
@@ -57,9 +57,9 @@ public class WordleLogic {
     }
 
     /**
-     * Accept the valid input filtered by InputFilter class,
+     * Accept the valid input filtered by Supportor.InputFilter class,
      * and calculate the result of an input word.
-     * @param input A valid input filtered by InputFilter class and conveyed from the constructor.
+     * @param input A valid input filtered by Supportor.InputFilter class and conveyed from the constructor.
      */
     private void logicCore(char[] input) {
         for (int i = 0; i < this.wordSize; i++) {

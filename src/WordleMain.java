@@ -1,3 +1,4 @@
+import Supportor.InputFilter;
 import Supportor.WordleMemory;
 
 /**

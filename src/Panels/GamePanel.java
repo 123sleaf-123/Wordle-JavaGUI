@@ -2,6 +2,9 @@ package Panels;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import Components.JStyleLabel;
 
 /**
@@ -12,7 +15,7 @@ import Components.JStyleLabel;
  * @version 1.0
  * @description The panel for the game, extending from JPanel.
  **/
-public class GamePanel extends JPanel {
+public class GamePanel extends JPanel implements KeyListener {
     private JStyleLabel[][] table = new JStyleLabel[6][5];
     private int size = 5;
 
@@ -20,10 +23,29 @@ public class GamePanel extends JPanel {
         initPanel();
     }
 
+    @Override
+    public void keyReleased(KeyEvent e) {
+//        System.out.println("Released");
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+//        System.out.println("Pressed");
+//        System.out.println(e.getKeyChar());
+        System.out.println("Pressed " + e.getKeyChar() + '\n' + this);
+
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+//        System.out.println("Typed ");
+    }
+
     /**
      * Initialisation of GamePanel class
      */
     public void initPanel() {
+        this.addKeyListener(this);
         this.setLayout(new GridLayout(6, 5, 1, 1));
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 5; j++) {
