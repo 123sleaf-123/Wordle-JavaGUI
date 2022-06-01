@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
  * @version 1.0
  * @description The strat panel of the game.
  **/
-public class StartPanel extends JPanel implements ActionListener {
+public class StartPanel extends JPanel {
     private JButton start = new JButton("Start");
     private JButton quit = new JButton("Quit");
 
@@ -22,31 +22,38 @@ public class StartPanel extends JPanel implements ActionListener {
         this.setLayout(new GridLayout(2, 1));
         this.add(start);
         this.add(quit);
-        start.addActionListener(this);
-        quit.addActionListener(this);
         this.setVisible(true);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == this.start) gameStart();
-        if (e.getSource() == this.quit) gameQuit();
+    public StartPanel(JButton start, JButton quit) {
+        this.start = start;
+        this.quit = quit;
+        this.setLayout(new GridLayout(2, 1));
+        this.add(start);
+        this.add(quit);
+        this.setVisible(true);
     }
 
-    public void gameStart() {
-        this.setVisible(false);
-        System.out.println("Start.");
-    }
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//        if (e.getSource() == this.start) gameStart();
+//        if (e.getSource() == this.quit) gameQuit();
+//    }
+//
+//    public void gameStart() {
+//        this.setVisible(false);
+//        System.out.println("Start.");
+//    }
+//
+//    public void gameQuit() {
+//        System.out.println("Quit.");
+//        System.exit(0);
+//    }
 
-    public void gameQuit() {
-        System.out.println("Quit.");
-        System.exit(0);
-    }
-
-    public static void main(String[] args) {
-        JFrame testFrame = new JFrame("test");
-        testFrame.setContentPane(new Panels.StartPanel());
-        testFrame.setSize(600, 400);
-        testFrame.setVisible(true);
-    }
+//    public static void main(String[] args) {
+//        JFrame testFrame = new JFrame("test");
+//        testFrame.setContentPane(new Panels.StartPanel());
+//        testFrame.setSize(600, 400);
+//        testFrame.setVisible(true);
+//    }
 }

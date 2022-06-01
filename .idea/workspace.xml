@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="思维混乱中">
-      <change afterPath="$PROJECT_DIR$/src/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JStyleLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Panels/StartPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WordleMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JStyleLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/JStyleLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/StartPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/StartPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Wordle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wordle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WordleLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WordleMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleMemory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +66,7 @@
       <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\README_IMGs" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Panels.StartPanel">
+  <component name="RunManager" selected="Application.Wordle">
     <configuration name="InputFilter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="InputFilter" />
       <module name="Wordle" />
@@ -103,8 +97,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Panels.StartPanel" />
         <item itemvalue="Application.Wordle" />
+        <item itemvalue="Application.Panels.StartPanel" />
         <item itemvalue="Application.WordleMemory" />
         <item itemvalue="Application.InputFilter" />
       </list>
@@ -140,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653712480917</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="思维混乱中">
+      <created>1654069577222</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654069577222</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
