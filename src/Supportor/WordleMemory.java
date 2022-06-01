@@ -1,8 +1,10 @@
+package Supportor;
+
 import java.io.*;
 import java.util.ArrayList;
 
 /**
- * Title:        WordleMemory.java
+ * Title:        Supportor.WordleMemory.java
  * Copyright:    Copyright(c) 2022
  *
  * @author Zhiye Huang
@@ -15,6 +17,11 @@ public class WordleMemory {
 
     private char[] input;
     private int idx = 0;
+
+    public WordleMemory() {
+        this.queryWords();
+        this.input = new char[5];
+    }
 
     public WordleMemory(int size) {
         this.queryWords();
@@ -34,11 +41,6 @@ public class WordleMemory {
             System.out.println("Error");
             System.exit(-1);
         }
-    }
-
-    public void update(InputFilter filter) {
-        this.idx = filter.getIdx();
-        this.input = filter.getInput();
     }
 
     public ArrayList<String> getDictionary() {

@@ -1,3 +1,5 @@
+import Supportor.WordleMemory;
+
 /**
  * Title:        WordleMain.java
  * Copyright:    Copyright(c) 2022

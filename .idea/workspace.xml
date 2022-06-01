@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="GamePanel的初始化现在由用initPanel()函数完成">
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="JStyleLabel的初始化现在由用initLabel()函数完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/JStyleLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/JStyleLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordleMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordleMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supportor/WordleMemory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,15 +76,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Wordle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Wordle" />
+    <configuration name="Supportor.WordleMemory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Supportor.WordleMemory" />
       <module name="Wordle" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WordleMemory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="WordleMemory" />
+    <configuration name="Wordle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Wordle" />
       <module name="Wordle" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,7 +94,7 @@
       <list>
         <item itemvalue="Application.Wordle" />
         <item itemvalue="Application.Panels.StartPanel" />
-        <item itemvalue="Application.WordleMemory" />
+        <item itemvalue="Application.Supportor.WordleMemory" />
         <item itemvalue="Application.InputFilter" />
       </list>
     </recent_temporary>
@@ -174,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654073142109</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="JStyleLabel的初始化现在由用initLabel()函数完成">
+      <created>1654074507573</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654074507573</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,6 +209,7 @@
     <MESSAGE value="修改了WordleMemory和GamePanel的小部分逻辑和成员。&#10;&#10;WordleMemory中while改为了do... while()；&#10;GamePanel中直接用二维数组JLabel[][] table = new JLabel[6][5];代替原来的混合设计。" />
     <MESSAGE value="修改了WordleMemory和GamePanel的小部分逻辑和成员。&#10;&#10;WordleMemory中while改为了do... while()；&#10;GamePanel中直接用二维数组JStyleLabel[][] table = new JStyleLabel[6][5];代替原来的混合设计。" />
     <MESSAGE value="GamePanel的初始化现在由用initPanel()函数完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="GamePanel的初始化现在由用initPanel()函数完成" />
+    <MESSAGE value="JStyleLabel的初始化现在由用initLabel()函数完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="JStyleLabel的初始化现在由用initLabel()函数完成" />
   </component>
 </project>

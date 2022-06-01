@@ -29,7 +29,8 @@ public class JStyleLabel extends JLabel{
      * Initialisation of JStyleLabel,
      */
     public void initLabel() {
-        this.setBackground(Color.YELLOW);
+        this.setBackground(Color.white);
+        this.setOpaque(true);
         this.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 //        this.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
     }

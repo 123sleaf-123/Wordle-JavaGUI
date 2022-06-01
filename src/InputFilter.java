@@ -1,3 +1,5 @@
+import Supportor.WordleMemory;
+
 /**
  * Title:        InputFilter.java
  * Copyright:    Copyright(c) 2022
@@ -30,7 +32,6 @@ public abstract class InputFilter{
         } else if (c == '\b') {
             if (this.idx >= 0) this.input[this.idx--] = 0;
         }
-        ifToMemory.update(this);
     }
 
     /**
