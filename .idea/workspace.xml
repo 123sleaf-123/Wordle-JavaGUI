@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="修改了WordleMemory和GamePanel的小部分逻辑和成员。&#10;&#10;WordleMemory中while改为了do... while()；&#10;GamePanel中直接用二维数组JLabel[][] table = new JLabel[6][5];代替原来的混合设计。">
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="GamePanel的初始化现在由用initPanel()函数完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WordleMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleMemory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/JStyleLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/JStyleLabel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +153,28 @@
       <option name="project" value="LOCAL" />
       <updated>1654071879633</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="修改了WordleMemory和GamePanel的小部分逻辑和成员。&#10;&#10;WordleMemory中while改为了do... while()；&#10;GamePanel中直接用二维数组JStyleLabel[][] table = new JStyleLabel[6][5];代替原来的混合设计。">
+      <created>1654073002320</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654073002320</updated>
+    </task>
+    <task id="LOCAL-00009" summary="GamePanel的初始化现在由用initPanel()函数完成">
+      <created>1654073120019</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654073120019</updated>
+    </task>
+    <task id="LOCAL-00010" summary="GamePanel的初始化现在由用initPanel()函数完成">
+      <created>1654073142109</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1654073142109</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,6 +196,8 @@
     <MESSAGE value="这是啥呢？" />
     <MESSAGE value="完成了键盘监听" />
     <MESSAGE value="修改了WordleMemory和GamePanel的小部分逻辑和成员。&#10;&#10;WordleMemory中while改为了do... while()；&#10;GamePanel中直接用二维数组JLabel[][] table = new JLabel[6][5];代替原来的混合设计。" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了WordleMemory和GamePanel的小部分逻辑和成员。&#10;&#10;WordleMemory中while改为了do... while()；&#10;GamePanel中直接用二维数组JLabel[][] table = new JLabel[6][5];代替原来的混合设计。" />
+    <MESSAGE value="修改了WordleMemory和GamePanel的小部分逻辑和成员。&#10;&#10;WordleMemory中while改为了do... while()；&#10;GamePanel中直接用二维数组JStyleLabel[][] table = new JStyleLabel[6][5];代替原来的混合设计。" />
+    <MESSAGE value="GamePanel的初始化现在由用initPanel()函数完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="GamePanel的初始化现在由用initPanel()函数完成" />
   </component>
 </project>
