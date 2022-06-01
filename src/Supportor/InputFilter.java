@@ -12,13 +12,12 @@ import Supportor.WordleMemory;
  * to generate suitable input to the core logic processing class.
  **/
 public class InputFilter{
+    private ArrayList<String> dictionary = new ArrayList<>();
     private char[] input;
     private int idx = 0;
-    private WordleMemory ifToMemory;
 
-    public InputFilter(int size, WordleMemory memory) {
-        this.input = new char[size];
-        this.ifToMemory = memory;
+    public  InputFilter(int size) {
+        input = new char[size];
     }
 
     public void inputProcess(char c) {
@@ -43,6 +42,35 @@ public class InputFilter{
 
     }
 
+    public void queryWords() {
+        File f = new File("resources/dictionary.txt");
+        try {
+            FileReader fr = new FileReader(f);
+            BufferedReader br = new BufferedReader(fr);
+            String str;
+            do {
+                str = br.readLine();
+                dictionary.add(str);
+            } while (str != null);
+        } catch (IOException e) {
+            System.out.println("Error");
+            System.exit(-1);
+        }
+    }
+
+    public boolean IsAWord() {
+        return true;
+    }
+
+    public int ErrorNotAWord() {
+        System.out.println(String.valueOf(input) + " is not a word.");
+        return 2;
+    }
+
+    public int ErrorNotEnoughChar() {
+        return 3;
+    }
+
     public char[] getInput() {
         return input;
     }
@@ -57,17 +85,5 @@ public class InputFilter{
 
     public void setIdx(int idx) {
         this.idx = idx;
-    }
-
-    public boolean IsAWord() {
-        return true;
-    }
-
-    public void ErrorNotAWord() {
-
-    }
-
-    public void ErrorNotEnoughChar() {
-
     }
 }
