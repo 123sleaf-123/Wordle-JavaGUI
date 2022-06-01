@@ -17,7 +17,6 @@ public class GamePanel extends JPanel {
     private int size = 5;
 
     public GamePanel() {
-        this.setLayout(new GridLayout(6, 5, 1, 1));
         initPanel();
     }
 
@@ -25,6 +24,7 @@ public class GamePanel extends JPanel {
      * Initialisation of GamePanel class
      */
     public void initPanel() {
+        this.setLayout(new GridLayout(6, 5, 1, 1));
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 5; j++) {
                 table[i][j] = new JStyleLabel("test"+i+j);
