@@ -46,16 +46,28 @@ public class GamePanel extends JPanel implements KeyListener {
     }
 
     /**
-     * Initialisation of GamePanel class
+     * Initialisation of GamePanel instance
      */
-    private void initPanel() {
-        inputFilter = new InputFilter(size);
+    private void initPanel(JButton backBtn) {
+        resourceReader = new ResourceReader();
+        inputProcessor = new InputProcessor(wordSize, resourceReader);
+        wordleLogic = new WordleLogic(resourceReader.wordle);
         this.addKeyListener(this);
-        this.setLayout(new GridLayout(6, 5, 1, 1));
+        this.setLayout(new BorderLayout());
+
+        JPanel centerPanel = new JPanel();
+        centerPanel.setLayout(new GridLayout(6, 5, 1, 1));
+        this.add(BorderLayout.CENTER, centerPanel);
+
+        JPanel northPanel = new JPanel();
+        northPanel.setLayout(new FlowLayout());
+        this.add(BorderLayout.NORTH, northPanel);
+        northPanel.add(backBtn);
+
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 5; j++) {
                 table[i][j] = new JStyleLabel("test"+i+j);
-                this.add(table[i][j]);
+                centerPanel.add(table[i][j]);
             }
         }
         this.setSize(600, 400);
