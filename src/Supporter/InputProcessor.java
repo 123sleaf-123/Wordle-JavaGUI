@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -26,9 +27,8 @@ public class InputProcessor {
     private int idx = 0;
 
     // Operation Codes
-    public final int NO_OPERATION = 0,
-            SET_A_CHARACTER = 1,  NOT_A_WORD = 2,
-            NOT_ENOUGH = 3, EMPTY = 4, IS_A_WORD = 5;
+    public final int NO_OPERATION = 0, SET_A_CHARACTER = 1, REMOVE_A_CHARACTER = 2,
+            NOT_A_WORD = 12, NOT_ENOUGH = 13, EMPTY = 14, IS_A_WORD = 15;
 
     public InputProcessor(int size) {
         input = new char[size];
@@ -55,8 +55,7 @@ public class InputProcessor {
         }
         if (c == KeyEvent.VK_BACK_SPACE) {
             if (tmpIdx > 0) {
-                this.input[--tmpIdx] = 0;
-                setIdx(tmpIdx);
+                return removeOperation();
             }
         }
         if (c == KeyEvent.VK_ENTER) {
@@ -96,7 +95,13 @@ public class InputProcessor {
     }
 
     private int removeOperation() {
-        return 9999;
+        System.out.println("Previous input is " + String.valueOf(input) + ".");
+        setIdx(getIdx() - 1);
+        System.out.printf("Remove input[%d] = %c.\n", getIdx(), input[getIdx()]);
+        this.input[getIdx()] = 0;
+        System.out.println("Current input is " + String.valueOf(input));
+        System.out.println();
+        return REMOVE_A_CHARACTER;
     }
 
 
@@ -104,6 +109,8 @@ public class InputProcessor {
 
     private int IsAWord() {
         System.out.println(String.valueOf(getInput()) + " is a word.");
+        Arrays.fill(input, ' ');
+        setIdx(0);
         return IS_A_WORD;
     }
 
