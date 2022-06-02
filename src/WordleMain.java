@@ -1,5 +1,6 @@
-import Supportor.InputFilter;
-import Supportor.WordleMemory;
+import Supporter.InputProcessor;
+import Supporter.WordleLogic;
+import Supporter.WordleMemory;
 
 /**
  * Title:        WordleMain.java
@@ -12,7 +13,7 @@ import Supportor.WordleMemory;
 public class WordleMain {
 //    private GameController gc;
 //    private WordleFrame frame;
-    private InputFilter filter;
+    private InputProcessor filter;
     private WordleLogic cpu;
     private WordleMemory memory;
 
@@ -20,7 +21,7 @@ public class WordleMain {
     public WordleMain(int size) {
         memory = new WordleMemory(size);
 //        filter = new filter();
-//        cpu = new WordleLogic();
+//        cpu = new Supporter.WordleLogic();
     }
 
 //    public WordleMain(GameController gc, WordleFrame frame) {

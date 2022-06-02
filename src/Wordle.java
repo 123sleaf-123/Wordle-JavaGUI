@@ -10,8 +10,5 @@
 public class Wordle {
     public static void main(String[] args) {
         WordleFrame frame = new WordleFrame();
-//        GameController gc = new GameController(frame);
-//        WordleMain Main = new WordleMain(gc, frame);
-//        WordleMain Main = new WordleMain(5);
     }
 }

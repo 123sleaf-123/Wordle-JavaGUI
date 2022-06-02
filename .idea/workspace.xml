@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="现在在主界面WordleFrame中点击开始按钮，GamePanel能够读入词库了">
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="在GamePanel中增加了当前行的成员变量，增加了两个方，修改普通方法为私有方法。我们的输入有效了&#10;&#10;initPanel()变更为私有方法；&#10;新增了actionDependOnInput(int actionCode)和refresh()方法">
+      <change afterPath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Supportor/InputFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Supportor/WordleMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/WordleMemory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wordle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wordle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordleLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/WordleLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordleMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +71,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Wordle">
-    <configuration name="InputFilter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="InputFilter" />
+    <configuration name="InputProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Supporter.InputProcessor" />
       <module name="Wordle" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -79,8 +85,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Supportor.WordleMemory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Supportor.WordleMemory" />
+    <configuration name="Supporter.WordleMemory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Supporter.WordleMemory" />
       <module name="Wordle" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,8 +103,8 @@
       <list>
         <item itemvalue="Application.Wordle" />
         <item itemvalue="Application.Panels.StartPanel" />
-        <item itemvalue="Application.Supportor.WordleMemory" />
-        <item itemvalue="Application.InputFilter" />
+        <item itemvalue="Application.Supporter.WordleMemory" />
+        <item itemvalue="Application.Supporter.InputProcessor" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +201,42 @@
       <option name="project" value="LOCAL" />
       <updated>1654076141472</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="现在在主界面GamePanel能够被聚焦了&#10;&#10;也就是说能够切换到GamePanel界面后读取键盘输入了">
+      <created>1654083417764</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654083417764</updated>
+    </task>
+    <task id="LOCAL-00014" summary="现在在主界面GamePanel会初始化一个InputFilter成员，并且把键盘输入传递给该成员的inputProcess方法来决定弹出错误的类型或者填入单词。">
+      <created>1654084484987</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1654084484987</updated>
+    </task>
+    <task id="LOCAL-00015" summary="删除了WordleFrame的gameStart()方法中初始化的WordleMemory变量。&#10;&#10;因为WordleMemory变量在这里屁用都没。">
+      <created>1654085562160</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1654085562160</updated>
+    </task>
+    <task id="LOCAL-00016" summary="从前WordleMemory负责的功能现在都合并到了InputFilter中了。更改一了一下布局（generator+一般方法+get&amp;set）&#10;&#10;因为设计思想的变更，我们不再需要WordleMemory这一个运存，而且它很冗余">
+      <created>1654085854428</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1654085854428</updated>
+    </task>
+    <task id="LOCAL-00017" summary="在GamePanel中增加了当前行的成员变量，增加了两个方，修改普通方法为私有方法。我们的输入有效了&#10;&#10;initPanel()变更为私有方法；&#10;新增了actionDependOnInput(int actionCode)和refresh()方法">
+      <created>1654086059234</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1654086059234</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,7 +262,34 @@
     <MESSAGE value="GamePanel的初始化现在由用initPanel()函数完成" />
     <MESSAGE value="JStyleLabel的初始化现在由用initLabel()函数完成" />
     <MESSAGE value="现在在主界面WordleFrame中点击开始按钮，GamePanel能够读入词库了" />
-    <option name="LAST_COMMIT_MESSAGE" value="现在在主界面WordleFrame中点击开始按钮，GamePanel能够读入词库了" />
+    <MESSAGE value="现在在主界面GamePanel能够被聚焦了&#10;&#10;也就是说能够切换到GamePanel界面后读取键盘输入了" />
+    <MESSAGE value="现在在主界面GamePanel会初始化一个InputFilter成员，并且把键盘输入传递给该成员的inputProcess方法来决定弹出错误的类型或者填入单词。" />
+    <MESSAGE value="删除了WordleFrame的gameStart()方法中初始化的WordleMemory变量。&#10;&#10;因为WordleMemory变量在这里屁用都没。" />
+    <MESSAGE value="从前WordleMemory负责的功能现在都合并到了InputFilter中了。&#10;&#10;因为设计思想的变更，我们不再需要WordleMemory这一个运存，而且它很冗余" />
+    <MESSAGE value="从前WordleMemory负责的功能现在都合并到了InputFilter中了。更改一了一下布局（generator+一般方法+get&amp;set）&#10;&#10;因为设计思想的变更，我们不再需要WordleMemory这一个运存，而且它很冗余" />
+    <MESSAGE value="在GamePanel中增加了当前行的成员变量，增加了两个方，修改普通方法为私有方法。我们的输入有效了&#10;&#10;initPanel()变更为私有方法；&#10;新增了actionDependOnInput(int actionCode)和refresh()方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="在GamePanel中增加了当前行的成员变量，增加了两个方，修改普通方法为私有方法。我们的输入有效了&#10;&#10;initPanel()变更为私有方法；&#10;新增了actionDependOnInput(int actionCode)和refresh()方法" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Supporter/InputProcessor.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Supporter/InputProcessor.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Supporter/InputProcessor.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Wordle$Wordle.ic" NAME="Wordle Coverage Results" MODIFIED="1654076846121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
