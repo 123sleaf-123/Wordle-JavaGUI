@@ -18,7 +18,9 @@ import java.util.Random;
  * to generate suitable input to the core logic processing class.
  **/
 public class InputProcessor {
-    private ArrayList<String> dictionary = new ArrayList<>();
+    private ResourceReader resourceReader = new ResourceReader();
+
+    private ArrayList<String> dictionary;
     public char[] wordle;
     private final char[] input;
     private int idx = 0;
@@ -30,8 +32,8 @@ public class InputProcessor {
 
     public InputProcessor(int size) {
         input = new char[size];
-        queryWords();
-        generateWordle();
+        dictionary = resourceReader.getDictionary();
+        wordle = resourceReader.getWordle();
     }
 
     /**
@@ -58,50 +60,14 @@ public class InputProcessor {
             }
         }
         if (c == KeyEvent.VK_ENTER) {
-            if (tmpIdx == this.input.length)
-                if (searchWord()) return IsAWord();
+            if (tmpIdx == input.length)
+                if (resourceReader.searchWord(input)) return IsAWord();
                 else return errorNotAWord();
             else if (tmpIdx == 0) return errorEmptyInput();
             else return errorNotEnoughChar();
         }
 
         return noOperation();
-    }
-
-    /**
-     * Query words from targeted source.
-     * Then changed them to upper case and store.
-     */
-    public void queryWords() {
-        File f = new File("resources/dictionary.txt");
-        try {
-            FileReader fr = new FileReader(f);
-            BufferedReader br = new BufferedReader(fr);
-            String str = br.readLine();
-            while (str != null) {
-                dictionary.add(str.toUpperCase());
-                str = br.readLine();
-            }
-        } catch (IOException e) {
-            System.out.println("Error");
-            System.exit(-1);
-        }
-    }
-
-    /**
-     * A method to generate the target word from the dictionary
-     */
-    private void generateWordle() {
-        Random random = new Random();
-        wordle = dictionary.get(random.nextInt(0, dictionary.size())).toCharArray();
-    }
-
-    /**
-     * Judge that whether the input char array char[5] input is a word.
-     * @return true, when it's a word; Otherwise false.
-     */
-    public boolean searchWord() {
-        return dictionary.contains(String.valueOf(this.input));
     }
 
     // Operation methods

@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="在GamePanel中增加了当前行的成员变量，增加了两个方，修改普通方法为私有方法。我们的输入有效了&#10;&#10;initPanel()变更为私有方法；&#10;新增了actionDependOnInput(int actionCode)和refresh()方法">
-      <change afterPath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="彻底删除了WordleMemory">
+      <change afterPath="$PROJECT_DIR$/src/Supporter/ResourceReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Supportor/InputFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Supportor/WordleMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/WordleMemory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wordle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wordle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WordleLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/WordleLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WordleMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +230,42 @@
       <option name="project" value="LOCAL" />
       <updated>1654086059234</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="InputFilter改名。细化和新增了一些方法。&#10;&#10;InputFilter现在更名为InputProcessor。&#10;&#10;新增操作结果代码：&#10;NO_OPERATION = 0&#10;SET_A_CHARACTER = 1&#10;NOT_A_WORD = 2&#10;NOT_ENOUGH = 3&#10;EMPTY = 4&#10;IS_A_WORD = 5。&#10;&#10;重构了inputProcess方法：&#10;现在不再直接修改下标（位置），而是交由setOperation来存储和修改下标（removeOperation还没写）；&#10;回退的逻辑被修改，会先回退下标，再把当前位置设置为0；&#10;现在每一步操作都会返回一个执行一个操作方法，返回一个操作结果代码。&#10;&#10;queryWords()方法现在会把需要存储的单词全部改成大写。&#10;&#10;新增了生成目标单词的方法generateWordle()。&#10;&#10;新增了一系列操作方法：&#10;setOperation(char c)方法会打印存储操作和存储后的input词组，然后让下标+1，最后返回一个设置字母代码SET_A_CHARACTER。&#10;&#10;查询词汇是否存在的方法IsAWord()现在更名为searchWord()。&#10;&#10;新增了输入为空错误提示方法——errorEmptyInput()。&#10;&#10;setIdx(int idx)方法现在会把下标idx控制在[0,5]中">
+      <created>1654181312544</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1654181312544</updated>
+    </task>
+    <task id="LOCAL-00019" summary="移除了WordleMemory，新增了UI管理UIManager">
+      <created>1654181398377</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1654181398377</updated>
+    </task>
+    <task id="LOCAL-00020" summary="移动到了supporter包，新增了存储当前待处理猜测单词的变量guess&#10;初始化方法也也新增了待猜测单词wordle的初始化&#10;新增了猜测单词guess的设置和获取方法">
+      <created>1654181681283</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1654181681283</updated>
+    </task>
+    <task id="LOCAL-00021" summary="小修改：删除了一些无用注释，保存了一些改名变动">
+      <created>1654181755993</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1654181755993</updated>
+    </task>
+    <task id="LOCAL-00022" summary="彻底删除了WordleMemory">
+      <created>1654182005205</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1654182005205</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,28 +297,12 @@
     <MESSAGE value="从前WordleMemory负责的功能现在都合并到了InputFilter中了。&#10;&#10;因为设计思想的变更，我们不再需要WordleMemory这一个运存，而且它很冗余" />
     <MESSAGE value="从前WordleMemory负责的功能现在都合并到了InputFilter中了。更改一了一下布局（generator+一般方法+get&amp;set）&#10;&#10;因为设计思想的变更，我们不再需要WordleMemory这一个运存，而且它很冗余" />
     <MESSAGE value="在GamePanel中增加了当前行的成员变量，增加了两个方，修改普通方法为私有方法。我们的输入有效了&#10;&#10;initPanel()变更为私有方法；&#10;新增了actionDependOnInput(int actionCode)和refresh()方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="在GamePanel中增加了当前行的成员变量，增加了两个方，修改普通方法为私有方法。我们的输入有效了&#10;&#10;initPanel()变更为私有方法；&#10;新增了actionDependOnInput(int actionCode)和refresh()方法" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Supporter/InputProcessor.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Supporter/InputProcessor.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Supporter/InputProcessor.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="InputFilter改名。细化和新增了一些方法。&#10;&#10;InputFilter现在更名为InputProcessor。&#10;&#10;新增操作结果代码：&#10;NO_OPERATION = 0&#10;SET_A_CHARACTER = 1&#10;NOT_A_WORD = 2&#10;NOT_ENOUGH = 3&#10;EMPTY = 4&#10;IS_A_WORD = 5。&#10;&#10;重构了inputProcess方法：&#10;现在不再直接修改下标（位置），而是交由setOperation来存储和修改下标（removeOperation还没写）；&#10;回退的逻辑被修改，会先回退下标，再把当前位置设置为0；&#10;现在每一步操作都会返回一个执行一个操作方法，返回一个操作结果代码。&#10;&#10;queryWords()方法现在会把需要存储的单词全部改成大写。&#10;&#10;新增了生成目标单词的方法generateWordle()。&#10;&#10;新增了一系列操作方法：&#10;setOperation(char c)方法会打印存储操作和存储后的input词组，然后让下标+1，最后返回一个设置字母代码SET_A_CHARACTER。&#10;&#10;查询词汇是否存在的方法IsAWord()现在更名为searchWord()。&#10;&#10;新增了输入为空错误提示方法——errorEmptyInput()。&#10;&#10;setIdx(int idx)方法现在会把下标idx控制在[0,5]中" />
+    <MESSAGE value="移除了WordleMemory，新增了UI管理UIManager" />
+    <MESSAGE value="移动到了supporter包，新增了存储当前待处理猜测单词的变量guess&#10;初始化方法也也新增了待猜测单词wordle的初始化&#10;新增了猜测单词guess的设置和获取方法" />
+    <MESSAGE value="小修改：删除了一些无用注释，保存了一些改名变动" />
+    <MESSAGE value="彻底删除了WordleMemory" />
+    <option name="LAST_COMMIT_MESSAGE" value="彻底删除了WordleMemory" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Wordle$Wordle.ic" NAME="Wordle Coverage Results" MODIFIED="1654076846121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
