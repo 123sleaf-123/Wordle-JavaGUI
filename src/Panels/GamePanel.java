@@ -6,7 +6,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import Components.JStyleLabel;
-import Supportor.InputFilter;
+import Supporter.InputProcessor;
+import Supporter.Judgement;
+import Supporter.ResourceReader;
+import Supporter.WordleLogic;
 
 /**
  * Title:        GamePanel.java
