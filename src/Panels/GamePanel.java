@@ -17,13 +17,17 @@ import Supportor.InputFilter;
  * @description The panel for the game, extending from JPanel.
  **/
 public class GamePanel extends JPanel implements KeyListener {
-    private InputFilter inputFilter;
+    private ResourceReader resourceReader;
+    private InputProcessor inputProcessor;
+    private WordleLogic wordleLogic;
 
     private JStyleLabel[][] table = new JStyleLabel[6][5];
-    private int size = 5, currentRow = 0;
 
-    public GamePanel() {
-        initPanel();
+    private char[] curInput;
+    private int wordSize = 5, currentRow = 0;
+
+    public GamePanel(JButton bckBtn) {
+        initPanel(bckBtn);
     }
 
     @Override
@@ -78,7 +82,7 @@ public class GamePanel extends JPanel implements KeyListener {
     }
 
     private void refresh() {
-        char[] curInput = inputFilter.getInput();
+        char[] curInput = inputProcessor.getInput();
         for (int i = 0; i < 5; i++) {
             table[currentRow][i].setText(String.valueOf(curInput[i]));
         }
