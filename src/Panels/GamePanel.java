@@ -42,11 +42,8 @@ public class GamePanel extends JPanel implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-//        System.out.println("Pressed");
-//        System.out.println(e.getKeyChar());
         System.out.println("Pressed " + e.getKeyChar() + '\n' + this);
-        inputFilter.inputProcess(e.getKeyChar());
-        refresh();
+        actionDependOnInput(inputProcessor.inputProcess(e.getKeyChar()));
     }
 
     @Override
@@ -83,7 +80,25 @@ public class GamePanel extends JPanel implements KeyListener {
     }
 
     private void actionDependOnInput(int actionCode) {
-
+        switch (actionCode) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                refresh();
+                break;
+            case 12:
+                String str = String.valueOf(inputProcessor.getInput()) + " is not a word!";
+                dialogAutoGenerator(str, str);
+                break;
+            case 13:
+                break;
+            case 14:
+            case 15:
+                wordleLogic.logicCore(inputProcessor.getInput());
+                lineRefresh();
+        }
     }
 
     private void refresh() {
