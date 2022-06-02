@@ -1,6 +1,5 @@
 import Panels.*;
-import Supportor.WordleMemory;
-import java.awt.*;
+
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -51,7 +50,19 @@ public class WordleFrame extends JFrame implements ActionListener, KeyListener {
 //        System.out.println(e.getKeyChar());
     }
 
+    /**
+     * Initialisation of the WordleFrame.
+     *
+     */
     public void initFrame() {
+        try{
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+            SwingUtilities.updateComponentTreeUI(this);
+            this.pack();
+        }catch(Exception e){
+            System.out.println("Can't set this style:"+e);
+        }
+
         this.setSize(600, 400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
