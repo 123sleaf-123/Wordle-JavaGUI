@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="InputProcessor中关于文件读取，内容提取，查询内容的部分现在拆分到ResourceReader中，并独立维持一个ResourceReader实体来维持功能。">
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="完善了removeOperation功能及其提示">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654182878138</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="完善了removeOperation功能及其提示">
+      <created>1654183980423</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1654183980423</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -310,18 +317,8 @@
     <MESSAGE value="小修改：删除了一些无用注释，保存了一些改名变动" />
     <MESSAGE value="彻底删除了WordleMemory" />
     <MESSAGE value="InputProcessor中关于文件读取，内容提取，查询内容的部分现在拆分到ResourceReader中，并独立维持一个ResourceReader实体来维持功能。" />
-    <option name="LAST_COMMIT_MESSAGE" value="InputProcessor中关于文件读取，内容提取，查询内容的部分现在拆分到ResourceReader中，并独立维持一个ResourceReader实体来维持功能。" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Supporter/InputProcessor.java</url>
-          <line>99</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="完善了removeOperation功能及其提示" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善了removeOperation功能及其提示" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Wordle$Wordle.ic" NAME="Wordle Coverage Results" MODIFIED="1654076846121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

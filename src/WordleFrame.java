@@ -1,6 +1,7 @@
 import Panels.*;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 /**
@@ -51,24 +52,38 @@ public class WordleFrame extends JFrame implements ActionListener, KeyListener {
     }
 
     /**
-     * Initialisation of the WordleFrame.
-     *
+     * Initialisation of the WordleFrame instance.
      */
     public void initFrame() {
-        try{
+        try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
             SwingUtilities.updateComponentTreeUI(this);
             this.pack();
-        }catch(Exception e){
-            System.out.println("Can't set this style:"+e);
+        } catch (Exception e) {
+            System.out.println("Can't set this style:" + e);
         }
 
-        this.setSize(600, 400);
+        // Set the size and position of the frame
+        Toolkit kit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = kit.getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+        int width = screenWidth / 2;
+        int height = screenHeight / 2;
+        int x = screenWidth / 4;
+        int y = screenHeight / 4;
+        this.setSize(width,height);
+        this.setBounds(x, y, width, height);
+
+        // Set Content Panel
+        this.setContentPane(startPanel);
+
+        // Settings
+        this.setTitle("Wordle Power");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
 
-        this.setContentPane(startPanel);
-
+        // Add listeners
         startBtn.addActionListener(this);
         quitBtn.addActionListener(this);
         this.addKeyListener(this);
