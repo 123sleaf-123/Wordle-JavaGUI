@@ -28,32 +28,14 @@ public class StartPanel extends JPanel {
     public StartPanel(JButton start, JButton quit) {
         this.start = start;
         this.quit = quit;
-        this.setLayout(new GridLayout(2, 1));
-        this.add(start);
-        this.add(quit);
+
+        this.setLayout(new BorderLayout(this.getWidth() / 10, this.getHeight() / 10));
+
+        JPanel centerPanel = new JPanel();
+        centerPanel.setLayout(new GridLayout(3, 1));
+        this.add(BorderLayout.CENTER, centerPanel);
+        centerPanel.add(start);
+        centerPanel.add(quit);
         this.setVisible(true);
     }
-
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        if (e.getSource() == this.start) gameStart();
-//        if (e.getSource() == this.quit) gameQuit();
-//    }
-//
-//    public void gameStart() {
-//        this.setVisible(false);
-//        System.out.println("Start.");
-//    }
-//
-//    public void gameQuit() {
-//        System.out.println("Quit.");
-//        System.exit(0);
-//    }
-
-//    public static void main(String[] args) {
-//        JFrame testFrame = new JFrame("test");
-//        testFrame.setContentPane(new Panels.StartPanel());
-//        testFrame.setSize(600, 400);
-//        testFrame.setVisible(true);
-//    }
 }
