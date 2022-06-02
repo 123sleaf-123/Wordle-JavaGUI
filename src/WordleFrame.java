@@ -18,7 +18,7 @@ public class WordleFrame extends JFrame implements ActionListener, KeyListener {
     private final JButton backBtn = new JButton("Back");
 
     private final StartPanel startPanel = new StartPanel(startBtn, quitBtn);
-    private final GamePanel gamePanel = new GamePanel();
+    private final GamePanel gamePanel = new GamePanel(backBtn);
 
     public WordleFrame() {
         initFrame();
@@ -33,7 +33,7 @@ public class WordleFrame extends JFrame implements ActionListener, KeyListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == startBtn) gameStart();
         if (e.getSource() == quitBtn) gameQuit();
-        if (e.getSource() == backBtn) ;
+        if (e.getSource() == backBtn) backToStart();
     }
 
     @Override
@@ -111,6 +111,9 @@ public class WordleFrame extends JFrame implements ActionListener, KeyListener {
         System.exit(0);
     }
 
+    /**
+     * Method to return to the main frame.
+     */
     public void backToStart() {
         gamePanel.setVisible(false);
         this.setContentPane(startPanel);

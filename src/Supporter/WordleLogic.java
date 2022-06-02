@@ -52,25 +52,24 @@ public class WordleLogic {
      * A public constructor method to invoke another private constructor,
      * to initialise the instance variables.
      * Then, it invoke the logicCore to do the Wordle core logic processing.
-     * @param input A valid input filtered by Supporter.InputProcessor class.
      * @param wordle The target word to be guessed.
      */
-    public WordleLogic(char[] input, char[] wordle) {
-        this(input.length);
-        setGuess(input);
+    public WordleLogic(char[] wordle) {
+        this(wordle.length);
         setWordle(wordle);
     }
 
     /**
      * Accept the valid input filtered by Supporter.InputProcessor class,
      * and calculate the result of an input word.
+     * @param input A valid input filtered by Supporter.InputProcessor class.
      */
-    public void logicCore() {
+    public void logicCore(char[] input) {
         for (int i = 0; i < this.wordSize; i++) {
-            if (guess[i] == this.wordle[i]) this.colourRes[i] = Color.GREEN;
+            if (input[i] == this.wordle[i]) this.colourRes[i] = Color.GREEN;
             else {
                 for (int j = 0; j < this.wordSize; j++) {
-                    if (guess[i] == this.wordle[j])
+                    if (input[i] == this.wordle[j])
                         /* If the character hasn't been marked, we mark it */
                         if (!this.wordleFlag[j]) {
                             this.wordleFlag[j] = true;

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="完善了一些布局">
-      <change afterPath="$PROJECT_DIR$/src/Supporter/Judgement.java" afterDir="false" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="新增了Judgement类，带有两个静态方法isPlayerWin(JStyleLabel[][] table, int currentRow)和isFocusEnd(int currentRow)">
+      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Supporter/WordleLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/WordleLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordleFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +102,6 @@
         <item itemvalue="Application.Wordle" />
         <item itemvalue="Application.Panels.StartPanel" />
         <item itemvalue="Application.Supporter.WordleMemory" />
-        <item itemvalue="Application.Supporter.InputProcessor" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654188692250</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="新增了Judgement类，带有两个静态方法isPlayerWin(JStyleLabel[][] table, int currentRow)和isFocusEnd(int currentRow)">
+      <created>1654190600256</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1654190600256</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,7 +318,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改了一下README.me" />
     <MESSAGE value="思维混乱中" />
     <MESSAGE value="完成了开始界面和游戏界面的设置&#10;&#10;构架是先有主页面WordleFrame，主页面包含了开始界面startPanel、游戏界面gamePanel，以及开始界面的开始按钮和退出按钮。&#10;监听由主界面负责。&#10;开始界面类StartPanel和游戏界面类GamePanel现在都在Panels包里面了。&#10;特质标签类JStyleLabel现在在Components类里面了。&#10;&#10;注意：游戏界面现在没有被监听" />
     <MESSAGE value="这是啥呢？" />
@@ -333,7 +342,24 @@
     <MESSAGE value="完善了removeOperation功能及其提示" />
     <MESSAGE value="设置了主窗口的大小和位置" />
     <MESSAGE value="完善了一些布局" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善了一些布局" />
+    <MESSAGE value="新增了Judgement类，带有两个静态方法isPlayerWin(JStyleLabel[][] table, int currentRow)和isFocusEnd(int currentRow)" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增了Judgement类，带有两个静态方法isPlayerWin(JStyleLabel[][] table, int currentRow)和isFocusEnd(int currentRow)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Supporter/WordleLogic.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Panels/GamePanel.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Wordle$Wordle.ic" NAME="Wordle Coverage Results" MODIFIED="1654076846121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

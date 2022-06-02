@@ -6,6 +6,9 @@
 #### 软件架构
 ![img.png](README_IMGs/img.png)软件架构说明
 
+#### 设计流程图
+![img.png](img.png)
+
 
 #### 安装教程
 
