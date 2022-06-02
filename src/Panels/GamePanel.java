@@ -2,6 +2,8 @@ package Panels;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -89,5 +91,73 @@ public class GamePanel extends JPanel implements KeyListener {
         for (int i = 0; i < 5; i++) {
             table[currentRow][i].setText(String.valueOf(curInput[i]));
         }
+    }
+
+    private void lineRefresh() {
+        Color[] curColour = wordleLogic.getColourRes();
+        for (int i = 0; i < 5; i++) {
+            table[currentRow][i].setBackground(curColour[i]);
+        }
+        if (Judgement.isPlayerWin(table, getCurrentRow())) {
+            String winMessage = "Game win in " + (getCurrentRow() + 1)  + " rows";
+            dialogAutoGenerator(winMessage, "Cheers!");
+        }
+
+        if (Judgement.isFocusEnd(getCurrentRow())) {
+            dialogAutoGenerator("Level: Gamer", "Game lost");
+        }
+        inputProcessor.clearOperation();
+        setCurrentRow(getCurrentRow() + 1);
+    }
+
+    public void dialogAutoGenerator(String text, String title) {
+        // Initialisation of components
+        JButton okBtn = new JButton("OK"), cancelBtn = new JButton("Cancel");
+        JLabel textDisplayLabel = new JLabel(text);
+
+        // Initialisation of Containers
+        JDialog notAWordWarning = new JDialog((Frame) this.getTopLevelAncestor(), title);
+        notAWordWarning.setLayout(new GridLayout(2, 1));
+        JPanel btnPanel = new JPanel();
+        btnPanel.setLayout(new FlowLayout());
+
+        notAWordWarning.getContentPane().add(textDisplayLabel);
+        notAWordWarning.getContentPane().add(btnPanel);
+        btnPanel.add(okBtn);
+        btnPanel.add(cancelBtn);
+        Dimension dimension = new Dimension(300, 150);
+        notAWordWarning.setMaximumSize(dimension);
+        notAWordWarning.setSize(dimension);
+//        notAWordWarning.setBounds(this.getBounds());
+        notAWordWarning.setVisible(true);
+        ActionListener dialogActionListener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == okBtn) {
+                    notAWordWarning.setVisible(false);
+                }
+                if (e.getSource() == cancelBtn) {
+                    notAWordWarning.setVisible(false);
+                }
+            }
+        };
+        okBtn.addActionListener(dialogActionListener);
+        cancelBtn.addActionListener(dialogActionListener);
+    }
+
+    public int getWordSize() {
+        return wordSize;
+    }
+
+    public void setWordSize(int wordSize) {
+        this.wordSize = wordSize;
+    }
+
+    public int getCurrentRow() {
+        return currentRow;
+    }
+
+    public void setCurrentRow(int currentRow) {
+        this.currentRow = currentRow;
     }
 }
