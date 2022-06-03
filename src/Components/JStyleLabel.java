@@ -1,8 +1,6 @@
 package Components;
 
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
@@ -14,7 +12,7 @@ import java.awt.*;
  * @version 1.0
  * @description A distingguised label extending from JLabel class with special design.
  **/
-public class JStyleLabel extends JLabel{
+public class JStyleLabel extends JLabel {
 
     public JStyleLabel() {
         super();

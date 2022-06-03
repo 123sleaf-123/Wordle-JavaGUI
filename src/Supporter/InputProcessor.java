@@ -1,13 +1,7 @@
 package Supporter;
 
 import java.awt.event.KeyEvent;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Random;
 
 /**
  * Title:        Supporter.InputProcessor.java
@@ -19,15 +13,13 @@ import java.util.Random;
  * to generate suitable input to the core logic processing class.
  **/
 public class InputProcessor {
-    private ResourceReader resourceReader;
-
-    public char[] wordle;
-    private final char[] input;
-    private int idx = 0;
-
     // Operation Codes
     public final int NO_OPERATION = 0, SET_A_CHARACTER = 1, REMOVE_A_CHARACTER = 2,
             NOT_A_WORD = 12, NOT_ENOUGH = 13, EMPTY = 14, IS_A_WORD = 15;
+    private final char[] input;
+    public char[] wordle;
+    private ResourceReader resourceReader;
+    private int idx = 0;
 
     public InputProcessor(int size, ResourceReader reader) {
         input = new char[size];
@@ -37,7 +29,6 @@ public class InputProcessor {
     }
 
     /**
-     *
      * @param c Character to be filtered.
      * @return Operation codes.
      */
@@ -73,6 +64,7 @@ public class InputProcessor {
 
     /**
      * This method will do nothing to the current input array.
+     *
      * @return NO_OPERATION code, which is the number 0, to the inputProcess method.
      */
     private int noOperation() {
@@ -83,6 +75,7 @@ public class InputProcessor {
     /**
      * The setOperation(char c) method prints the saved operation and the saved input phrase, idx +1,
      * and returns a code SET_A_CHARACTER.
+     *
      * @param c Character to be stored.
      * @return Operation code SET_A_CHARACTER.
      */
@@ -139,6 +132,7 @@ public class InputProcessor {
 
     /**
      * Empty error message.
+     *
      * @return Error code EMPTY.
      */
     private int errorEmptyInput() {
@@ -154,6 +148,7 @@ public class InputProcessor {
 
     /**
      * The getter method of instance variable idx.
+     *
      * @return idx that is in [0, 5].
      */
     public int getIdx() {
@@ -162,10 +157,11 @@ public class InputProcessor {
 
     /**
      * The setter method to set instance variable idx.
+     *
      * @param idx To be set iff it's in [0, 5]. That is between 0 and 5, inclusive.
      */
     public void setIdx(int idx) {
-        if (idx >= 0 && idx <= 5){
+        if (idx >= 0 && idx <= 5) {
             this.idx = idx;
         }
     }

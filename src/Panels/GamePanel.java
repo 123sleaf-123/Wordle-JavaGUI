@@ -1,5 +1,14 @@
 package Panels;
 
+import Components.HorSpacer;
+import Components.JStyleLabel;
+import Components.VerSpacer;
+import Panels.Dialog.WordleDialog;
+import Supporter.InputProcessor;
+import Supporter.Judgement;
+import Supporter.ResourceReader;
+import Supporter.WordleLogic;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -9,15 +18,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
-
-import Components.HorSpacer;
-import Components.JStyleLabel;
-import Components.VerSpacer;
-import Panels.Dialog.WordleDialog;
-import Supporter.InputProcessor;
-import Supporter.Judgement;
-import Supporter.ResourceReader;
-import Supporter.WordleLogic;
 
 /**
  * Title:        GamePanel.java
@@ -69,8 +69,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         try {
             Image iconImg = ImageIO.read(new File("src/resources/img/Medico.png"));
             backBtnIicon.setImage(iconImg);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         backBtn.setIcon(backBtnIicon);
@@ -86,8 +85,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         try {
             Image iconImg = ImageIO.read(new File("src/resources/img/Kikuchiyo.png"));
             resetBtnIcon.setImage(iconImg);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         resetBtn.setIcon(resetBtnIcon);
@@ -106,6 +104,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 
     /**
      * actions depend on return operation codes
+     *
      * @param actionCode return operation codes from InputProcessor
      */
     private void actionDependOnInput(int actionCode) {
@@ -136,7 +135,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
                 wordleLogic.logicCore(inputProcessor.getInput());
                 lineRefresh();
                 if (Judgement.isPlayerWin(table, getCurrentRow())) {
-                    String winMessage = "Game win in " + getCurrentRow()  + " rows";
+                    String winMessage = "Game win in " + getCurrentRow() + " rows";
                     WordleDialog winDialog =
                             new WordleDialog((Frame) this.getTopLevelAncestor(), winMessage, "Cheers!");
                     WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
@@ -209,6 +208,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 
     /**
      * Print the input message and deal with the input
+     *
      * @param e the event to be processed
      */
     @Override
@@ -226,6 +226,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
      * If the event was caused by a JButton, the method call clear() method.
      * If the event was caused by JButton backBtn, then it back to StartPanel.
      * Otherwise, GamePanel ask for focus by calling requestFocus() method.
+     *
      * @param e the event to be processed
      */
     @Override

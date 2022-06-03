@@ -17,8 +17,8 @@ import java.util.Random;
  **/
 public class ResourceReader {
 
-    private ArrayList<String> dictionary = new ArrayList<>();
     public char[] wordle;
+    private ArrayList<String> dictionary = new ArrayList<>();
 
     public ResourceReader() {
         queryWords();
@@ -55,6 +55,7 @@ public class ResourceReader {
 
     /**
      * Judge that whether the input char array char[5] input is a word.
+     *
      * @return true, when it's a word; Otherwise false.
      */
     public boolean searchWord(char[] input) {

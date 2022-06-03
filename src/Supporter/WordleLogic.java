@@ -1,6 +1,6 @@
 package Supporter;
 
-import java.awt.Color;
+import java.awt.*;
 import java.util.Arrays;
 
 /**
@@ -20,6 +20,7 @@ public class WordleLogic {
     /**
      * A private constructor that invoke the constructor without parameters first,
      * then initialises instance variables wordle and wordleFlag with a size ${size}.
+     *
      * @param size Specify the size of the given words.
      */
     private WordleLogic(int size) {
@@ -36,6 +37,7 @@ public class WordleLogic {
      * A public constructor method to invoke another private constructor,
      * to initialise the instance variables.
      * Then, it invoke the logicCore to do the Wordle core logic processing.
+     *
      * @param wordle The target word to be guessed.
      */
     public WordleLogic(char[] wordle) {
@@ -46,6 +48,7 @@ public class WordleLogic {
     /**
      * Accept the valid input filtered by Supporter.InputProcessor class,
      * and calculate the result of an input word.
+     *
      * @param input A valid input filtered by Supporter.InputProcessor class.
      */
     public void logicCore(char[] input) {
@@ -66,8 +69,7 @@ public class WordleLogic {
             if (input[i] == this.wordle[i]) {
                 colourRes[i] = Color.GREEN;
                 inputFlag[i] = wordleFlag[i] = true;
-            }
-            else colourRes[i] = Color.GRAY;
+            } else colourRes[i] = Color.GRAY;
         }
         for (int i = 0; i < wordSize; i++) {
             if (!inputFlag[i]) {

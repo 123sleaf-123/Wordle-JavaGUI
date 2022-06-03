@@ -34,8 +34,7 @@ public class WordleDialog extends JDialog {
         // Icon Setting
         try {
             this.setIconImage(ImageIO.read(new File("src/resources/img/alycei_coni.png")));
-        }
-        catch (IOException exc) {
+        } catch (IOException exc) {
             exc.printStackTrace();
         }
 

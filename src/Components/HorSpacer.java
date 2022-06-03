@@ -24,6 +24,7 @@ public class HorSpacer extends JPanel {
 
     /**
      * Indicate the number of units of space to control the width.
+     *
      * @param unit Number of units of space.
      */
     public HorSpacer(int unit) {

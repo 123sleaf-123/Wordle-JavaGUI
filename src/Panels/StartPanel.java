@@ -33,7 +33,7 @@ public class StartPanel extends JPanel {
         this.setLayout(new BorderLayout(this.getWidth() / 10, this.getHeight() / 10));
 
         gameTitle.setMinimumSize(new Dimension(200, 150));
-        gameTitle.setFont(new Font("Arial Black", Font.PLAIN , 72));
+        gameTitle.setFont(new Font("Arial Black", Font.PLAIN, 72));
         gameTitle.setHorizontalAlignment(SwingConstants.CENTER);
 
         JPanel centerPanel = new JPanel();
