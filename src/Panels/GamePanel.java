@@ -150,7 +150,9 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 
                 if (Judgement.isFocusEnd(getCurrentRow())) {
                     WordleDialog focusEndDialog =
-                            new WordleDialog((Frame) this.getTopLevelAncestor(), "Game lost", "Level: Gamer");
+                            new WordleDialog((Frame) this.getTopLevelAncestor(),
+                                    "Game lost", "Wordle: " +
+                                    String.valueOf(wordleLogic.getWordle()) + ".    Level: Gamer");
                     WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
                     focusEndDialog.getOkBtn().addActionListener(new ActionListener() {
                         @Override
