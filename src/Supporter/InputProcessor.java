@@ -130,6 +130,14 @@ public class InputProcessor {
     }
 
     /**
+     * Clear all temperate variables and initialise them
+     */
+    public void reset() {
+        clearOperation();
+        wordle = resourceReader.getWordle();
+    }
+
+    /**
      * Empty error message.
      * @return Error code EMPTY.
      */

@@ -13,6 +13,7 @@ import java.io.IOException;
 import Components.HorSpacer;
 import Components.JStyleLabel;
 import Components.VerSpacer;
+import Panels.Dialog.WordleDialog;
 import Supporter.InputProcessor;
 import Supporter.Judgement;
 import Supporter.ResourceReader;
@@ -26,34 +27,17 @@ import Supporter.WordleLogic;
  * @version 1.0
  * @description The panel for the game, extending from JPanel.
  **/
-public class GamePanel extends JPanel implements KeyListener {
+public class GamePanel extends JPanel implements KeyListener, ActionListener {
     private ResourceReader resourceReader;
     private InputProcessor inputProcessor;
     private WordleLogic wordleLogic;
 
     private JStyleLabel[][] table = new JStyleLabel[6][5];
 
-    private char[] curInput;
     private int wordSize = 5, currentRow = 0;
 
     public GamePanel(JButton bckBtn) {
         initPanel(bckBtn);
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-//        System.out.println("Released");
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        System.out.println("Pressed " + e.getKeyChar() + '\n' + this);
-        actionDependOnInput(inputProcessor.inputProcess(e.getKeyChar()));
-    }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-//        System.out.println("Typed ");
     }
 
     /**
@@ -73,22 +57,43 @@ public class GamePanel extends JPanel implements KeyListener {
         this.add(BorderLayout.NORTH, northPanel);
         this.add(BorderLayout.WEST, new HorSpacer(20));
         this.add(BorderLayout.EAST, new HorSpacer(20));
-        this.add(BorderLayout.SOUTH, new VerSpacer(this, 2, 50));
+        this.add(BorderLayout.SOUTH, new VerSpacer(this, 2, 20));
 
         // northPanel Settings
 
-        // backBtn Settings
-        ImageIcon backBtnIcon = new ImageIcon();
+        // backBtn Icon Settings
+        backBtn.addActionListener(this);
+
+        // backBtn Icon Settings
+        ImageIcon backBtnIicon = new ImageIcon();
         try {
-            Image iconImg = ImageIO.read(new File("src/resources/img/alycei_coni.png"));
-            backBtnIcon.setImage(iconImg);
+            Image iconImg = ImageIO.read(new File("src/resources/img/Medico.png"));
+            backBtnIicon.setImage(iconImg);
         }
         catch (IOException e) {
             e.printStackTrace();
         }
-        backBtn.setIcon(backBtnIcon);
-        backBtn.setPreferredSize(new Dimension(250, 40));
+        backBtn.setIcon(backBtnIicon);
+        backBtn.setPreferredSize(new Dimension(220, 80));
         northPanel.add(backBtn);
+
+        // resetBtn Settings
+        JButton resetBtn = new JButton("Reset");
+        resetBtn.addActionListener(this);
+
+        // resetBtn Icon Settings
+        ImageIcon resetBtnIcon = new ImageIcon();
+        try {
+            Image iconImg = ImageIO.read(new File("src/resources/img/Kikuchiyo.png"));
+            resetBtnIcon.setImage(iconImg);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        resetBtn.setIcon(resetBtnIcon);
+        resetBtn.setPreferredSize(new Dimension(220, 80));
+        northPanel.add(resetBtn);
+
 
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 5; j++) {
@@ -99,6 +104,10 @@ public class GamePanel extends JPanel implements KeyListener {
         this.setSize(600, 400);
     }
 
+    /**
+     * actions depend on return operation codes
+     * @param actionCode return operation codes from InputProcessor
+     */
     private void actionDependOnInput(int actionCode) {
         switch (actionCode) {
             case 0:
@@ -134,7 +143,7 @@ public class GamePanel extends JPanel implements KeyListener {
 
                 if (Judgement.isFocusEnd(getCurrentRow())) {
                     WordleDialog EmptyInputWarning =
-                            new WordleDialog((Frame) this.getTopLevelAncestor(), "Level: Gamer", "Game lost");
+                            new WordleDialog((Frame) this.getTopLevelAncestor(), "Game lost", "Level: Gamer");
                 }
                 inputProcessor.clearOperation();
                 setCurrentRow(getCurrentRow() + 1);
@@ -154,6 +163,62 @@ public class GamePanel extends JPanel implements KeyListener {
         Color[] curColour = wordleLogic.getColourRes();
         for (int i = 0; i < 5; i++) {
             table[currentRow][i].setBackground(curColour[i]);
+        }
+    }
+
+    /**
+     * Clear all temperate variables and initialise them
+     */
+    public void clear() {
+        System.out.println("Start clear.");
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                table[i][j].setText("");
+                table[i][j].setBackground(Color.WHITE);
+            }
+        }
+        setCurrentRow(0);
+        resourceReader.reset();
+        inputProcessor.reset();
+        wordleLogic.reset(resourceReader.getWordle());
+        refresh();
+        lineRefresh();
+    }
+
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+//        System.out.println("Released");
+    }
+
+    /**
+     * Print the input message and deal with the input
+     * @param e the event to be processed
+     */
+    @Override
+    public void keyPressed(KeyEvent e) {
+        System.out.println("Pressed " + e.getKeyChar() + '\n' + this);
+        actionDependOnInput(inputProcessor.inputProcess(e.getKeyChar()));
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+//        System.out.println("Typed ");
+    }
+
+    /**
+     * If the event was caused by a JButton, the method call clear() method.
+     * If the event was caused by JButton backBtn, then it back to StartPanel.
+     * Otherwise, GamePanel ask for focus by calling requestFocus() method.
+     * @param e the event to be processed
+     */
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource().getClass() == (new JButton()).getClass()) {
+            clear();
+            WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
+            if (e.getSource() == father.getBackBtn()) father.backToStart();
+            else this.requestFocus();
         }
     }
 

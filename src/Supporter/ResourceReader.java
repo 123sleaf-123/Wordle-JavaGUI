@@ -47,10 +47,10 @@ public class ResourceReader {
     /**
      * A method to generate the target word from the dictionary
      */
-    private void generateWordle() {
+    public void generateWordle() {
         Random random = new Random();
         wordle = dictionary.get(random.nextInt(0, dictionary.size())).toCharArray();
-        wordle = "GREEN".toCharArray();
+//        wordle = "GREEN".toCharArray();
     }
 
     /**
@@ -59,6 +59,13 @@ public class ResourceReader {
      */
     public boolean searchWord(char[] input) {
         return dictionary.contains(String.valueOf(input));
+    }
+
+    /**
+     * Clear all temperate variables and initialise them
+     */
+    public void reset() {
+        generateWordle();
     }
 
     public ArrayList<String> getDictionary() {
