@@ -18,19 +18,11 @@ public class WordleLogic {
     private Color[] colourRes; // The result (colour) of a right input.
 
     /**
-     * A private constructor that call the method to get a random wordle.
-     */
-    private WordleLogic() {
-
-    }
-
-    /**
      * A private constructor that invoke the constructor without parameters first,
      * then initialises instance variables wordle and wordleFlag with a size ${size}.
      * @param size Specify the size of the given words.
      */
     private WordleLogic(int size) {
-        this();
         this.setWordSize(size);
 
         /*
@@ -92,7 +84,12 @@ public class WordleLogic {
         }
     }
 
-    public void getWordleFromMemory() {}
+    public void reset(char[] wordle) {
+        this.wordle = wordle;
+        for (int i = 0; i < 5; i++) {
+            colourRes[i] = Color.WHITE;
+        }
+    }
 
     public int getWordSize() {
         return wordSize;

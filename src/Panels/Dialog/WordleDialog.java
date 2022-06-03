@@ -1,4 +1,4 @@
-package Panels;
+package Panels.Dialog;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -46,8 +46,8 @@ public class WordleDialog extends JDialog {
         Dimension dimension = new Dimension(300, 150);
         this.setMaximumSize(dimension);
         this.setSize(dimension);
-        this.setBounds(owner.getX() + owner.getWidth() / 3, owner.getY() + getHeight() / 3,
-                owner.getWidth() / 3, owner.getHeight() / 3);
+        this.setBounds(owner.getX() + owner.getWidth() / 4, owner.getY() + getHeight() / 4,
+                owner.getWidth() / 2, owner.getHeight() / 4);
         this.setAutoRequestFocus(true);
         this.setVisible(true);
 

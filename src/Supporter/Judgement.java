@@ -33,6 +33,6 @@ public class Judgement {
      * @return true if player has lost or false otherwise.
      */
     public static boolean isFocusEnd(int currentRow) {
-        return currentRow > 5;
+        return currentRow == 5;
     }
 }
