@@ -13,7 +13,7 @@ import java.util.Arrays;
  **/
 public class HorSpacer extends JPanel {
     public HorSpacer() {
-        char[] filler = new char[30];
+        char[] filler = new char[40];
         Arrays.fill(filler, ' ');
         JLabel spacer = new JLabel(String.valueOf(filler));
         this.add(spacer);
