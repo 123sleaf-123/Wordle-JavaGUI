@@ -25,6 +25,9 @@ public class ResourceReader {
         generateWordle();
     }
 
+    /**
+     * Method to query words from files or databases and then store them in the memory
+     */
     public void queryWords() {
         File f = new File("src/resources/dictionary.txt");
         try {
@@ -47,6 +50,7 @@ public class ResourceReader {
     private void generateWordle() {
         Random random = new Random();
         wordle = dictionary.get(random.nextInt(0, dictionary.size())).toCharArray();
+        wordle = "GREEN".toCharArray();
     }
 
     /**

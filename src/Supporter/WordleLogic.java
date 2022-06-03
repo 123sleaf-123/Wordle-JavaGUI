@@ -15,7 +15,6 @@ public class WordleLogic {
     private int wordSize = 5; // The size (or length) of the word of the current Wordle game
     private char[] guess; // The word that the player guessed.
     private char[] wordle; // The target word to guess.
-    private Boolean[] wordleFlag; // The flags (or marks) of target word.
     private Color[] colourRes; // The result (colour) of a right input.
 
     /**
@@ -33,13 +32,6 @@ public class WordleLogic {
     private WordleLogic(int size) {
         this();
         this.setWordSize(size);
-
-        /*
-         * use Arrays.fill method to initialise wordleFlag to all false(boolean) as a mark,
-         * indicating that all characters are not matched.
-         */
-        this.wordleFlag = new Boolean[this.wordSize];
-        Arrays.fill(this.wordleFlag, false);
 
         /*
          * use Arrays.fill to initialise colorRes to all white
@@ -65,18 +57,36 @@ public class WordleLogic {
      * @param input A valid input filtered by Supporter.InputProcessor class.
      */
     public void logicCore(char[] input) {
+        Boolean[] inputFlag, wordleFlag;
+
+        /*
+         * use Arrays.fill method to initialise wordleFlag to all false(boolean) as a mark,
+         * indicating that all characters are not matched.
+         */
+        wordleFlag = new Boolean[wordSize];
+        Arrays.fill(wordleFlag, false);
+
+        inputFlag = new Boolean[wordSize];
+        Arrays.fill(inputFlag, false);
+
+
         for (int i = 0; i < this.wordSize; i++) {
-            if (input[i] == this.wordle[i]) this.colourRes[i] = Color.GREEN;
-            else {
-                for (int j = 0; j < this.wordSize; j++) {
-                    if (input[i] == this.wordle[j])
-                        /* If the character hasn't been marked, we mark it */
-                        if (!this.wordleFlag[j]) {
-                            this.wordleFlag[j] = true;
-                            this.colourRes[i] = Color.YELLOW;
+            if (input[i] == this.wordle[i]) {
+                colourRes[i] = Color.GREEN;
+                inputFlag[i] = wordleFlag[i] = true;
+            }
+            else colourRes[i] = Color.GRAY;
+        }
+        for (int i = 0; i < wordSize; i++) {
+            if (!inputFlag[i]) {
+                for (int j = 0; j < wordSize; j++) {
+                    if (!wordleFlag[j]) {
+                        if (input[i] == wordle[j]) {
+                            colourRes[i] = Color.YELLOW;
+                            inputFlag[i] = wordleFlag[j] = true;
                             break;
                         }
-                    this.colourRes[i] = Color.GRAY;
+                    }
                 }
             }
         }
@@ -106,14 +116,6 @@ public class WordleLogic {
 
     public void setWordle(char[] wordle) {
         this.wordle = wordle;
-    }
-
-    public Boolean[] getWordleFlag() {
-        return wordleFlag;
-    }
-
-    public void setWordleFlag(Boolean[] wordleFlag) {
-        this.wordleFlag = wordleFlag;
     }
 
     public Color[] getColourRes() {

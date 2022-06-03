@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="现在新增了对话框类WordleDialog，继承自JDialog，构造方法会自动实现原来GamePanel类中的dialogAutoGenerator方法">
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="利用对话框类差创建了一些新的提示框，修改了Judgement的小逻辑（&gt;5）结束，修改了资源文件路径，移动到了src文件中">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/dictionary.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Supporter/Judgement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/Judgement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Supporter/ResourceReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/ResourceReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Supporter/WordleLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/WordleLogic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,17 +48,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/课件/大二/下/Java/MiniProject/Wordle/resources&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "E:/课件/大二/下/Java/MiniProject/Wordle/src"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\src" />
       <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -358,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654227607728</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="利用对话框类差创建了一些新的提示框，修改了Judgement的小逻辑（&gt;5）结束，修改了资源文件路径，移动到了src文件中">
+      <created>1654228678312</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1654228678312</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -373,7 +380,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JStyleLabel的初始化现在由用initLabel()函数完成" />
     <MESSAGE value="现在在主界面WordleFrame中点击开始按钮，GamePanel能够读入词库了" />
     <MESSAGE value="现在在主界面GamePanel能够被聚焦了&#10;&#10;也就是说能够切换到GamePanel界面后读取键盘输入了" />
     <MESSAGE value="现在在主界面GamePanel会初始化一个InputFilter成员，并且把键盘输入传递给该成员的inputProcess方法来决定弹出错误的类型或者填入单词。" />
@@ -398,18 +404,8 @@
     <MESSAGE value="actionOnDepend方法现在能够根据操作/错误码执行一部分操作和提示弹出，而后决定更新内容" />
     <MESSAGE value="更新了说明，删除了无关冗余" />
     <MESSAGE value="现在新增了对话框类WordleDialog，继承自JDialog，构造方法会自动实现原来GamePanel类中的dialogAutoGenerator方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="现在新增了对话框类WordleDialog，继承自JDialog，构造方法会自动实现原来GamePanel类中的dialogAutoGenerator方法" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Supporter/WordleLogic.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="利用对话框类差创建了一些新的提示框，修改了Judgement的小逻辑（&gt;5）结束，修改了资源文件路径，移动到了src文件中" />
+    <option name="LAST_COMMIT_MESSAGE" value="利用对话框类差创建了一些新的提示框，修改了Judgement的小逻辑（&gt;5）结束，修改了资源文件路径，移动到了src文件中" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Wordle$Wordle.ic" NAME="Wordle Coverage Results" MODIFIED="1654076846121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

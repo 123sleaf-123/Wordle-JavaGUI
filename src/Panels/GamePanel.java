@@ -108,13 +108,16 @@ public class GamePanel extends JPanel implements KeyListener {
                 lineRefresh();
                 if (Judgement.isPlayerWin(table, getCurrentRow())) {
                     String winMessage = "Game win in " + getCurrentRow()  + " rows";
-                    dialogAutoGenerator(winMessage, "Cheers!");
+                    WordleDialog EmptyInputWarning =
+                            new WordleDialog((Frame) this.getTopLevelAncestor(), winMessage, "Cheers!");
                 }
 
                 if (Judgement.isFocusEnd(getCurrentRow())) {
-                    dialogAutoGenerator("Level: Gamer", "Game lost");
+                    WordleDialog EmptyInputWarning =
+                            new WordleDialog((Frame) this.getTopLevelAncestor(), "Level: Gamer", "Game lost");
                 }
                 inputProcessor.clearOperation();
+                setCurrentRow(getCurrentRow() + 1);
                 break;
             }
         }
@@ -132,7 +135,6 @@ public class GamePanel extends JPanel implements KeyListener {
         for (int i = 0; i < 5; i++) {
             table[currentRow][i].setBackground(curColour[i]);
         }
-        setCurrentRow(getCurrentRow() + 1);
     }
 
     public void dialogAutoGenerator(String text, String title) {
