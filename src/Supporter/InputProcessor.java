@@ -31,6 +31,7 @@ public class InputProcessor {
 
     public InputProcessor(int size, ResourceReader reader) {
         input = new char[size];
+        Arrays.fill(input, ' ');
         this.resourceReader = reader;
         wordle = resourceReader.getWordle();
     }
@@ -97,7 +98,7 @@ public class InputProcessor {
         System.out.println("Previous input is " + String.valueOf(input) + ".");
         setIdx(getIdx() - 1);
         System.out.printf("Remove input[%d] = %c.\n", getIdx(), input[getIdx()]);
-        this.input[getIdx()] = 0;
+        this.input[getIdx()] = ' ';
         System.out.println("Current input is " + String.valueOf(input));
         System.out.println();
         return REMOVE_A_CHARACTER;

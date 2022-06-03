@@ -62,7 +62,7 @@ public class GamePanel extends JPanel implements KeyListener {
         this.setLayout(new BorderLayout());
 
         JPanel centerPanel = new JPanel();
-        centerPanel.setLayout(new GridLayout(6, 5, 1, 1));
+        centerPanel.setLayout(new GridLayout(6, 5, 5, 5));
         this.add(BorderLayout.CENTER, centerPanel);
 
         JPanel northPanel = new JPanel();
@@ -72,7 +72,7 @@ public class GamePanel extends JPanel implements KeyListener {
 
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 5; j++) {
-                table[i][j] = new JStyleLabel("test"+i+j);
+                table[i][j] = new JStyleLabel();
                 centerPanel.add(table[i][j]);
             }
         }
@@ -135,38 +135,6 @@ public class GamePanel extends JPanel implements KeyListener {
         for (int i = 0; i < 5; i++) {
             table[currentRow][i].setBackground(curColour[i]);
         }
-    }
-
-    public void dialogAutoGenerator(String text, String title) {
-        // Initialisation of components
-        JButton okBtn = new JButton("OK"), cancelBtn = new JButton("Cancel");
-        JLabel textDisplayLabel = new JLabel(text);
-
-        // Initialisation of Containers
-        JDialog notAWordWarning = new JDialog((Frame) this.getTopLevelAncestor(), title);
-        notAWordWarning.setLayout(new GridLayout(2, 1));
-        JPanel btnPanel = new JPanel();
-        btnPanel.setLayout(new FlowLayout());
-
-        notAWordWarning.getContentPane().add(textDisplayLabel);
-        notAWordWarning.getContentPane().add(btnPanel);
-        btnPanel.add(okBtn);
-        btnPanel.add(cancelBtn);
-        Dimension dimension = new Dimension(300, 150);
-        notAWordWarning.setMaximumSize(dimension);
-        notAWordWarning.setSize(dimension);
-//        notAWordWarning.setBounds(this.getBounds());
-        notAWordWarning.setVisible(true);
-        ActionListener dialogActionListener = e -> {
-            if (e.getSource() == okBtn) {
-                notAWordWarning.setVisible(false);
-            }
-            if (e.getSource() == cancelBtn) {
-                notAWordWarning.setVisible(false);
-            }
-        };
-        okBtn.addActionListener(dialogActionListener);
-        cancelBtn.addActionListener(dialogActionListener);
     }
 
     public int getWordSize() {

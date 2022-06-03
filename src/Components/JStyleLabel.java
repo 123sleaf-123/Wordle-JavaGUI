@@ -3,6 +3,7 @@ package Components;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 
 /**
@@ -31,7 +32,10 @@ public class JStyleLabel extends JLabel{
     public void initLabel() {
         this.setBackground(Color.white);
         this.setOpaque(true);
-        this.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
-//        this.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+        this.setBorder(LineBorder.createBlackLineBorder());
+        this.setMinimumSize(new Dimension(400, 400));
+        this.setPreferredSize(new Dimension(20, 20));
+        this.setHorizontalAlignment(CENTER);
+        this.setFont(new Font("Arial Black", Font.BOLD, 30));
     }
 }

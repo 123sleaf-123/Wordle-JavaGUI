@@ -1,8 +1,11 @@
 package Panels;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Title:        WordleDialog.java
@@ -17,32 +20,43 @@ public class WordleDialog extends JDialog {
     private JLabel textDisplayLabel;
 
     public WordleDialog(Frame owner, String title, String text) {
+        super(owner, title);
         // Initialisation of components
         okBtn = new JButton("OK");
         cancelBtn = new JButton("Cancel");
         JLabel textDisplayLabel = new JLabel(text);
 
         // Initialisation of Containers
-        JDialog dialog = new JDialog(owner, title);
-        dialog.setLayout(new GridLayout(2, 1));
+        this.setLayout(new GridLayout(2, 1));
         JPanel btnPanel = new JPanel();
         btnPanel.setLayout(new FlowLayout());
 
-        dialog.getContentPane().add(textDisplayLabel);
-        dialog.getContentPane().add(btnPanel);
+        // Icon Setting
+        try {
+            this.setIconImage(ImageIO.read(new File("src/resources/img/alycei_coni.png")));
+        }
+        catch (IOException exc) {
+            exc.printStackTrace();
+        }
+
+        this.getContentPane().add(textDisplayLabel);
+        this.getContentPane().add(btnPanel);
         btnPanel.add(okBtn);
         btnPanel.add(cancelBtn);
         Dimension dimension = new Dimension(300, 150);
-        dialog.setMaximumSize(dimension);
-        dialog.setSize(dimension);
-//        dialog.setBounds(this.getBounds());
-        dialog.setVisible(true);
+        this.setMaximumSize(dimension);
+        this.setSize(dimension);
+        this.setBounds(owner.getX() + owner.getWidth() / 3, owner.getY() + getHeight() / 3,
+                owner.getWidth() / 3, owner.getHeight() / 3);
+        this.setAutoRequestFocus(true);
+        this.setVisible(true);
+
         ActionListener dialogActionListener = e -> {
             if (e.getSource() == okBtn) {
-                dialog.setVisible(false);
+                this.setVisible(false);
             }
             if (e.getSource() == cancelBtn) {
-                dialog.setVisible(false);
+                this.setVisible(false);
             }
         };
         okBtn.addActionListener(dialogActionListener);

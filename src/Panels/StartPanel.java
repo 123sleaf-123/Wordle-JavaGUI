@@ -1,9 +1,10 @@
 package Panels;
 
+import Components.HorSpacer;
+import Components.JStyleLabel;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Title:        Panels.StartPanel.java
@@ -14,28 +15,41 @@ import java.awt.event.ActionListener;
  * @description The strat panel of the game.
  **/
 public class StartPanel extends JPanel {
-    private JButton start = new JButton("Start");
-    private JButton quit = new JButton("Quit");
+    private JButton startBtn = new JButton("Start");
+    private JButton settingBtn = new JButton("Settings");
+    private JButton rankBtn = new JButton("Ranks");
+    private JButton quitBtn = new JButton("Quit");
+    private JLabel gameTitle = new JLabel("Wordle");
 
     public StartPanel() {
         super();
         this.setLayout(new GridLayout(2, 1));
-        this.add(start);
-        this.add(quit);
+        this.add(startBtn);
+        this.add(quitBtn);
         this.setVisible(true);
     }
 
-    public StartPanel(JButton start, JButton quit) {
-        this.start = start;
-        this.quit = quit;
-
+    public StartPanel(JButton startBtn, JButton quitBtn) {
         this.setLayout(new BorderLayout(this.getWidth() / 10, this.getHeight() / 10));
 
+        gameTitle.setMinimumSize(new Dimension(200, 150));
+        gameTitle.setFont(new Font("Arial Black", Font.PLAIN , 72));
+        gameTitle.setHorizontalAlignment(SwingConstants.CENTER);
+
         JPanel centerPanel = new JPanel();
-        centerPanel.setLayout(new GridLayout(3, 1));
+//        centerPanel.setMinimumSize(new Dimension(100, 150));
+        centerPanel.setMaximumSize(new Dimension(100, 150));
+        centerPanel.setLayout(new GridLayout(4, 1, 10, 30));
+        centerPanel.add(startBtn);
+        centerPanel.add(settingBtn);
+        centerPanel.add(rankBtn);
+        centerPanel.add(quitBtn);
+
+        this.add(BorderLayout.NORTH, gameTitle);
         this.add(BorderLayout.CENTER, centerPanel);
-        centerPanel.add(start);
-        centerPanel.add(quit);
+        this.add(BorderLayout.WEST, new HorSpacer());
+        this.add(BorderLayout.EAST, new HorSpacer());
+        this.add(BorderLayout.SOUTH, new HorSpacer());
         this.setVisible(true);
     }
 }
