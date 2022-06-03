@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="修改了占位符类型的方法，为未来的自适应奠定基础">
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="完善了对话窗形态，完善了判断逻辑，删除了方法冗余">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/Dialog/WordleDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/Dialog/WordleDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/WordleDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/Dialog/WordleDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/WordleFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Supporter/Judgement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/Judgement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Supporter/ResourceReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/ResourceReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Supporter/WordleLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/WordleLogic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -439,7 +434,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654265591816</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="实现了监听从Frame到GamePanel的转移，并且自动清空内容（返回主界面以后），实现重新开始">
+      <created>1654269240349</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1654269240349</updated>
+    </task>
+    <task id="LOCAL-00046" summary="完善了对话窗形态，完善了判断逻辑，删除了方法冗余">
+      <created>1654269292580</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1654269292580</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -454,8 +463,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="在GamePanel中增加了当前行的成员变量，增加了两个方，修改普通方法为私有方法。我们的输入有效了&#10;&#10;initPanel()变更为私有方法；&#10;新增了actionDependOnInput(int actionCode)和refresh()方法" />
-    <MESSAGE value="InputFilter改名。细化和新增了一些方法。&#10;&#10;InputFilter现在更名为InputProcessor。&#10;&#10;新增操作结果代码：&#10;NO_OPERATION = 0&#10;SET_A_CHARACTER = 1&#10;NOT_A_WORD = 2&#10;NOT_ENOUGH = 3&#10;EMPTY = 4&#10;IS_A_WORD = 5。&#10;&#10;重构了inputProcess方法：&#10;现在不再直接修改下标（位置），而是交由setOperation来存储和修改下标（removeOperation还没写）；&#10;回退的逻辑被修改，会先回退下标，再把当前位置设置为0；&#10;现在每一步操作都会返回一个执行一个操作方法，返回一个操作结果代码。&#10;&#10;queryWords()方法现在会把需要存储的单词全部改成大写。&#10;&#10;新增了生成目标单词的方法generateWordle()。&#10;&#10;新增了一系列操作方法：&#10;setOperation(char c)方法会打印存储操作和存储后的input词组，然后让下标+1，最后返回一个设置字母代码SET_A_CHARACTER。&#10;&#10;查询词汇是否存在的方法IsAWord()现在更名为searchWord()。&#10;&#10;新增了输入为空错误提示方法——errorEmptyInput()。&#10;&#10;setIdx(int idx)方法现在会把下标idx控制在[0,5]中" />
     <MESSAGE value="移除了WordleMemory，新增了UI管理UIManager" />
     <MESSAGE value="移动到了supporter包，新增了存储当前待处理猜测单词的变量guess&#10;初始化方法也也新增了待猜测单词wordle的初始化&#10;新增了猜测单词guess的设置和获取方法" />
     <MESSAGE value="小修改：删除了一些无用注释，保存了一些改名变动" />
@@ -479,7 +486,9 @@
     <MESSAGE value="新增了垂直占位符VerSpacer及其三种构造方法" />
     <MESSAGE value="新增了返回按钮的图片，新增了两个界面的各种占位符用法" />
     <MESSAGE value="修改了占位符类型的方法，为未来的自适应奠定基础" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了占位符类型的方法，为未来的自适应奠定基础" />
+    <MESSAGE value="实现了监听从Frame到GamePanel的转移，并且自动清空内容（返回主界面以后），实现重新开始" />
+    <MESSAGE value="完善了对话窗形态，完善了判断逻辑，删除了方法冗余" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善了对话窗形态，完善了判断逻辑，删除了方法冗余" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

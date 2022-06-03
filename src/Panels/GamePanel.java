@@ -137,13 +137,27 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
                 lineRefresh();
                 if (Judgement.isPlayerWin(table, getCurrentRow())) {
                     String winMessage = "Game win in " + getCurrentRow()  + " rows";
-                    WordleDialog EmptyInputWarning =
+                    WordleDialog winDialog =
                             new WordleDialog((Frame) this.getTopLevelAncestor(), winMessage, "Cheers!");
+                    WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
+                    winDialog.getOkBtn().addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            father.backToStart();
+                        }
+                    });
                 }
 
                 if (Judgement.isFocusEnd(getCurrentRow())) {
-                    WordleDialog EmptyInputWarning =
+                    WordleDialog focusEndDialog =
                             new WordleDialog((Frame) this.getTopLevelAncestor(), "Game lost", "Level: Gamer");
+                    WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
+                    focusEndDialog.getOkBtn().addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            father.backToStart();
+                        }
+                    });
                 }
                 inputProcessor.clearOperation();
                 setCurrentRow(getCurrentRow() + 1);

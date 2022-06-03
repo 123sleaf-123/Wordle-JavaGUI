@@ -62,4 +62,28 @@ public class WordleDialog extends JDialog {
         okBtn.addActionListener(dialogActionListener);
         cancelBtn.addActionListener(dialogActionListener);
     }
+
+    public JButton getOkBtn() {
+        return okBtn;
+    }
+
+    public void setOkBtn(JButton okBtn) {
+        this.okBtn = okBtn;
+    }
+
+    public JButton getCancelBtn() {
+        return cancelBtn;
+    }
+
+    public void setCancelBtn(JButton cancelBtn) {
+        this.cancelBtn = cancelBtn;
+    }
+
+    public JLabel getTextDisplayLabel() {
+        return textDisplayLabel;
+    }
+
+    public void setTextDisplayLabel(JLabel textDisplayLabel) {
+        this.textDisplayLabel = textDisplayLabel;
+    }
 }
