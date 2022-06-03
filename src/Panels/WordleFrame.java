@@ -1,3 +1,5 @@
+package Panels;
+
 import Panels.*;
 
 import javax.swing.*;
@@ -5,7 +7,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Title:        WordleFrame.java
+ * Title:        Panels.WordleFrame.java
  * Copyright:    Copyright(c) 2022
  *
  * @author Zhiye Huang
@@ -54,7 +56,7 @@ public class WordleFrame extends JFrame implements ActionListener, KeyListener {
     }
 
     /**
-     * Initialisation of the WordleFrame instance.
+     * Initialisation of the Panels.WordleFrame instance.
      */
     public void initFrame() {
         try {

@@ -1,3 +1,4 @@
+import Panels.WordleFrame;
 
 /**
  * Title:        Wordle.java
