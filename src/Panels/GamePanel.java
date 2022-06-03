@@ -71,9 +71,11 @@ public class GamePanel extends JPanel implements KeyListener {
         this.add(BorderLayout.CENTER, centerPanel);
         JPanel northPanel = new JPanel();
         this.add(BorderLayout.NORTH, northPanel);
-        this.add(BorderLayout.WEST, new HorSpacer());
-        this.add(BorderLayout.EAST, new HorSpacer());
-        this.add(BorderLayout.SOUTH, new VerSpacer());
+        this.add(BorderLayout.WEST, new HorSpacer(20));
+        this.add(BorderLayout.EAST, new HorSpacer(20));
+        this.add(BorderLayout.SOUTH, new VerSpacer(this, 2, 50));
+
+        // northPanel Settings
 
         // backBtn Settings
         ImageIcon backBtnIcon = new ImageIcon();
