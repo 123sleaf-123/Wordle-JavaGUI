@@ -98,6 +98,7 @@ public class GamePanel extends JPanel implements KeyListener {
             case 15:
                 wordleLogic.logicCore(inputProcessor.getInput());
                 lineRefresh();
+                break;
         }
     }
 
@@ -145,15 +146,12 @@ public class GamePanel extends JPanel implements KeyListener {
         notAWordWarning.setSize(dimension);
 //        notAWordWarning.setBounds(this.getBounds());
         notAWordWarning.setVisible(true);
-        ActionListener dialogActionListener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == okBtn) {
-                    notAWordWarning.setVisible(false);
-                }
-                if (e.getSource() == cancelBtn) {
-                    notAWordWarning.setVisible(false);
-                }
+        ActionListener dialogActionListener = e -> {
+            if (e.getSource() == okBtn) {
+                notAWordWarning.setVisible(false);
+            }
+            if (e.getSource() == cancelBtn) {
+                notAWordWarning.setVisible(false);
             }
         };
         okBtn.addActionListener(dialogActionListener);
