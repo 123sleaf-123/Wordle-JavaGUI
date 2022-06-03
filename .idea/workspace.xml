@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="更新了说明，删除了无关冗余" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="现在新增了对话框类WordleDialog，继承自JDialog，构造方法会自动实现原来GamePanel类中的dialogAutoGenerator方法">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/dictionary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Supporter/Judgement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/Judgement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Supporter/ResourceReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/ResourceReader.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +63,7 @@
       <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\src" />
       <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\README_IMGs" />
     </key>
   </component>
@@ -344,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654194185112</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="现在新增了对话框类WordleDialog，继承自JDialog，构造方法会自动实现原来GamePanel类中的dialogAutoGenerator方法">
+      <created>1654227607728</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1654227607728</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,7 +373,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="GamePanel的初始化现在由用initPanel()函数完成" />
     <MESSAGE value="JStyleLabel的初始化现在由用initLabel()函数完成" />
     <MESSAGE value="现在在主界面WordleFrame中点击开始按钮，GamePanel能够读入词库了" />
     <MESSAGE value="现在在主界面GamePanel能够被聚焦了&#10;&#10;也就是说能够切换到GamePanel界面后读取键盘输入了" />
@@ -384,7 +397,8 @@
     <MESSAGE value="新增了：&#10;行更新方法lineRefresh()，能更新当前行标签的颜色，而后判断输赢，控制开始结束。&#10;对话窗自动创建方法dialogAutoGenerator(String text, String title)，能够设置内容和标题，自动设置大小位置，并带有ok和cancel两个按钮&#10;一些getter和setter" />
     <MESSAGE value="actionOnDepend方法现在能够根据操作/错误码执行一部分操作和提示弹出，而后决定更新内容" />
     <MESSAGE value="更新了说明，删除了无关冗余" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新了说明，删除了无关冗余" />
+    <MESSAGE value="现在新增了对话框类WordleDialog，继承自JDialog，构造方法会自动实现原来GamePanel类中的dialogAutoGenerator方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="现在新增了对话框类WordleDialog，继承自JDialog，构造方法会自动实现原来GamePanel类中的dialogAutoGenerator方法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -393,11 +407,6 @@
           <url>file://$PROJECT_DIR$/src/Supporter/WordleLogic.java</url>
           <line>78</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Panels/GamePanel.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

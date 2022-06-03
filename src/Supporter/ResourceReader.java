@@ -26,7 +26,7 @@ public class ResourceReader {
     }
 
     public void queryWords() {
-        File f = new File("resources/dictionary.txt");
+        File f = new File("src/resources/dictionary.txt");
         try {
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);

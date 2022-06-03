@@ -82,23 +82,41 @@ public class GamePanel extends JPanel implements KeyListener {
     private void actionDependOnInput(int actionCode) {
         switch (actionCode) {
             case 0:
+                break;
             case 1:
             case 2:
-            case 3:
-            case 4:
                 refresh();
                 break;
-            case 12:
+            case 12: {
                 String str = String.valueOf(inputProcessor.getInput()) + " is not a word!";
-                dialogAutoGenerator(str, str);
+                WordleDialog notAWordWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), str, str);
                 break;
-            case 13:
+            }
+            case 13: {
+                String title = "Not Enough Characters!";
+                WordleDialog notEnoughCharWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), title, "");
                 break;
-            case 14:
-            case 15:
+            }
+            case 14: {
+                String title = "Empty Input!";
+                String text = "Please type your keyboard to input.";
+                WordleDialog EmptyInputWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), title, text);
+                break;
+            }
+            case 15: {
                 wordleLogic.logicCore(inputProcessor.getInput());
                 lineRefresh();
+                if (Judgement.isPlayerWin(table, getCurrentRow())) {
+                    String winMessage = "Game win in " + getCurrentRow()  + " rows";
+                    dialogAutoGenerator(winMessage, "Cheers!");
+                }
+
+                if (Judgement.isFocusEnd(getCurrentRow())) {
+                    dialogAutoGenerator("Level: Gamer", "Game lost");
+                }
+                inputProcessor.clearOperation();
                 break;
+            }
         }
     }
 
@@ -114,15 +132,6 @@ public class GamePanel extends JPanel implements KeyListener {
         for (int i = 0; i < 5; i++) {
             table[currentRow][i].setBackground(curColour[i]);
         }
-        if (Judgement.isPlayerWin(table, getCurrentRow())) {
-            String winMessage = "Game win in " + (getCurrentRow() + 1)  + " rows";
-            dialogAutoGenerator(winMessage, "Cheers!");
-        }
-
-        if (Judgement.isFocusEnd(getCurrentRow())) {
-            dialogAutoGenerator("Level: Gamer", "Game lost");
-        }
-        inputProcessor.clearOperation();
         setCurrentRow(getCurrentRow() + 1);
     }
 
