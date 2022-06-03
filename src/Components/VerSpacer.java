@@ -15,7 +15,7 @@ public class VerSpacer extends JPanel {
     /**
      * Default spacer with 2 unit and 100 per(unit)Len
      */
-    public VerSpacer() {
+    public VerSpacer(JPanel owner) {
         int unit = 2;
         this.setLayout(new GridLayout(unit, 1, 5, 100));
         for (int i = 0; i < unit; i++) {
@@ -25,9 +25,11 @@ public class VerSpacer extends JPanel {
 
     /**
      * Spacer with indicated number of unit and 100 per(unit)Len
+     *
+     * @param owner
      * @param unit
      */
-    public VerSpacer(int unit) {
+    public VerSpacer(JPanel owner, int unit) {
         this.setLayout(new GridLayout(unit, 1, 5, 100));
         for (int i = 0; i < unit; i++) {
             this.add(new Label());
@@ -36,10 +38,12 @@ public class VerSpacer extends JPanel {
 
     /**
      * Spacer with indicated number of unit and indicated per(unit)Len
+     *
+     * @param owner
      * @param unit
      * @param perLen
      */
-    public VerSpacer(int unit, int perLen) {
+    public VerSpacer(JPanel owner, int unit, int perLen) {
         this.setLayout(new GridLayout(unit, 1, 5, perLen));
         for (int i = 0; i < unit; i++) {
             this.add(new Label());
