@@ -58,7 +58,7 @@ public class InputProcessor {
                 return removeOperation();
             }
         }
-        if (c == KeyEvent.VK_ENTER) {
+        if (c == KeyEvent.VK_ENTER || c == KeyEvent.VK_SPACE) {
             if (tmpIdx == input.length)
                 if (resourceReader.searchWord(input)) return IsAWord();
                 else return errorNotAWord();

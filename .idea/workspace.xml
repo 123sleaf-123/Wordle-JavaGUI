@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="新增了占位符HorSpacer&#10;&#10;清空了测试字符串在label中的创建&#10;&#10;InputProcessor现在自动填充' '（空格），而不是0&#10;&#10;JStyleLabel现在有了Arial Black 24号加粗字体和黑色外框线&#10;&#10;StartPanel现在有了更多按钮，并且有了标题，结构更完善">
-      <change afterPath="$PROJECT_DIR$/src/Components/VerSpacer.java" afterDir="false" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="新增了垂直占位符VerSpacer及其三种构造方法">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HorSpacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HorSpacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/StartPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/StartPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/JStyleLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/JStyleLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/WordleFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/InputProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -400,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654261302870</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="新增了垂直占位符VerSpacer及其三种构造方法">
+      <created>1654262091308</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1654262091308</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -415,7 +423,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="删除了WordleFrame的gameStart()方法中初始化的WordleMemory变量。&#10;&#10;因为WordleMemory变量在这里屁用都没。" />
     <MESSAGE value="从前WordleMemory负责的功能现在都合并到了InputFilter中了。&#10;&#10;因为设计思想的变更，我们不再需要WordleMemory这一个运存，而且它很冗余" />
     <MESSAGE value="从前WordleMemory负责的功能现在都合并到了InputFilter中了。更改一了一下布局（generator+一般方法+get&amp;set）&#10;&#10;因为设计思想的变更，我们不再需要WordleMemory这一个运存，而且它很冗余" />
     <MESSAGE value="在GamePanel中增加了当前行的成员变量，增加了两个方，修改普通方法为私有方法。我们的输入有效了&#10;&#10;initPanel()变更为私有方法；&#10;新增了actionDependOnInput(int actionCode)和refresh()方法" />
@@ -440,7 +447,8 @@
     <MESSAGE value="更改了位置" />
     <MESSAGE value="新建了一个gui界面" />
     <MESSAGE value="新增了占位符HorSpacer&#10;&#10;清空了测试字符串在label中的创建&#10;&#10;InputProcessor现在自动填充' '（空格），而不是0&#10;&#10;JStyleLabel现在有了Arial Black 24号加粗字体和黑色外框线&#10;&#10;StartPanel现在有了更多按钮，并且有了标题，结构更完善" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增了占位符HorSpacer&#10;&#10;清空了测试字符串在label中的创建&#10;&#10;InputProcessor现在自动填充' '（空格），而不是0&#10;&#10;JStyleLabel现在有了Arial Black 24号加粗字体和黑色外框线&#10;&#10;StartPanel现在有了更多按钮，并且有了标题，结构更完善" />
+    <MESSAGE value="新增了垂直占位符VerSpacer及其三种构造方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增了垂直占位符VerSpacer及其三种构造方法" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

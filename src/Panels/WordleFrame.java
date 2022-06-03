@@ -79,14 +79,13 @@ public class WordleFrame extends JFrame implements ActionListener, KeyListener {
         int height = screenHeight / 2;
         int x = screenWidth / 4;
         int y = screenHeight / 4;
-        this.setSize(width,height);
+        this.setSize(width, height);
         this.setBounds(x, y, width, height);
 
         // Icon Setting
         try {
             this.setIconImage(ImageIO.read(new File("src/resources/img/alycei_coni.png")));
-        }
-        catch (IOException exc) {
+        } catch (IOException exc) {
             exc.printStackTrace();
         }
 

@@ -1,13 +1,18 @@
 package Panels;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.IOException;
 
+import Components.HorSpacer;
 import Components.JStyleLabel;
+import Components.VerSpacer;
 import Supporter.InputProcessor;
 import Supporter.Judgement;
 import Supporter.ResourceReader;
@@ -64,10 +69,23 @@ public class GamePanel extends JPanel implements KeyListener {
         JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new GridLayout(6, 5, 5, 5));
         this.add(BorderLayout.CENTER, centerPanel);
-
         JPanel northPanel = new JPanel();
-        northPanel.setLayout(new FlowLayout());
         this.add(BorderLayout.NORTH, northPanel);
+        this.add(BorderLayout.WEST, new HorSpacer());
+        this.add(BorderLayout.EAST, new HorSpacer());
+        this.add(BorderLayout.SOUTH, new VerSpacer());
+
+        // backBtn Settings
+        ImageIcon backBtnIcon = new ImageIcon();
+        try {
+            Image iconImg = ImageIO.read(new File("src/resources/img/alycei_coni.png"));
+            backBtnIcon.setImage(iconImg);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        backBtn.setIcon(backBtnIcon);
+        backBtn.setPreferredSize(new Dimension(250, 40));
         northPanel.add(backBtn);
 
         for (int i = 0; i < 6; i++) {
