@@ -12,6 +12,8 @@ import java.awt.*;
  * @description A Button extending from JButton class with special design.
  **/
 public class JStyleButton extends JButton {
+    public static final int BLACK = 0, PINK = 1;
+
     /**
      * Default constructor of special design Button
      */

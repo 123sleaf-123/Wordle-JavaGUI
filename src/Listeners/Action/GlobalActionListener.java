@@ -1,5 +1,6 @@
 package Listeners.Action;
 
+import Components.JStyleButton;
 import Containers.GamePanel;
 import Containers.StartPanel;
 import Containers.WordleFrame;
@@ -45,7 +46,7 @@ public class GlobalActionListener implements ActionListener {
      */
     public void addPanelBtn(Component[] components) {
         for (Component component : components) {
-            if (component.getClass() == JButton.class) {
+            if (component.getClass() == JButton.class || component.getClass() == JStyleButton.class) {
                 ((JButton) component).addActionListener(this);
             }
         }

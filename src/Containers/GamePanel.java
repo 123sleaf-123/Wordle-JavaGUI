@@ -1,6 +1,7 @@
 package Containers;
 
 import Components.HorSpacer;
+import Components.JStyleButton;
 import Components.JStyleLabel;
 import Components.VerSpacer;
 import Containers.Dialog.WordleDialog;
@@ -30,8 +31,8 @@ public class GamePanel extends JPanel implements KeyListener {
     private InputProcessor inputProcessor;
     private WordleLogic wordleLogic;
 
-    private final JButton backBtn = new JButton("Back");
-    private final JButton resetBtn = new JButton("Reset");
+    private final JStyleButton backBtn = new JStyleButton("Back");
+    private final JStyleButton resetBtn = new JStyleButton("Reset");
     private final JStyleLabel[][] table = new JStyleLabel[6][5];
 
     private int wordSize = 5, currentRow = 0;
@@ -40,6 +41,11 @@ public class GamePanel extends JPanel implements KeyListener {
     private HorSpacer westHorSpacer;
     private HorSpacer eastHorSpacer;
     private VerSpacer southVerSpacer;
+    private WordleDialog notAWordWarning;
+    private WordleDialog notEnoughCharWarning;
+    private WordleDialog emptyInputWarning;
+    private WordleDialog winDialog;
+    private WordleDialog focusEndDialog;
 
     public GamePanel() {
         initialise();
@@ -68,18 +74,40 @@ public class GamePanel extends JPanel implements KeyListener {
         this.add(BorderLayout.SOUTH, southVerSpacer);
 
         // backBtn Icon Settings
-        ImageIcon backBtnIicon = new ImageIcon();
+        initBackBtn();
+
+        // resetBtn Icon Settings
+        initResetBtn();
+        
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                table[i][j] = new JStyleLabel();
+                centerPanel.add(table[i][j]);
+            }
+        }
+        this.setSize(600, 400);
+    }
+
+    /**
+     * Initialise backBtn, backBtn icon settings
+     */
+    private void initBackBtn() {
+        ImageIcon backBtnIcon = new ImageIcon();
         try {
             Image iconImg = ImageIO.read(new File("src/resources/img/Medico.png"));
-            backBtnIicon.setImage(iconImg);
+            backBtnIcon.setImage(iconImg);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        backBtn.setIcon(backBtnIicon);
+        backBtn.setIcon(backBtnIcon);
         backBtn.setPreferredSize(new Dimension(220, 80));
         northPanel.add(backBtn);
+    }
 
-        // resetBtn Icon Settings
+    /**
+     * Initialise resetBtn, resetBtn icon settings
+     */
+    private void initResetBtn() {
         ImageIcon resetBtnIcon = new ImageIcon();
         try {
             Image iconImg = ImageIO.read(new File("src/resources/img/Kikuchiyo.png"));
@@ -90,15 +118,6 @@ public class GamePanel extends JPanel implements KeyListener {
         resetBtn.setIcon(resetBtnIcon);
         resetBtn.setPreferredSize(new Dimension(220, 80));
         northPanel.add(resetBtn);
-
-
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 5; j++) {
-                table[i][j] = new JStyleLabel();
-                centerPanel.add(table[i][j]);
-            }
-        }
-        this.setSize(600, 400);
     }
 
     /**
@@ -116,18 +135,18 @@ public class GamePanel extends JPanel implements KeyListener {
                 break;
             case 12: {
                 String str = String.valueOf(inputProcessor.getInput()) + " is not a word!";
-                WordleDialog notAWordWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), str, str);
+                notAWordWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), str, str);
                 break;
             }
             case 13: {
                 String title = "Not Enough Characters!";
-                WordleDialog notEnoughCharWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), title, "");
+                notEnoughCharWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), title, "");
                 break;
             }
             case 14: {
                 String title = "Empty Input!";
                 String text = "Please type your keyboard to input.";
-                WordleDialog EmptyInputWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), title, text);
+                emptyInputWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), title, text);
                 break;
             }
             case 15: {
@@ -135,22 +154,13 @@ public class GamePanel extends JPanel implements KeyListener {
                 lineRefresh();
                 if (Judgement.isPlayerWin(table, getCurrentRow())) {
                     String winMessage = "Game win in " + getCurrentRow() + " rows";
-                    WordleDialog winDialog =
-                            new WordleDialog((Frame) this.getTopLevelAncestor(), winMessage, "Cheers!");
-                    WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
-//                    winDialog.getOkBtn().addActionListener(new ActionListener() {
-//                        @Override
-//                        public void actionPerformed(ActionEvent e) {
-//                            father.getbackToStart();
-//                        }
-//                    });
+                    winDialog = new WordleDialog((JFrame) this.getTopLevelAncestor(), winMessage, "Cheers!");
                 }
 
                 if (Judgement.isFocusEnd(getCurrentRow())) {
-                    WordleDialog focusEndDialog =
-                            new WordleDialog((Frame) this.getTopLevelAncestor(),
-                                    "Game lost", "Wordle: " +
-                                    String.valueOf(wordleLogic.getWordle()) + ".    Level: Gamer");
+                    focusEndDialog = new WordleDialog((JFrame) this.getTopLevelAncestor(),
+                            "Game lost", "Wordle: " +
+                            String.valueOf(wordleLogic.getWordle()) + ".    Level: Gamer");
                     WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
 //                    focusEndDialog.getOkBtn().addActionListener(new ActionListener() {
 //                        @Override
@@ -221,28 +231,11 @@ public class GamePanel extends JPanel implements KeyListener {
 //        System.out.println("Typed ");
     }
 
-//    /**
-//     * If the event was caused by a JButton, the method call clear() method.
-//     * If the event was caused by JButton backBtn, then it back to StartPanel.
-//     * Otherwise, GamePanel ask for focus by calling requestFocus() method.
-//     *
-//     * @param e the event to be processed
-//     */
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        if (e.getSource().getClass() == JButton.class) {
-//            clear();
-//            WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
-////            if (e.getSource() == father.getBackBtn()) father.backToStart();
-////            else this.requestFocus();
-//        }
-//    }
-
-    public JButton getBackBtn() {
+    public JStyleButton getBackBtn() {
         return backBtn;
     }
 
-    public JButton getResetBtn() {
+    public JStyleButton getResetBtn() {
         return resetBtn;
     }
 

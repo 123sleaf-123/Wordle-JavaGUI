@@ -1,6 +1,7 @@
 package Containers;
 
 import Components.HorSpacer;
+import Components.JStyleButton;
 import Components.VerSpacer;
 
 import javax.swing.*;
@@ -15,10 +16,10 @@ import java.awt.*;
  * @description The strat panel of the game.
  **/
 public class StartPanel extends JPanel {
-    private final JButton startBtn = new JButton("Start");
-    private final JButton settingBtn = new JButton("Settings");
-    private final JButton rankBtn = new JButton("Ranks");
-    private final JButton exitBtn = new JButton("Exit");
+    private final JStyleButton startBtn = new JStyleButton("Start");
+    private final JStyleButton settingBtn = new JStyleButton("Settings");
+    private final JStyleButton rankBtn = new JStyleButton("Ranks");
+    private final JStyleButton exitBtn = new JStyleButton("Exit");
     private final JLabel gameTitle = new JLabel("Wordle");
     private JPanel centerPanel;
     private HorSpacer westHorSpacer;
@@ -58,19 +59,19 @@ public class StartPanel extends JPanel {
         this.setVisible(true);
     }
 
-    public JButton getStartBtn() {
+    public JStyleButton getStartBtn() {
         return startBtn;
     }
 
-    public JButton getSettingBtn() {
+    public JStyleButton getSettingBtn() {
         return settingBtn;
     }
 
-    public JButton getRankBtn() {
+    public JStyleButton getRankBtn() {
         return rankBtn;
     }
 
-    public JButton getExitBtn() {
+    public JStyleButton getExitBtn() {
         return exitBtn;
     }
 
