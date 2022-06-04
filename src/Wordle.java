@@ -1,3 +1,4 @@
+import Listeners.GlobalActionListener;
 import Panels.WordleFrame;
 
 /**
@@ -11,5 +12,6 @@ import Panels.WordleFrame;
 public class Wordle {
     public static void main(String[] args) {
         WordleFrame frame = new WordleFrame();
+        GlobalActionListener globalActionListener = new GlobalActionListener(frame);
     }
 }

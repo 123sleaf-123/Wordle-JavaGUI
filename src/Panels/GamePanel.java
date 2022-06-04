@@ -32,37 +32,48 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     private InputProcessor inputProcessor;
     private WordleLogic wordleLogic;
 
-    private JStyleLabel[][] table = new JStyleLabel[6][5];
+    private final JButton backBtn = new JButton("Back");
+    private final JButton resetBtn = new JButton("Reset");
+    private final JStyleLabel[][] table = new JStyleLabel[6][5];
 
     private int wordSize = 5, currentRow = 0;
+    private JPanel centerPanel;
+    private JPanel northPanel;
+    private HorSpacer westHorSpacer;
+    private HorSpacer eastHorSpacer;
+    private VerSpacer southVerSpacer;
 
-    public GamePanel(JButton bckBtn) {
-        initPanel(bckBtn);
+    public GamePanel() {
+        initPanel();
     }
 
     /**
      * Initialisation of GamePanel instance
      */
-    private void initPanel(JButton backBtn) {
+    private void initPanel() {
         resourceReader = new ResourceReader();
         inputProcessor = new InputProcessor(wordSize, resourceReader);
         wordleLogic = new WordleLogic(resourceReader.wordle);
         this.addKeyListener(this);
         this.setLayout(new BorderLayout());
 
-        JPanel centerPanel = new JPanel();
+        centerPanel = new JPanel();
         centerPanel.setLayout(new GridLayout(6, 5, 5, 5));
         this.add(BorderLayout.CENTER, centerPanel);
-        JPanel northPanel = new JPanel();
+        northPanel = new JPanel();
         this.add(BorderLayout.NORTH, northPanel);
-        this.add(BorderLayout.WEST, new HorSpacer(20));
-        this.add(BorderLayout.EAST, new HorSpacer(20));
-        this.add(BorderLayout.SOUTH, new VerSpacer(this, 2, 20));
+        westHorSpacer = new HorSpacer(20);
+        this.add(BorderLayout.WEST, westHorSpacer);
+        eastHorSpacer = new HorSpacer(20);
+        this.add(BorderLayout.EAST, eastHorSpacer);
+        southVerSpacer = new VerSpacer(this, 2, 20);
+        this.add(BorderLayout.SOUTH, southVerSpacer);
 
         // northPanel Settings
 
-        // backBtn Icon Settings
-        backBtn.addActionListener(this);
+        // backBtn Settings
+//        JButton backBtn = new JButton("Back");
+//        backBtn.addActionListener(this);
 
         // backBtn Icon Settings
         ImageIcon backBtnIicon = new ImageIcon();
@@ -77,8 +88,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         northPanel.add(backBtn);
 
         // resetBtn Settings
-        JButton resetBtn = new JButton("Reset");
-        resetBtn.addActionListener(this);
+//        JButton resetBtn = new JButton("Reset");
+//        resetBtn.addActionListener(this);
 
         // resetBtn Icon Settings
         ImageIcon resetBtnIcon = new ImageIcon();
@@ -139,12 +150,12 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
                     WordleDialog winDialog =
                             new WordleDialog((Frame) this.getTopLevelAncestor(), winMessage, "Cheers!");
                     WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
-                    winDialog.getOkBtn().addActionListener(new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            father.backToStart();
-                        }
-                    });
+//                    winDialog.getOkBtn().addActionListener(new ActionListener() {
+//                        @Override
+//                        public void actionPerformed(ActionEvent e) {
+//                            father.getbackToStart();
+//                        }
+//                    });
                 }
 
                 if (Judgement.isFocusEnd(getCurrentRow())) {
@@ -153,12 +164,12 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
                                     "Game lost", "Wordle: " +
                                     String.valueOf(wordleLogic.getWordle()) + ".    Level: Gamer");
                     WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
-                    focusEndDialog.getOkBtn().addActionListener(new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            father.backToStart();
-                        }
-                    });
+//                    focusEndDialog.getOkBtn().addActionListener(new ActionListener() {
+//                        @Override
+//                        public void actionPerformed(ActionEvent e) {
+//                            father.backToStart();
+//                        }
+//                    });
                 }
                 inputProcessor.clearOperation();
                 setCurrentRow(getCurrentRow() + 1);
@@ -231,12 +242,64 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().getClass() == (new JButton()).getClass()) {
+        if (e.getSource().getClass() == JButton.class) {
             clear();
             WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
-            if (e.getSource() == father.getBackBtn()) father.backToStart();
-            else this.requestFocus();
+//            if (e.getSource() == father.getBackBtn()) father.backToStart();
+//            else this.requestFocus();
         }
+    }
+
+    public JButton getBackBtn() {
+        return backBtn;
+    }
+
+    public JButton getResetBtn() {
+        return resetBtn;
+    }
+
+    public JStyleLabel[][] getTable() {
+        return table;
+    }
+
+    public JPanel getCenterPanel() {
+        return centerPanel;
+    }
+
+    public void setCenterPanel(JPanel centerPanel) {
+        this.centerPanel = centerPanel;
+    }
+
+    public JPanel getNorthPanel() {
+        return northPanel;
+    }
+
+    public void setNorthPanel(JPanel northPanel) {
+        this.northPanel = northPanel;
+    }
+
+    public HorSpacer getWestHorSpacer() {
+        return westHorSpacer;
+    }
+
+    public void setWestHorSpacer(HorSpacer westHorSpacer) {
+        this.westHorSpacer = westHorSpacer;
+    }
+
+    public HorSpacer getEastHorSpacer() {
+        return eastHorSpacer;
+    }
+
+    public void setEastHorSpacer(HorSpacer eastHorSpacer) {
+        this.eastHorSpacer = eastHorSpacer;
+    }
+
+    public VerSpacer getSouthVerSpacer() {
+        return southVerSpacer;
+    }
+
+    public void setSouthVerSpacer(VerSpacer southVerSpacer) {
+        this.southVerSpacer = southVerSpacer;
     }
 
     public int getWordSize() {

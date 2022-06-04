@@ -1,5 +1,7 @@
 package Panels;
 
+import Listeners.GlobalActionListener;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -18,13 +20,9 @@ import java.io.IOException;
  * @version 1.0
  * @description The Frame of Wordle.
  **/
-public class WordleFrame extends JFrame implements ActionListener, KeyListener {
-    private final JButton startBtn = new JButton("Start");
-    private final JButton quitBtn = new JButton("Quit");
-    private final JButton backBtn = new JButton("Back");
-
-    private final StartPanel startPanel = new StartPanel(startBtn, quitBtn);
-    private final GamePanel gamePanel = new GamePanel(backBtn);
+public class WordleFrame extends JFrame {
+    private final StartPanel startPanel = new StartPanel();
+    private final GamePanel gamePanel = new GamePanel();
 
     public WordleFrame() {
         initFrame();
@@ -33,28 +31,6 @@ public class WordleFrame extends JFrame implements ActionListener, KeyListener {
     public WordleFrame(String title) {
         super(title);
         initFrame();
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == startBtn) gameStart();
-        if (e.getSource() == quitBtn) gameQuit();
-//        if (e.getSource() == backBtn) backToStart();
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-//        System.out.println("Released");
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-//        System.out.println(e.getKeyChar());
     }
 
     /**
@@ -95,54 +71,6 @@ public class WordleFrame extends JFrame implements ActionListener, KeyListener {
         this.setTitle("Wordle Power");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-
-        // Add listeners
-        startBtn.addActionListener(this);
-        quitBtn.addActionListener(this);
-        backBtn.addActionListener(this);
-        this.addKeyListener(this);
-    }
-
-    /**
-     * Change the panel to the GamePanel.
-     */
-    public void gameStart() {
-        startPanel.setVisible(false);
-        this.setContentPane(gamePanel);
-        gamePanel.setVisible(true);
-        gamePanel.requestFocusInWindow();
-        System.out.println("Start.");
-    }
-
-    /**
-     * End the program.
-     */
-    public void gameQuit() {
-        System.out.println("Quit.");
-        System.exit(0);
-    }
-
-    /**
-     * Method to return to the main frame.
-     */
-    public void backToStart() {
-        gamePanel.setVisible(false);
-        this.setContentPane(startPanel);
-        startPanel.setVisible(true);
-        startPanel.requestFocusInWindow();
-        System.out.println("Back to the start panel");
-    }
-
-    public JButton getStartBtn() {
-        return startBtn;
-    }
-
-    public JButton getQuitBtn() {
-        return quitBtn;
-    }
-
-    public JButton getBackBtn() {
-        return backBtn;
     }
 
     public StartPanel getStartPanel() {

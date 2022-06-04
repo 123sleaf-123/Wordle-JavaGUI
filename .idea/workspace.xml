@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="优化了文件结构">
-      <change afterPath="$PROJECT_DIR$/src/Components/JStyleButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_5_27_23_35__Changes_.xml" beforeDir="false" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="GlobalActionListener现在承担起了主界面切换的重担，某种意义上也是非常方便了&#10;&#10;WordleFrame现在也不再承担存储转换界面按钮的事情，按钮由各个界面独自生成和存储，GlobalActionListener管理部分事关界面切换的事情">
+      <change afterPath="$PROJECT_DIR$/src/Listeners/GlobalActionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/JStyleLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/JStyleLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/StartPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/StartPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/WordleFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wordle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wordle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,13 +128,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653575895986</updated>
-    </task>
-    <task id="LOCAL-00001" summary="完成了Wordle程序的核心逻辑处理器类型WordleLogic的算法设计与实现，并在主类Wordle中完成了测试，算法逻辑正常.&#10;&#10;WordleLogic有两个私有构造方法和一个公共构造方法（初始化输入），公共构造方法会调用带单参数私有构造方法来初始化与目标词汇和结果有关的变量，然后调用核心逻辑logicCore方法来实现判断和结果输出">
-      <created>1653665042774</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1653665042774</updated>
     </task>
     <task id="LOCAL-00002" summary="修改了一下README.me">
       <created>1653666051884</created>
@@ -471,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654272166457</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="修改了窗口大小&#10;&#10;新增了多娜多娜风格按钮">
+      <created>1654351763659</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1654351763659</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -486,8 +487,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="彻底删除了WordleMemory" />
-    <MESSAGE value="InputProcessor中关于文件读取，内容提取，查询内容的部分现在拆分到ResourceReader中，并独立维持一个ResourceReader实体来维持功能。" />
     <MESSAGE value="完善了removeOperation功能及其提示" />
     <MESSAGE value="设置了主窗口的大小和位置" />
     <MESSAGE value="完善了一些布局" />
@@ -511,7 +510,20 @@
     <MESSAGE value="完善了回退逻辑" />
     <MESSAGE value="完善了提示" />
     <MESSAGE value="优化了文件结构" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化了文件结构" />
+    <MESSAGE value="修改了窗口大小&#10;&#10;新增了多娜多娜风格按钮" />
+    <MESSAGE value="GlobalActionListener现在承担起了主界面切换的重担，某种意义上也是非常方便了&#10;&#10;WordleFrame现在也不再承担存储转换界面按钮的事情，按钮由各个界面独自生成和存储，GlobalActionListener管理部分事关界面切换的事情" />
+    <option name="LAST_COMMIT_MESSAGE" value="GlobalActionListener现在承担起了主界面切换的重担，某种意义上也是非常方便了&#10;&#10;WordleFrame现在也不再承担存储转换界面按钮的事情，按钮由各个界面独自生成和存储，GlobalActionListener管理部分事关界面切换的事情" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Listeners/GlobalActionListener.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
