@@ -1,5 +1,5 @@
-import Listeners.GlobalActionListener;
-import Panels.WordleFrame;
+import Listeners.Action.GlobalActionListener;
+import Containers.WordleFrame;
 
 /**
  * Title:        Wordle.java

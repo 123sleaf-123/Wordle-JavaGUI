@@ -1,4 +1,4 @@
-package Panels.Dialog;
+package Containers.Dialog;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

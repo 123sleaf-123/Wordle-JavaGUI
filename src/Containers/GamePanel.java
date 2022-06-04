@@ -1,9 +1,9 @@
-package Panels;
+package Containers;
 
 import Components.HorSpacer;
 import Components.JStyleLabel;
 import Components.VerSpacer;
-import Panels.Dialog.WordleDialog;
+import Containers.Dialog.WordleDialog;
 import Supporter.InputProcessor;
 import Supporter.Judgement;
 import Supporter.ResourceReader;
@@ -12,8 +12,6 @@ import Supporter.WordleLogic;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
@@ -27,7 +25,7 @@ import java.io.IOException;
  * @version 1.0
  * @description The panel for the game, extending from JPanel.
  **/
-public class GamePanel extends JPanel implements KeyListener, ActionListener {
+public class GamePanel extends JPanel implements KeyListener {
     private ResourceReader resourceReader;
     private InputProcessor inputProcessor;
     private WordleLogic wordleLogic;
@@ -44,13 +42,13 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     private VerSpacer southVerSpacer;
 
     public GamePanel() {
-        initPanel();
+        initialise();
     }
 
     /**
      * Initialisation of GamePanel instance
      */
-    private void initPanel() {
+    private void initialise() {
         resourceReader = new ResourceReader();
         inputProcessor = new InputProcessor(wordSize, resourceReader);
         wordleLogic = new WordleLogic(resourceReader.wordle);
@@ -69,12 +67,6 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         southVerSpacer = new VerSpacer(this, 2, 20);
         this.add(BorderLayout.SOUTH, southVerSpacer);
 
-        // northPanel Settings
-
-        // backBtn Settings
-//        JButton backBtn = new JButton("Back");
-//        backBtn.addActionListener(this);
-
         // backBtn Icon Settings
         ImageIcon backBtnIicon = new ImageIcon();
         try {
@@ -86,10 +78,6 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         backBtn.setIcon(backBtnIicon);
         backBtn.setPreferredSize(new Dimension(220, 80));
         northPanel.add(backBtn);
-
-        // resetBtn Settings
-//        JButton resetBtn = new JButton("Reset");
-//        resetBtn.addActionListener(this);
 
         // resetBtn Icon Settings
         ImageIcon resetBtnIcon = new ImageIcon();
@@ -233,22 +221,22 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 //        System.out.println("Typed ");
     }
 
-    /**
-     * If the event was caused by a JButton, the method call clear() method.
-     * If the event was caused by JButton backBtn, then it back to StartPanel.
-     * Otherwise, GamePanel ask for focus by calling requestFocus() method.
-     *
-     * @param e the event to be processed
-     */
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource().getClass() == JButton.class) {
-            clear();
-            WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
-//            if (e.getSource() == father.getBackBtn()) father.backToStart();
-//            else this.requestFocus();
-        }
-    }
+//    /**
+//     * If the event was caused by a JButton, the method call clear() method.
+//     * If the event was caused by JButton backBtn, then it back to StartPanel.
+//     * Otherwise, GamePanel ask for focus by calling requestFocus() method.
+//     *
+//     * @param e the event to be processed
+//     */
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//        if (e.getSource().getClass() == JButton.class) {
+//            clear();
+//            WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
+////            if (e.getSource() == father.getBackBtn()) father.backToStart();
+////            else this.requestFocus();
+//        }
+//    }
 
     public JButton getBackBtn() {
         return backBtn;

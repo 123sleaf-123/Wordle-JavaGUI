@@ -1,8 +1,8 @@
-package Listeners;
+package Listeners.Action;
 
-import Panels.GamePanel;
-import Panels.StartPanel;
-import Panels.WordleFrame;
+import Containers.GamePanel;
+import Containers.StartPanel;
+import Containers.WordleFrame;
 
 import javax.swing.*;
 import java.awt.*;
