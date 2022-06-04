@@ -1,6 +1,7 @@
 package Components;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.Arrays;
 
 /**
@@ -12,14 +13,15 @@ import java.util.Arrays;
  * @description A horizontal spacer.
  **/
 public class HorSpacer extends JPanel {
+
+    private char[] filler;
+    private int unit = 40;
+
     /**
      * Default Generator, using 40 spaces to control the width.
      */
     public HorSpacer() {
-        char[] filler = new char[40];
-        Arrays.fill(filler, ' ');
-        JLabel spacer = new JLabel(String.valueOf(filler));
-        this.add(spacer);
+        initialise();
     }
 
     /**
@@ -28,9 +30,19 @@ public class HorSpacer extends JPanel {
      * @param unit Number of units of space.
      */
     public HorSpacer(int unit) {
-        char[] filler = new char[unit];
+        this.unit = unit;
+        initialise();
+    }
+
+    /**
+     * Initialise HorSpacer instance
+     */
+    public void initialise() {
+        filler = new char[unit];
         Arrays.fill(filler, ' ');
         JLabel spacer = new JLabel(String.valueOf(filler));
         this.add(spacer);
+        this.setOpaque(false);
+        spacer.setOpaque(false);
     }
 }

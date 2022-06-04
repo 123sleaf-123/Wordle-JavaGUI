@@ -50,6 +50,7 @@ public class WordleFrame extends JFrame {
         int y = screenHeight / 4;
         this.setSize(width, height);
         this.setBounds(x, y, width, height);
+        this.setResizable(false);
 
         // Icon Setting
         try {
@@ -57,6 +58,14 @@ public class WordleFrame extends JFrame {
         } catch (IOException exc) {
             exc.printStackTrace();
         }
+
+        // Background Image Setting
+        ImageIcon icon = new ImageIcon("src/resources/img/coverageDohna1.jpg");
+        JLabel imgLabel = new JLabel(icon);
+        imgLabel.setSize(this.getSize());
+        imgLabel.setOpaque(true);
+        imgLabel.setBackground(new Color(255, 51, 140));
+        this.getLayeredPane().add(imgLabel, Integer.valueOf(Integer.MIN_VALUE));
 
         // Set Content Panel
         this.setContentPane(startPanel);

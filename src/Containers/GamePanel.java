@@ -5,6 +5,7 @@ import Components.JStyleButton;
 import Components.JStyleLabel;
 import Components.VerSpacer;
 import Containers.Dialog.WordleDialog;
+import Listeners.Action.GamePanelActionListener;
 import Supporter.InputProcessor;
 import Supporter.Judgement;
 import Supporter.ResourceReader;
@@ -31,11 +32,14 @@ public class GamePanel extends JPanel implements KeyListener {
     private InputProcessor inputProcessor;
     private WordleLogic wordleLogic;
 
-    private final JStyleButton backBtn = new JStyleButton("Back");
-    private final JStyleButton resetBtn = new JStyleButton("Reset");
-    private final JStyleLabel[][] table = new JStyleLabel[6][5];
+    private GamePanelActionListener actionListener;
 
     private int wordSize = 5, currentRow = 0;
+
+    private final JStyleButton backBtn = new JStyleButton("Back", JStyleButton.PINK);
+    private final JStyleButton resetBtn = new JStyleButton("Reset", JStyleButton.PINK);
+    private final JStyleLabel[][] table = new JStyleLabel[6][5];
+
     private JPanel centerPanel;
     private JPanel northPanel;
     private HorSpacer westHorSpacer;
@@ -58,6 +62,7 @@ public class GamePanel extends JPanel implements KeyListener {
         resourceReader = new ResourceReader();
         inputProcessor = new InputProcessor(wordSize, resourceReader);
         wordleLogic = new WordleLogic(resourceReader.wordle);
+        actionListener  = new GamePanelActionListener(this);
         this.addKeyListener(this);
         this.setLayout(new BorderLayout());
 
@@ -100,7 +105,7 @@ public class GamePanel extends JPanel implements KeyListener {
             e.printStackTrace();
         }
         backBtn.setIcon(backBtnIcon);
-        backBtn.setPreferredSize(new Dimension(220, 80));
+        backBtn.setPreferredSize(new Dimension(240, 80));
         northPanel.add(backBtn);
     }
 
@@ -116,7 +121,7 @@ public class GamePanel extends JPanel implements KeyListener {
             e.printStackTrace();
         }
         resetBtn.setIcon(resetBtnIcon);
-        resetBtn.setPreferredSize(new Dimension(220, 80));
+        resetBtn.setPreferredSize(new Dimension(240, 80));
         northPanel.add(resetBtn);
     }
 
@@ -191,7 +196,8 @@ public class GamePanel extends JPanel implements KeyListener {
     }
 
     /**
-     * Clear all temperate variables and initialise them
+     * Clear all temperate variables and initialise them.
+     * When backBtn or resetBtn is pressed.
      */
     public void clear() {
         System.out.println("Start clear.");

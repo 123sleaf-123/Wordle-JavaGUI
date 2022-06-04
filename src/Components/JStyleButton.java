@@ -12,7 +12,8 @@ import java.awt.*;
  * @description A Button extending from JButton class with special design.
  **/
 public class JStyleButton extends JButton {
-    public static final int BLACK = 0, PINK = 1;
+    public static final int NON = 0, PINK = 1;
+    private int colorCode = NON;
 
     /**
      * Default constructor of special design Button
@@ -30,10 +31,28 @@ public class JStyleButton extends JButton {
         initialise();
     }
 
+
+    public JStyleButton(String text, int colorCode) {
+        super(text);
+        setColorCode(colorCode);
+        initialise();
+    }
+
     public void initialise() {
         this.setOpaque(true);
-        this.setBackground(new Color(255, 0, 204));
-        this.setFont(new Font("Arial BLACk", Font.ITALIC, 16));
+        if (colorCode == 0) this.setBackground(new Color(0, 0, 0));
+        if (colorCode == 1) this.setBackground(new Color(255, 0, 204));
+
         this.setForeground(new Color(255, 255, 255));
+        this.setFont(new Font("Arial BLACk", Font.ITALIC, 16));
+        this.setPreferredSize(new Dimension(100, 40));
+    }
+
+    public int getColorCode() {
+        return colorCode;
+    }
+
+    public void setColorCode(int colorCode) {
+        this.colorCode = colorCode;
     }
 }

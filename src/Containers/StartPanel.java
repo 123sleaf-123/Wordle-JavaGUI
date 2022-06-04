@@ -20,7 +20,7 @@ public class StartPanel extends JPanel {
     private final JStyleButton settingBtn = new JStyleButton("Settings");
     private final JStyleButton rankBtn = new JStyleButton("Ranks");
     private final JStyleButton exitBtn = new JStyleButton("Exit");
-    private final JLabel gameTitle = new JLabel("Wordle");
+    private final JLabel gameTitle = new JLabel();
     private JPanel centerPanel;
     private HorSpacer westHorSpacer;
     private HorSpacer eastHorSpacer;
@@ -37,6 +37,9 @@ public class StartPanel extends JPanel {
         gameTitle.setMinimumSize(new Dimension(200, 150));
         gameTitle.setFont(new Font("Arial Black", Font.PLAIN, 72));
         gameTitle.setHorizontalAlignment(SwingConstants.CENTER);
+        ImageIcon icon = new ImageIcon("src/resources/img/Wordle.png");
+        gameTitle.setIcon(icon);
+        gameTitle.setOpaque(false);
 
         centerPanel = new JPanel();
 //        centerPanel.setMinimumSize(new Dimension(100, 150));
@@ -56,7 +59,10 @@ public class StartPanel extends JPanel {
         this.add(BorderLayout.EAST, eastHorSpacer);
         southVerSpacer = new VerSpacer(this);
         this.add(BorderLayout.SOUTH, southVerSpacer);
-        this.setVisible(true);
+
+        // Set Opaque false
+        this.setOpaque(false);
+        centerPanel.setOpaque(false);
     }
 
     public JStyleButton getStartBtn() {

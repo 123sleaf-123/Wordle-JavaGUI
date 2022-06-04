@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="Panels包修改为Containers包&#10;GamePanel不再实现ActionListener接口，改由其功能类实现&#10;移除了MainFrame">
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="改用了JStyleButton&#10;&#10;细化了成员和初始化方法">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HorSpacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HorSpacer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/JStyleButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/JStyleButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/VerSpacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/VerSpacer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Containers/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Containers/StartPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/StartPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners/Action/GlobalActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/Action/GlobalActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/WordleFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/WordleFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/Action/GamePanelActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/Action/GamePanelActionListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,13 +124,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653575895986</updated>
-    </task>
-    <task id="LOCAL-00004" summary="思维混乱中">
-      <created>1654069577222</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1654069577222</updated>
     </task>
     <task id="LOCAL-00005" summary="完成了开始界面和游戏界面的设置&#10;&#10;构架是先有主页面WordleFrame，主页面包含了开始界面startPanel、游戏界面gamePanel，以及开始界面的开始按钮和退出按钮。&#10;监听由主界面负责。&#10;开始界面类StartPanel和游戏界面类GamePanel现在都在Panels包里面了。&#10;特质标签类JStyleLabel现在在Components类里面了。&#10;&#10;注意：游戏界面现在没有被监听">
       <created>1654071101005</created>
@@ -463,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654359301762</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="改用了JStyleButton&#10;&#10;细化了成员和初始化方法">
+      <created>1654360484745</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1654360484745</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -478,7 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="设置了主窗口的大小和位置" />
     <MESSAGE value="完善了一些布局" />
     <MESSAGE value="新增了Judgement类，带有两个静态方法isPlayerWin(JStyleLabel[][] table, int currentRow)和isFocusEnd(int currentRow)" />
     <MESSAGE value="更新了Readme&#10;&#10;新增了游戏页面的返回按钮，完善了布局&#10;&#10;InputProcessor新增了clearOperation()，不再自动清理存储着的输入，而是等待外部调用完再调用该方法进行清理；资源管理器不再独自维护，而是从外部获取&#10;&#10;WordleFrame新增了返回按钮backBtn以及返回主界面方法public void backToStart()&#10;&#10;完善了WordleLogic的逻辑核心，不再调用内部参数，直接从外界读入操作值" />
@@ -503,7 +507,8 @@
     <MESSAGE value="修改了窗口大小&#10;&#10;新增了多娜多娜风格按钮" />
     <MESSAGE value="GlobalActionListener现在承担起了主界面切换的重担，某种意义上也是非常方便了&#10;&#10;WordleFrame现在也不再承担存储转换界面按钮的事情，按钮由各个界面独自生成和存储，GlobalActionListener管理部分事关界面切换的事情" />
     <MESSAGE value="Panels包修改为Containers包&#10;GamePanel不再实现ActionListener接口，改由其功能类实现&#10;移除了MainFrame" />
-    <option name="LAST_COMMIT_MESSAGE" value="Panels包修改为Containers包&#10;GamePanel不再实现ActionListener接口，改由其功能类实现&#10;移除了MainFrame" />
+    <MESSAGE value="改用了JStyleButton&#10;&#10;细化了成员和初始化方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="改用了JStyleButton&#10;&#10;细化了成员和初始化方法" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
