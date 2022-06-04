@@ -74,8 +74,8 @@ public class WordleFrame extends JFrame implements ActionListener, KeyListener {
         Dimension screenSize = kit.getScreenSize();
         int screenWidth = screenSize.width;
         int screenHeight = screenSize.height;
-        int width = screenWidth / 4;
-        int height = screenHeight / 2;
+        int width = screenWidth / 3;
+        int height = (int) (screenHeight / 1.5);
         int x = screenWidth / 4;
         int y = screenHeight / 4;
         this.setSize(width, height);

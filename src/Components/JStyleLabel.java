@@ -10,7 +10,7 @@ import java.awt.*;
  *
  * @author Zhiye Huang
  * @version 1.0
- * @description A distingguised label extending from JLabel class with special design.
+ * @description A label extending from JLabel class with special design.
  **/
 public class JStyleLabel extends JLabel {
 
