@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
  * @description An ActionListener implements ActionListener interface for GamePanel class.
  **/
 public class GamePanelActionListener implements ActionListener {
-    private GamePanel gamePanel;
+    private final GamePanel gamePanel;
 
     /**
      * Initialise GamePanelActionListener instance by storing the user instance GamePanel

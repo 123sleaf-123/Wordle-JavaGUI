@@ -18,7 +18,7 @@ public class InputProcessor {
             NOT_A_WORD = 12, NOT_ENOUGH = 13, EMPTY = 14, IS_A_WORD = 15;
     private final char[] input;
     public char[] wordle;
-    private ResourceReader resourceReader;
+    private final ResourceReader resourceReader;
     private int idx = 0;
 
     public InputProcessor(int size, ResourceReader reader) {
