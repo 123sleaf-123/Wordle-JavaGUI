@@ -1,0 +1,17 @@
+begin: 1654412366233	end: 1654412369753	duration: 3s	rows: 1	state: win	
+begin: 1654412426151	end: 1654412428672	duration: 2s	rows: 1	state: win	
+begin: 1654412450620	end: 1654412457912	duration: 7s	rows: 2	state: win	
+begin: 1654412450620	end: 1654412495456	duration: 44s	rows: 3	state: win	
+begin: 1654412506897	end: 1654412509617	duration: 2s	rows: 1	state: win	
+begin: 1654412533128	end: 1654412537343	duration: 4s	rows: 1	state: win	
+begin: 1654412571242	end: 1654412574095	duration: 2s	rows: 1	state: win	
+begin: 1654412673301	end: 1654412681776	duration: 8s	rows: 2	state: win	
+begin: 1654412720582	end: 1654412728727	duration: 8s	rows: 3	state: win	
+begin: 1654412749970	end: 1654412752232	duration: 2s	rows: 1	state: win	
+begin: 1654412790596	end: 1654412795592	duration: 4s	rows: 2	state: win	
+begin: 1654412883344	end: 1654412885895	duration: 2s	rows: 1	state: win	
+begin: 1654412932301	end: 1654412935560	duration: 3s	rows: 1	state: win	
+begin: 1654413202625	end: 1654413204951	duration: 2s	rows: 1	state: win	
+begin: 1654413202625	end: 1654413220863	duration: 18s	rows: 2	state: win	
+begin: 1654413261969	end: 1654413276040	duration: 14s	rows: 4	state: win	
+begin: 1654415054076	end: 1654415092574	duration: 38s	rows: 6	state: lost	

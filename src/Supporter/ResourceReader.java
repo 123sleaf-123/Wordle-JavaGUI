@@ -1,9 +1,9 @@
 package Supporter;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import Containers.GamePanel;
+import DataClass.Record;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -18,7 +18,7 @@ import java.util.Random;
 public class ResourceReader {
 
     public char[] wordle;
-    private ArrayList<String> dictionary = new ArrayList<>();
+    private final ArrayList<String> dictionary = new ArrayList<>();
 
     public ResourceReader() {
         queryWords();
@@ -54,6 +54,55 @@ public class ResourceReader {
     }
 
     /**
+     * Read the file to decide player's level
+     */
+    public double readRecord(int duration) {
+        int recordNum = 0, winNum = 0;
+        double rankPercent = 1.0;
+        File df = new File("src/GameData/data.txt");
+        try {
+            FileReader dfr = new FileReader(df);
+            BufferedReader dfBfr = new BufferedReader(dfr);
+            String lineText = dfBfr.readLine();
+            while (lineText != null) {
+                Record lineRecord = new Record(lineText.split("\t"));
+                if (lineRecord.getDuration() > duration) winNum++;
+                recordNum++;
+                lineText = dfBfr.readLine();
+            }
+            rankPercent =  ((double) winNum / (double) recordNum);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return rankPercent;
+    }
+
+    /**
+     * Write game message to the file
+     */
+    public void endRecord(boolean isWin, GamePanel gamePanel, Record record) {
+        File df = new File("src/GameData/data.txt");
+        try {
+            FileWriter dfw = new FileWriter(df, true);
+            String begin = "begin: " + gamePanel.getBegin();
+            String end = "end: " + gamePanel.getEnd();
+            String duration = "duration: " + ((gamePanel.getEnd() - gamePanel.getBegin()) / 1000) + "s";
+            String rows = "rows: " + (gamePanel.getCurrentRow() + 1);
+            String state;
+            if (isWin) state = "state: win";
+            else  state = "state: lost";
+            String content = String.join("\t", begin, end, duration, rows, state, "\n");
+            dfw.write(content);
+            dfw.close();
+            System.out.println("Write \"" +content + "\" to file " + df);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Judge that whether the input char array char[5] input is a word.
      *
      * @return true, when it's a word; Otherwise false.
@@ -69,18 +118,25 @@ public class ResourceReader {
         generateWordle();
     }
 
+    /**
+     * @return dictionary of all words
+     */
     public ArrayList<String> getDictionary() {
         return dictionary;
     }
 
-    public void setDictionary(ArrayList<String> dictionary) {
-        this.dictionary = dictionary;
-    }
-
+    /**
+     * Get wordle(target word) as a char array
+     * @return wordle(target word) as a char array.
+     */
     public char[] getWordle() {
         return wordle;
     }
 
+    /**
+     * set wordle(target word)
+     * @param wordle wordle to be set
+     */
     public void setWordle(char[] wordle) {
         this.wordle = wordle;
     }

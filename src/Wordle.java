@@ -12,6 +12,5 @@ import Containers.WordleFrame;
 public class Wordle {
     public static void main(String[] args) {
         WordleFrame frame = new WordleFrame();
-        GlobalActionListener globalActionListener = new GlobalActionListener(frame);
     }
 }

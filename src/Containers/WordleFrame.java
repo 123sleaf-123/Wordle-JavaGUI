@@ -1,5 +1,7 @@
 package Containers;
 
+import Listeners.Action.GlobalActionListener;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -15,13 +17,32 @@ import java.io.IOException;
  * @description The Frame of Wordle.
  **/
 public class WordleFrame extends JFrame {
+    /**
+     * The start penal
+     */
     private final StartPanel startPanel = new StartPanel();
+
+    /**
+     * The game penal
+     */
     private final GamePanel gamePanel = new GamePanel();
 
+    /**
+     * The GlobalActionListener
+     */
+    private final GlobalActionListener globalActionListener = new GlobalActionListener(this);
+
+    /**
+     * Constructor initialise class itself
+     */
     public WordleFrame() {
         initFrame();
     }
 
+    /**
+     * Constructor to set title by calling superclass constructor and initialise class itself
+     * @param title Title of the frame
+     */
     public WordleFrame(String title) {
         super(title);
         initFrame();
@@ -31,14 +52,6 @@ public class WordleFrame extends JFrame {
      * Initialisation of the Containers.WordleFrame instance.
      */
     public void initFrame() {
-//        try {
-//            UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
-//            SwingUtilities.updateComponentTreeUI(this);
-//            this.pack();
-//        } catch (Exception e) {
-//            System.out.println("Can't set this style:" + e);
-//        }
-
         // Set the size and position of the frame
         Toolkit kit = Toolkit.getDefaultToolkit();
         Dimension screenSize = kit.getScreenSize();
@@ -76,11 +89,27 @@ public class WordleFrame extends JFrame {
         this.setVisible(true);
     }
 
+    /**
+     * Method to get the startPanel
+     * @return startPanel
+     */
     public StartPanel getStartPanel() {
         return startPanel;
     }
 
+    /**
+     * Method to get the gamePanel
+     * @return gamePanel
+     */
     public GamePanel getGamePanel() {
         return gamePanel;
+    }
+
+    /**
+     * Method to get the globalActionListener
+     * @return globalActionListener
+     */
+    public GlobalActionListener getGlobalActionListener() {
+        return globalActionListener;
     }
 }

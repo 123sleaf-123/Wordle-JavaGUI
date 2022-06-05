@@ -28,10 +28,13 @@ public class StartPanel extends JPanel {
 
     public StartPanel() {
         super();
-        initPanel();
+        initialise();
     }
 
-    private void initPanel() {
+    /**
+     * Initialise startPanel instance
+     */
+    private void initialise() {
         this.setLayout(new BorderLayout(this.getWidth() / 10, this.getHeight() / 10));
 
         gameTitle.setMinimumSize(new Dimension(200, 150));
@@ -65,54 +68,106 @@ public class StartPanel extends JPanel {
         centerPanel.setOpaque(false);
     }
 
+    /**
+     * Get startBtn as a JStyleButton instance.
+     * @return startBtn as a JStyleButton
+     */
     public JStyleButton getStartBtn() {
         return startBtn;
     }
 
+    /**
+     * Get settingBtn as a JStyleButton instance.
+     * @return settingBtn as a JStyleButton instance.
+     */
     public JStyleButton getSettingBtn() {
         return settingBtn;
     }
 
+    /**
+     * Get rankBtn as a JStyleButton instance.
+     * @return rankBtn as a JStyleButton
+     */
     public JStyleButton getRankBtn() {
         return rankBtn;
     }
 
+    /**
+     * Get exitBtn as a JStyleButton instance.
+     * @return exitBtn as a JStyleButton
+     */
     public JStyleButton getExitBtn() {
         return exitBtn;
     }
 
+    /**
+     * Get gameTile as a JLabel instance.
+     * @return gameTile as a JLabel
+     */
     public JLabel getGameTitle() {
         return gameTitle;
     }
 
+    /**
+     * Get centerPanel as a JPanel instance.
+     * @return centerPanel as a JPanel instance
+     */
     public JPanel getCenterPanel() {
         return centerPanel;
     }
 
+    /**
+     * Set centerPanel as another JPanel instance.
+     * @param centerPanel another JPanel instance to be set
+     */
     public void setCenterPanel(JPanel centerPanel) {
         this.centerPanel = centerPanel;
     }
 
+    /**
+     * Get westHorSpacer as a HorSpacer instance.
+     * @return westHorSpacer
+     */
     public HorSpacer getWestHorSpacer() {
         return westHorSpacer;
     }
 
+    /**
+     * Set westHorSpacer as another HorSpacer instance.
+     * @param westHorSpacer another HorSpacer instance to be set
+     */
     public void setWestHorSpacer(HorSpacer westHorSpacer) {
         this.westHorSpacer = westHorSpacer;
     }
 
+    /**
+     * Get eastHorSpacer as a HorSpacer instance.
+     * @return eastHorSpacer
+     */
     public HorSpacer getEastHorSpacer() {
         return eastHorSpacer;
     }
 
+    /**
+     * Set eastHorSpacer as another HorSpacer instance.
+     * @param eastHorSpacer another HorSpacer instance to be set
+     */
     public void setEastHorSpacer(HorSpacer eastHorSpacer) {
         this.eastHorSpacer = eastHorSpacer;
     }
 
+    /**
+     * Get southVerSpacer as a VerSpacer instance.
+     * @return southVerSpacer
+     */
     public VerSpacer getSouthVerSpacer() {
         return southVerSpacer;
     }
 
+    /**
+     * Set southVerSpacer as another VerSpacer instance.
+     * @param southVerSpacer another VerSpacer instance to be set
+     */
     public void setSouthVerSpacer(VerSpacer southVerSpacer) {
         this.southVerSpacer = southVerSpacer;
     }

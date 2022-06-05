@@ -5,6 +5,7 @@ import Components.JStyleButton;
 import Components.JStyleLabel;
 import Components.VerSpacer;
 import Containers.Dialog.WordleDialog;
+import DataClass.Record;
 import Listeners.Action.GamePanelActionListener;
 import Supporter.InputProcessor;
 import Supporter.Judgement;
@@ -17,6 +18,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -35,22 +37,37 @@ public class GamePanel extends JPanel implements KeyListener {
     private GamePanelActionListener actionListener;
 
     private int wordSize = 5, currentRow = 0;
+    private long begin, end;
 
     private final JStyleButton backBtn = new JStyleButton("Back", JStyleButton.PINK);
     private final JStyleButton resetBtn = new JStyleButton("Reset", JStyleButton.PINK);
+
+    /**
+     * The components to form a table to display the current and previous input and results
+     */
     private final JStyleLabel[][] table = new JStyleLabel[6][5];
 
     private JPanel centerPanel;
     private JPanel northPanel;
-    private HorSpacer westHorSpacer;
-    private HorSpacer eastHorSpacer;
-    private VerSpacer southVerSpacer;
-    private WordleDialog notAWordWarning;
-    private WordleDialog notEnoughCharWarning;
-    private WordleDialog emptyInputWarning;
-    private WordleDialog winDialog;
-    private WordleDialog focusEndDialog;
 
+    /**
+     * Spacer to adjust components' sizes
+     */
+    private HorSpacer westHorSpacer;
+
+    /**
+     * Spacer to adjust components' sizes
+     */
+    private HorSpacer eastHorSpacer;
+
+    /**
+     * Spacer to adjust components' sizes
+     */
+    private VerSpacer southVerSpacer;
+
+    /**
+     * Constructor Method to initialise class itself
+     */
     public GamePanel() {
         initialise();
     }
@@ -91,6 +108,8 @@ public class GamePanel extends JPanel implements KeyListener {
             }
         }
         this.setSize(600, 400);
+
+        begin = System.currentTimeMillis();
     }
 
     /**
@@ -139,56 +158,88 @@ public class GamePanel extends JPanel implements KeyListener {
                 refresh();
                 break;
             case 12: {
-                String str = String.valueOf(inputProcessor.getInput()) + " is not a word!";
-                notAWordWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), str, str);
+                String str = String.valueOf(getInputProcessor().getInput()) + " is not a word!";
+                JOptionPane.showMessageDialog(this,
+                        str, "Not A Word!", JOptionPane.ERROR_MESSAGE);
                 break;
             }
             case 13: {
                 String title = "Not Enough Characters!";
-                notEnoughCharWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), title, "");
+                String text = "Current input is " + String.valueOf(inputProcessor.getInput()) +
+                        ", length is " + inputProcessor.getIdx() + ".\n" + title;
+                JOptionPane.showMessageDialog(this,
+                        text, title, JOptionPane.INFORMATION_MESSAGE);
                 break;
             }
             case 14: {
                 String title = "Empty Input!";
                 String text = "Please type your keyboard to input.";
-                emptyInputWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), title, text);
+                JOptionPane.showMessageDialog(this, text, title, JOptionPane.INFORMATION_MESSAGE);
                 break;
             }
             case 15: {
-                wordleLogic.logicCore(inputProcessor.getInput());
+                getWordleLogic().logicCore(getInputProcessor().getInput());
                 lineRefresh();
-                if (Judgement.isPlayerWin(table, getCurrentRow())) {
-                    String winMessage = "Game win in " + getCurrentRow() + " rows";
-                    winDialog = new WordleDialog((JFrame) this.getTopLevelAncestor(), winMessage, "Cheers!");
+                if (! endJudge()) {
+                    inputProcessor.clearOperation();
+                    setCurrentRow(getCurrentRow() + 1);
                 }
-
-                if (Judgement.isFocusEnd(getCurrentRow())) {
-                    focusEndDialog = new WordleDialog((JFrame) this.getTopLevelAncestor(),
-                            "Game lost", "Wordle: " +
-                            String.valueOf(wordleLogic.getWordle()) + ".    Level: Gamer");
-                    WordleFrame father = (WordleFrame) this.getTopLevelAncestor();
-//                    focusEndDialog.getOkBtn().addActionListener(new ActionListener() {
-//                        @Override
-//                        public void actionPerformed(ActionEvent e) {
-//                            father.backToStart();
-//                        }
-//                    });
-                }
-                inputProcessor.clearOperation();
-                setCurrentRow(getCurrentRow() + 1);
                 break;
             }
         }
     }
 
-    private void refresh() {
+    /**
+     * Use Judgement to judge whether a game has ended.
+     * @return whether to do continue operation.
+     */
+    public boolean endJudge() {
+        if (Judgement.isPlayerWin(getTable(), getCurrentRow())) {
+            end = System.currentTimeMillis();
+            int duration = (int) ((end - begin) / 1000);
+            Record winRecord = new Record();
+            resourceReader.endRecord(true, this, winRecord);
+            String winMessage = "Game win in " + (getCurrentRow() + 1) + " row(s) within " +
+                    duration + "s.\n" + "You have beaten " +
+                    ((Double) (resourceReader.readRecord(duration) * 100)).intValue() +
+                    " percentages of players";
+            String title = "Cheers!";
+            int choice = JOptionPane.showConfirmDialog(this,
+                    winMessage, title, JOptionPane.YES_NO_OPTION);
+            ((WordleFrame) this.getTopLevelAncestor()).getGlobalActionListener().backToStart();
+            clear();
+            return true;
+        }
+
+        if (Judgement.isFocusEnd(getCurrentRow())) {
+            end = System.currentTimeMillis();
+            Record lostRecord = new Record();
+            resourceReader.endRecord(false, this, lostRecord);
+            String lostMessage = "Wordle: " + String.valueOf(getWordleLogic().getWordle()) +
+                    ".\nLevel: Gamer.\n Game Lost.";
+            int choice = JOptionPane.showConfirmDialog(this,
+                    lostMessage, "Game lost", JOptionPane.YES_NO_OPTION);
+            ((WordleFrame) this.getTopLevelAncestor()).getGlobalActionListener().backToStart();
+            clear();
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Refresh current line JStyleLabels to display the current input
+     */
+    public void refresh() {
         char[] curInput = inputProcessor.getInput();
         for (int i = 0; i < 5; i++) {
             table[currentRow][i].setText(String.valueOf(curInput[i]));
         }
     }
 
-    private void lineRefresh() {
+    /**
+     * Refresh the current line JStyleLabels to display the result colours.
+     */
+    public void lineRefresh() {
         Color[] curColour = wordleLogic.getColourRes();
         for (int i = 0; i < 5; i++) {
             table[currentRow][i].setBackground(curColour[i]);
@@ -216,12 +267,22 @@ public class GamePanel extends JPanel implements KeyListener {
     }
 
 
+    /**
+     * Invoked when a key has been released.
+     * See the class description for {@link KeyEvent} for a definition of
+     * a key released event.
+     *
+     * @param e the event to be processed
+     */
     @Override
     public void keyReleased(KeyEvent e) {
 //        System.out.println("Released");
     }
 
     /**
+     * Invoked when a key has been pressed.
+     * See the class description for {@link KeyEvent} for a definition of
+     * a key pressed event.
      * Print the input message and deal with the input
      *
      * @param e the event to be processed
@@ -232,9 +293,40 @@ public class GamePanel extends JPanel implements KeyListener {
         actionDependOnInput(inputProcessor.inputProcess(e.getKeyChar()));
     }
 
+    /**
+     * Invoked when a key has been typed.
+     * See the class description for {@link KeyEvent} for a definition of
+     * a key typed event.
+     *
+     * @param e the event to be processed
+     */
     @Override
     public void keyTyped(KeyEvent e) {
 //        System.out.println("Typed ");
+    }
+
+    public ResourceReader getResourceReader() {
+        return resourceReader;
+    }
+
+    public void setResourceReader(ResourceReader resourceReader) {
+        this.resourceReader = resourceReader;
+    }
+
+    public InputProcessor getInputProcessor() {
+        return inputProcessor;
+    }
+
+    public void setInputProcessor(InputProcessor inputProcessor) {
+        this.inputProcessor = inputProcessor;
+    }
+
+    public WordleLogic getWordleLogic() {
+        return wordleLogic;
+    }
+
+    public void setWordleLogic(WordleLogic wordleLogic) {
+        this.wordleLogic = wordleLogic;
     }
 
     public JStyleButton getBackBtn() {
@@ -304,4 +396,21 @@ public class GamePanel extends JPanel implements KeyListener {
     public void setCurrentRow(int currentRow) {
         this.currentRow = currentRow;
     }
+
+    public long getBegin() {
+        return begin;
+    }
+
+    public void setBegin(long begin) {
+        this.begin = begin;
+    }
+
+    public long getEnd() {
+        return end;
+    }
+
+    public void setEnd(long end) {
+        this.end = end;
+    }
+
 }
