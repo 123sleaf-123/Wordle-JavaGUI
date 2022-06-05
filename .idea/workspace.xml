@@ -1,24 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="修正了计时错误和重新设置后面板失去聚焦无法操作的bug">
-      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_9.png" afterDir="false" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="更新了中文说明">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameData/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameData/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.en.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.en.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +69,7 @@
       <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\课件\大二\下\Java\MiniProject\wordle-java\README_IMGs" />
       <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\src" />
       <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\README_IMGs" />
     </key>
@@ -145,20 +131,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653575895986</updated>
-    </task>
-    <task id="LOCAL-00015" summary="删除了WordleFrame的gameStart()方法中初始化的WordleMemory变量。&#10;&#10;因为WordleMemory变量在这里屁用都没。">
-      <created>1654085562160</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1654085562160</updated>
-    </task>
-    <task id="LOCAL-00016" summary="从前WordleMemory负责的功能现在都合并到了InputFilter中了。更改一了一下布局（generator+一般方法+get&amp;set）&#10;&#10;因为设计思想的变更，我们不再需要WordleMemory这一个运存，而且它很冗余">
-      <created>1654085854428</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1654085854428</updated>
     </task>
     <task id="LOCAL-00017" summary="在GamePanel中增加了当前行的成员变量，增加了两个方，修改普通方法为私有方法。我们的输入有效了&#10;&#10;initPanel()变更为私有方法；&#10;新增了actionDependOnInput(int actionCode)和refresh()方法">
       <created>1654086059234</created>
@@ -489,7 +461,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654441752406</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="更新了中文说明">
+      <created>1654444300776</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1654444300776</updated>
+    </task>
+    <task id="LOCAL-00065" summary="更新了中文说明">
+      <created>1654444365868</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1654444365868</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -504,7 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="更新了说明，删除了无关冗余" />
     <MESSAGE value="现在新增了对话框类WordleDialog，继承自JDialog，构造方法会自动实现原来GamePanel类中的dialogAutoGenerator方法" />
     <MESSAGE value="利用对话框类差创建了一些新的提示框，修改了Judgement的小逻辑（&gt;5）结束，修改了资源文件路径，移动到了src文件中" />
     <MESSAGE value="更改了位置" />
@@ -529,7 +514,8 @@
     <MESSAGE value="增加了音乐线程" />
     <MESSAGE value="优化了代码" />
     <MESSAGE value="修正了计时错误和重新设置后面板失去聚焦无法操作的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修正了计时错误和重新设置后面板失去聚焦无法操作的bug" />
+    <MESSAGE value="更新了中文说明" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了中文说明" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
