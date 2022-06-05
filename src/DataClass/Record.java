@@ -6,7 +6,7 @@ package DataClass;
  *
  * @author Zhiye Huang
  * @version 1.0
- * @description Records in files.
+ * @description Packages of records in files.
  **/
 public class Record {
     private long begin, end;

@@ -32,12 +32,20 @@ public class JStyleButton extends JButton {
     }
 
 
+    /**
+     * Generator method to set Button text and Button color through colorCode
+     * @param text
+     * @param colorCode
+     */
     public JStyleButton(String text, int colorCode) {
         super(text);
         setColorCode(colorCode);
         initialise();
     }
 
+    /**
+     * Initialise JStyleButton instances
+     */
     public void initialise() {
         this.setOpaque(true);
         if (colorCode == 0) this.setBackground(new Color(0, 0, 0));
@@ -48,10 +56,20 @@ public class JStyleButton extends JButton {
         this.setPreferredSize(new Dimension(100, 40));
     }
 
+    /**
+     * Getter method of instance variable colorCode.
+     *
+     * @return instance variable colorCode
+     */
     public int getColorCode() {
         return colorCode;
     }
 
+    /**
+     * Setter method of instance variable colorCode.
+     *
+     * @param colorCode another color code to set
+     */
     public void setColorCode(int colorCode) {
         this.colorCode = colorCode;
     }
