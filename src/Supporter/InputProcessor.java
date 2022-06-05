@@ -73,7 +73,7 @@ public class InputProcessor {
     }
 
     /**
-     * The setOperation(char c) method prints the saved operation and the saved input phrase, idx +1,
+     * The setOperation(char c) method prints the set operation and the saved input phrase, idx +1,
      * and returns a code SET_A_CHARACTER.
      *
      * @param c Character to be stored.
@@ -87,6 +87,13 @@ public class InputProcessor {
         return SET_A_CHARACTER;
     }
 
+    /**
+     * The removeOperation(char c) method prints the remove operation and
+     * the before and after removal input phrase, idx - 1,
+     * and returns an operation code REMOVE_A_CHARACTER.
+     *
+     * @return operation code REMOVE_A_CHARACTER
+     */
     private int removeOperation() {
         System.out.println("Previous input is " + String.valueOf(input) + ".");
         setIdx(getIdx() - 1);
@@ -97,6 +104,9 @@ public class InputProcessor {
         return REMOVE_A_CHARACTER;
     }
 
+    /**
+     * Reset the game runtime variable to initial state.
+     */
     public void clearOperation() {
         Arrays.fill(input, ' ');
         setIdx(0);
@@ -105,6 +115,10 @@ public class InputProcessor {
 
     // Information convey methods
 
+    /**
+     * Print information that input is a word and return an information code IS_A_WORD.
+     * @return information code IS_A_WORD
+     */
     private int IsAWord() {
         System.out.println(String.valueOf(getInput()) + " is a word.");
         return IS_A_WORD;
@@ -112,11 +126,19 @@ public class InputProcessor {
 
     // Warnings methods
 
+    /**
+     * Print information that input is not word and return an error information code NOT_A_WORD.
+     * @return error information code NOT_A_WORD
+     */
     private int errorNotAWord() {
         System.out.println(String.valueOf(input) + " is not a word.");
         return NOT_A_WORD;
     }
 
+    /**
+     * Print information that input has not enough characters and return an error information code NOT_ENOUGH.
+     * @return
+     */
     private int errorNotEnoughChar() {
         System.out.println("Not Enough Characters!");
         return NOT_ENOUGH;
@@ -142,6 +164,10 @@ public class InputProcessor {
 
     // Getter and Setter methods
 
+    /**
+     * The getter method of instance variable char array input.
+     * @return char array input
+     */
     public char[] getInput() {
         return input;
     }
@@ -166,10 +192,19 @@ public class InputProcessor {
         }
     }
 
+    /**
+     * The getter method of instance variable wordle.
+     * @return target word
+     */
     public char[] getWordle() {
         return wordle;
     }
 
+    /**
+     * The setter method to set instance variable wordle.
+     *
+     * @param wordle another target word
+     */
     public void setWordle(char[] wordle) {
         this.wordle = wordle;
     }

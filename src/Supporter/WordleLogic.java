@@ -54,10 +54,8 @@ public class WordleLogic {
     public void logicCore(char[] input) {
         Boolean[] inputFlag, wordleFlag;
 
-        /*
-         * use Arrays.fill method to initialise wordleFlag to all false(boolean) as a mark,
-         * indicating that all characters are not matched.
-         */
+//        use Arrays.fill method to initialise wordleFlag to all false(boolean) as a mark,
+//        indicating that all characters are not matched.
         wordleFlag = new Boolean[wordSize];
         Arrays.fill(wordleFlag, false);
 
@@ -65,6 +63,7 @@ public class WordleLogic {
         Arrays.fill(inputFlag, false);
 
 
+        // Core logic
         for (int i = 0; i < this.wordSize; i++) {
             if (input[i] == this.wordle[i]) {
                 colourRes[i] = Color.GREEN;
@@ -86,6 +85,10 @@ public class WordleLogic {
         }
     }
 
+    /**
+     * Reset the game runtime variable to initial state.
+     * @param wordle
+     */
     public void reset(char[] wordle) {
         this.wordle = wordle;
         for (int i = 0; i < 5; i++) {
