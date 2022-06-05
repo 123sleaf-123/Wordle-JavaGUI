@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="添加了大量注释">
-      <change afterPath="$PROJECT_DIR$/src/MusicPlayer/StartPanelPlayer.java" afterDir="false" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="优化了代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameData/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameData/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/Action/GlobalActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/Action/GlobalActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MusicPlayer/StartPanelPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MusicPlayer/StartPanelPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Wordle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wordle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,12 +50,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
     "OverrideImplement.generate.javadoc": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "E:/课件/大二/下/Java/MiniProject/Wordle/src/resources/music",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -71,13 +76,6 @@
     </key>
   </component>
   <component name="RunManager" selected="应用程序.Wordle">
-    <configuration name="Containers.StartPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Containers.StartPanel" />
-      <module name="Wordle" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="InputProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Supporter.InputProcessor" />
       <module name="Wordle" />
@@ -105,6 +103,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Wordle (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Wordle" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Wordle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Wordle" />
       <module name="Wordle" />
@@ -115,6 +119,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.Wordle" />
+        <item itemvalue="应用程序.Wordle (1)" />
         <item itemvalue="应用程序.InputProcessor" />
       </list>
     </recent_temporary>
@@ -127,20 +132,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653575895986</updated>
-    </task>
-    <task id="LOCAL-00012" summary="现在在主界面WordleFrame中点击开始按钮，GamePanel能够读入词库了">
-      <created>1654076141472</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1654076141472</updated>
-    </task>
-    <task id="LOCAL-00013" summary="现在在主界面GamePanel能够被聚焦了&#10;&#10;也就是说能够切换到GamePanel界面后读取键盘输入了">
-      <created>1654083417764</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1654083417764</updated>
     </task>
     <task id="LOCAL-00014" summary="现在在主界面GamePanel会初始化一个InputFilter成员，并且把键盘输入传递给该成员的inputProcess方法来决定弹出错误的类型或者填入单词。">
       <created>1654084484987</created>
@@ -471,7 +462,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654416550282</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="增加了音乐线程">
+      <created>1654422121850</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1654422121850</updated>
+    </task>
+    <task id="LOCAL-00062" summary="优化了代码">
+      <created>1654422294168</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1654422294168</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -486,8 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="独立维护一个ResourceReader，WordleLogic" />
-    <MESSAGE value="新增了：&#10;行更新方法lineRefresh()，能更新当前行标签的颜色，而后判断输赢，控制开始结束。&#10;对话窗自动创建方法dialogAutoGenerator(String text, String title)，能够设置内容和标题，自动设置大小位置，并带有ok和cancel两个按钮&#10;一些getter和setter" />
     <MESSAGE value="actionOnDepend方法现在能够根据操作/错误码执行一部分操作和提示弹出，而后决定更新内容" />
     <MESSAGE value="更新了说明，删除了无关冗余" />
     <MESSAGE value="现在新增了对话框类WordleDialog，继承自JDialog，构造方法会自动实现原来GamePanel类中的dialogAutoGenerator方法" />
@@ -511,7 +514,9 @@
     <MESSAGE value="添加了Record类，完善了内在逻辑和提示信息&#10;增加了大量注释" />
     <MESSAGE value="删除了无用的WordleDialog类" />
     <MESSAGE value="添加了大量注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了大量注释" />
+    <MESSAGE value="增加了音乐线程" />
+    <MESSAGE value="优化了代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化了代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -520,16 +525,6 @@
           <url>file://$PROJECT_DIR$/src/Containers/GamePanel.java</url>
           <line>204</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MusicPlayer/StartPanelPlayer.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MusicPlayer/StartPanelPlayer.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />

@@ -29,19 +29,18 @@ public class StartPanelPlayer {
         this.set(path);
     }
 
-    public boolean set(String p)  //设置播放路径
+    public boolean set(String p)
     {
-        if (_set)  //如果已经被初始化了（缓冲区已经有音频准备播放了）
+        if (_set)
         {
-            boolean stop_playing_return = stop_playing();  //关闭当前缓冲区
-            if (!stop_playing_return)  //如果失败
+            boolean stop_playing_return = stop_playing();
+            if (!stop_playing_return)
             {
                 return false;
             }
         }
-        path = p;  //更新音频路径
+        path = p;
         try {
-            //初始化音频
             aistream = AudioSystem.getAudioInputStream(new File(path));
             format = aistream.getFormat();
             sampleRate = format.getSampleRate();
@@ -60,7 +59,7 @@ public class StartPanelPlayer {
             return false;
         }
         try {
-            //打开缓冲区
+            // open
             bytes = new byte[512];
             length = 0;
             dataline.open(format);
@@ -69,46 +68,47 @@ public class StartPanelPlayer {
         } catch (Exception err) {
             System.out.println("Error");
             err.printStackTrace();
-            stop_playing();  //关闭当前缓冲区
+            stop_playing();  // close current
             return false;
         } catch (Error err) {
             System.out.println("Error: can not play the audio");
             err.printStackTrace();
-            stop_playing();  //关闭当前缓冲区
+            stop_playing();  // close
             return false;
         }
-        _set = true;  //初始化成功
+        _set = true;  // init success
         return true;
     }
 
-    /*
-     * playFrom返回值
-     * -1：异常
-     * 0：音频结束
-     * 1：正常
+    /**
+     * playFrom
+     * @return int
+     * -1：wrong
+     * 0：ends
+     * 1：normal
      */
-    public int playFrom(int t)  //从某处开始播放（需要重新设置缓冲区）
+    public int playFrom(int t)
     {
-        if (!_set)  //如果没有设置过缓冲区
+        if (!_set)
         {
             return -1;
         }
-        //重新设置缓冲区
-        boolean stop_playing_return = stop_playing();  //关闭当前缓冲区
+        // reset
+        boolean stop_playing_return = stop_playing();
         if (!stop_playing_return) {
             return -1;
         }
-        boolean set_return = set(path);  //初始化音频并打开缓冲区
+        boolean set_return = set(path);
         if (!set_return) {
             return -1;
         }
-        boolean audio_ended = false;  //音频是否结束
+        boolean audio_ended = false;
         try {
-            while (played < t)  //在播放到t之前
+            while (played < t)
             {
                 length = aistream.read(bytes);
                 played++;
-                if (length <= 0)  //如果音频播放结束了就退出循环
+                if (length <= 0)
                 {
                     audio_ended = true;
                     break;
@@ -129,7 +129,7 @@ public class StartPanelPlayer {
         return 1;
     }
 
-    public boolean stop_playing()  //停止播放并关闭缓冲区
+    public boolean stop_playing()  // stop play
     {
         try {
             aistream.close();
@@ -140,7 +140,7 @@ public class StartPanelPlayer {
             format = null;
             datalineinfo = null;
             dataline = null;
-            _set = false;  //还原回没有初始化前
+            _set = false;  // reset
         } catch (Exception err) {
             System.out.println("Error");
             err.printStackTrace();
@@ -153,17 +153,18 @@ public class StartPanelPlayer {
         return true;
     }
 
-    /*
-     * play返回值
-     * -1：异常
-     * 0：播放结束
-     * 1：正常
+    /**
+     * playFrom
+     * @return int
+     * -1：wrong
+     * 0：ends
+     * 1：normal
      */
     public int play() {
-        boolean audio_ended = false;  //音频是否结束
+        boolean audio_ended = false;  // is end?
         try {
             length = aistream.read(bytes);
-            if (length <= 0)  //如果音频播放结束了就退出循环
+            if (length <= 0)  // ends and quit
             {
                 audio_ended = true;
             } else {
@@ -185,7 +186,11 @@ public class StartPanelPlayer {
         return 1;
     }
 
-    public String getPath()  //获取音频路径
+    /**
+     * get audio path
+     * @return
+     */
+    public String getPath()
     {
         if (!_set) {
             return "Error";
@@ -193,7 +198,11 @@ public class StartPanelPlayer {
         return path;
     }
 
-    public int getPlayed()  //获取已经播放的长度
+    /**
+     * get play progress
+     * @return
+     */
+    public int getPlayed()
     {
         if (!_set) {
             return -1;
@@ -201,7 +210,11 @@ public class StartPanelPlayer {
         return played;
     }
 
-    public float getSecLength()  //获取时长
+    /**
+     * get play time
+     * @return
+     */
+    public float getSecLength()
     {
         if (!_set) {
             return -1;

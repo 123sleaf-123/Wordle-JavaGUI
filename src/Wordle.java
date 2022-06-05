@@ -20,8 +20,8 @@ public class Wordle {
             int au_return;
             while(true)
             {
-                au_return = player.play();  //播放1秒
-                if(au_return==0)  //如果播放结束
+                au_return = player.play();  // play 1s
+                if(au_return==0)  // if ends, replay
                 {
                     System.out.println("audio ended");
                     player.playFrom(0);
