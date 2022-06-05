@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="优化了代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameData/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameData/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/Action/GamePanelActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/Action/GamePanelActionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Listeners/Action/GlobalActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/Action/GlobalActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MusicPlayer/StartPanelPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MusicPlayer/StartPanelPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wordle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wordle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Supporter/ResourceReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/ResourceReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,22 +50,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "OverrideImplement.generate.javadoc": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/课件/大二/下/Java/MiniProject/Wordle/src/resources/music",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/课件/大二/下/Java/MiniProject/wordle-java&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\src\resources\music" />

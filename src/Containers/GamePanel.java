@@ -257,6 +257,8 @@ public class GamePanel extends JPanel implements KeyListener {
             }
         }
         setCurrentRow(0);
+        setEnd(0);
+        setBegin(System.currentTimeMillis());
         resourceReader.reset();
         inputProcessor.reset();
         wordleLogic.reset(resourceReader.getWordle());

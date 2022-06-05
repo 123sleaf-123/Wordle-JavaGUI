@@ -50,7 +50,7 @@ public class ResourceReader {
     public void generateWordle() {
         Random random = new Random();
         wordle = dictionary.get(random.nextInt(0, dictionary.size())).toCharArray();
-//        wordle = "GREEN".toCharArray();
+        wordle = "GREEN".toCharArray();
     }
 
     /**

@@ -60,6 +60,7 @@ public class GlobalActionListener implements ActionListener {
         frame.setContentPane(frame.getGamePanel());
         frame.getGamePanel().setVisible(true);
         frame.getGamePanel().requestFocusInWindow();
+        gamePanel.setBegin(System.currentTimeMillis());
         System.out.println("Start.");
     }
 
@@ -88,7 +89,9 @@ public class GlobalActionListener implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == startPanel.getStartBtn()) gameStart();
+        if (e.getSource() == startPanel.getStartBtn()) {
+            gameStart();
+        }
         if (e.getSource() == startPanel.getExitBtn()) {
             int choice = JOptionPane.showConfirmDialog(startPanel, "Do you confirm to exit?", "EXIT",
                     JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);

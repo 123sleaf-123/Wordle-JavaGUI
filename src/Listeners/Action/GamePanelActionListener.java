@@ -44,5 +44,9 @@ public class GamePanelActionListener implements ActionListener {
         if (e.getSource() == gamePanel.getBackBtn() || e.getSource() == gamePanel.getResetBtn()) {
             gamePanel.clear();
         }
+        if (e.getSource() == gamePanel.getResetBtn()) {
+            gamePanel.clear();
+            gamePanel.requestFocus();
+        }
     }
 }
