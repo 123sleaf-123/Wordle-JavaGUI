@@ -6,7 +6,7 @@ A wordle game finished by using Java and Java GUI.
 
 #### Software Architecture
 
-Software architecture description
+![img.png](README_IMGs/img.png)Software architecture description
 
 #### Installation
 
