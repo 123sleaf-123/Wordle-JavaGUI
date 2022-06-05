@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="优化了代码">
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="修正了计时错误和重新设置后面板失去聚焦无法操作的bug">
+      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameData/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameData/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners/Action/GamePanelActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/Action/GamePanelActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners/Action/GlobalActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/Action/GlobalActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Supporter/ResourceReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Supporter/ResourceReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,13 +145,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653575895986</updated>
-    </task>
-    <task id="LOCAL-00014" summary="现在在主界面GamePanel会初始化一个InputFilter成员，并且把键盘输入传递给该成员的inputProcess方法来决定弹出错误的类型或者填入单词。">
-      <created>1654084484987</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1654084484987</updated>
     </task>
     <task id="LOCAL-00015" summary="删除了WordleFrame的gameStart()方法中初始化的WordleMemory变量。&#10;&#10;因为WordleMemory变量在这里屁用都没。">
       <created>1654085562160</created>
@@ -478,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654422294168</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="修正了计时错误和重新设置后面板失去聚焦无法操作的bug">
+      <created>1654441752405</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1654441752406</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -493,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="actionOnDepend方法现在能够根据操作/错误码执行一部分操作和提示弹出，而后决定更新内容" />
     <MESSAGE value="更新了说明，删除了无关冗余" />
     <MESSAGE value="现在新增了对话框类WordleDialog，继承自JDialog，构造方法会自动实现原来GamePanel类中的dialogAutoGenerator方法" />
     <MESSAGE value="利用对话框类差创建了一些新的提示框，修改了Judgement的小逻辑（&gt;5）结束，修改了资源文件路径，移动到了src文件中" />
@@ -518,7 +528,8 @@
     <MESSAGE value="添加了大量注释" />
     <MESSAGE value="增加了音乐线程" />
     <MESSAGE value="优化了代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化了代码" />
+    <MESSAGE value="修正了计时错误和重新设置后面板失去聚焦无法操作的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正了计时错误和重新设置后面板失去聚焦无法操作的bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
