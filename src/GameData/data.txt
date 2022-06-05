@@ -15,3 +15,5 @@ begin: 1654413202625	end: 1654413204951	duration: 2s	rows: 1	state: win
 begin: 1654413202625	end: 1654413220863	duration: 18s	rows: 2	state: win	
 begin: 1654413261969	end: 1654413276040	duration: 14s	rows: 4	state: win	
 begin: 1654415054076	end: 1654415092574	duration: 38s	rows: 6	state: lost	
+begin: 1654416609954	end: 1654416790940	duration: 180s	rows: 5	state: win	
+begin: 1654416609954	end: 1654416885372	duration: 275s	rows: 6	state: lost	
