@@ -1,12 +1,9 @@
 package Listeners.Key;
 
-import Containers.Dialog.WordleDialog;
 import Containers.GamePanel;
-import Containers.WordleFrame;
 import Supporter.Judgement;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 

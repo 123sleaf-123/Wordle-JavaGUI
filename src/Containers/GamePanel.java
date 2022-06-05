@@ -4,7 +4,6 @@ import Components.HorSpacer;
 import Components.JStyleButton;
 import Components.JStyleLabel;
 import Components.VerSpacer;
-import Containers.Dialog.WordleDialog;
 import DataClass.Record;
 import Listeners.Action.GamePanelActionListener;
 import Supporter.InputProcessor;
@@ -18,7 +17,6 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 
 /**
