@@ -1,4 +1,4 @@
-package listeners.Action;
+package listeners.action;
 
 import components.JStyleButton;
 import containers.GamePanel;

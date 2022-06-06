@@ -5,7 +5,7 @@ import components.JStyleButton;
 import components.JStyleLabel;
 import components.VerSpacer;
 import dataClass.Record;
-import listeners.Action.GamePanelActionListener;
+import listeners.action.GamePanelActionListener;
 import supporter.InputProcessor;
 import supporter.Judgement;
 import supporter.ResourceReader;

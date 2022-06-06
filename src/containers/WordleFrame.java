@@ -1,6 +1,6 @@
 package containers;
 
-import listeners.Action.GlobalActionListener;
+import listeners.action.GlobalActionListener;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

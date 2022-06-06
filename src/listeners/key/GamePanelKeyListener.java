@@ -1,4 +1,4 @@
-package listeners.Key;
+package listeners.key;
 
 import containers.GamePanel;
 import supporter.Judgement;
@@ -91,14 +91,14 @@ public class GamePanelKeyListener implements KeyListener {
                 if (Judgement.isPlayerWin(gamePanel.getTable(), gamePanel.getCurrentRow())) {
                     String winMessage = "Game win in " + gamePanel.getCurrentRow() + " rows";
 //                    winDialog = new WordleDialog((JFrame) this.getTopLevelAncestor(), winMessage, "Cheers!");
-                    int choice = JOptionPane.showConfirmDialog(gamePanel,
-                            winMessage, "Cheers!", JOptionPane.PLAIN_MESSAGE);
+//                    int choice = JOptionPane.showConfirmDialog(gamePanel,
+//                            winMessage, "Cheers!", JOptionPane.PLAIN_MESSAGE);
                 }
 
                 if (Judgement.isFocusEnd(gamePanel.getCurrentRow())) {
-                    int choice = JOptionPane.showConfirmDialog(gamePanel,
-                            "Wordle: " + String.valueOf(gamePanel.getWordleLogic().getWordle()) +
-                                    ".    Level: Gamer", "Game lost", JOptionPane.PLAIN_MESSAGE);
+//                    int choice = JOptionPane.showConfirmDialog(gamePanel,
+//                            "Wordle: " + String.valueOf(gamePanel.getWordleLogic().getWordle()) +
+//                                    ".    Level: Gamer", "Game lost", JOptionPane.PLAIN_MESSAGE);
                 }
                 gamePanel.getInputProcessor().clearOperation();
                 gamePanel.setCurrentRow(gamePanel.getCurrentRow() + 1);
