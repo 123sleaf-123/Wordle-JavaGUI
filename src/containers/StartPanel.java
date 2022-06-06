@@ -16,16 +16,55 @@ import java.awt.*;
  * @description The strat panel of the game.
  **/
 public class StartPanel extends JPanel {
+
+    /**
+     * Button to start game
+     */
     private final JStyleButton startBtn = new JStyleButton("Start");
+
+    /**
+     * Button to modify settings, not yet finished
+     */
     private final JStyleButton settingBtn = new JStyleButton("Settings");
+
+    /**
+     * Button to see the ranks, not yet finished
+     */
     private final JStyleButton rankBtn = new JStyleButton("Ranks");
+
+    /**
+     * Button to exit the game
+     */
     private final JStyleButton exitBtn = new JStyleButton("Exit");
+
+    /**
+     * JLabel to show the game Title
+     */
     private final JLabel gameTitle = new JLabel();
+
+    /**
+     * Center JPanel to contains the four buttons above
+     */
     private JPanel centerPanel;
+
+    /**
+     * Spacer to horizontal modify layout
+     */
     private HorSpacer westHorSpacer;
+
+    /**
+     * Spacer to horizontal modify layout
+     */
     private HorSpacer eastHorSpacer;
+
+    /**
+     * Spacer to vertical modify layout
+     */
     private VerSpacer southVerSpacer;
 
+    /**
+     * Default constructor method
+     */
     public StartPanel() {
         super();
         initialise();

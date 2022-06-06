@@ -14,11 +14,18 @@ import java.awt.*;
  **/
 public class JStyleLabel extends JLabel {
 
+    /**
+     * Default Generator method of JStyleLabel
+     */
     public JStyleLabel() {
         super();
         initLabel();
     }
 
+    /**
+     * Generator method of JStyleLabel with initialisation of content text
+     * @param text content text
+     */
     public JStyleLabel(String text) {
         super(text);
         initLabel();

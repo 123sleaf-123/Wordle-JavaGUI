@@ -28,16 +28,46 @@ import java.io.IOException;
  * @description The panel for the game, extending from JPanel.
  **/
 public class GamePanel extends JPanel implements KeyListener {
+
+    /**
+     * read resource from files
+     */
     private ResourceReader resourceReader;
+
+    /**
+     * member to process input
+     */
     private InputProcessor inputProcessor;
+
+    /**
+     * member to determine the result colours
+     */
     private WordleLogic wordleLogic;
 
+    /**
+     * ActionListener for GamePanel
+     */
     private GamePanelActionListener actionListener;
 
+    /**
+     * wordSize can be expanded in the future as a challenge,
+     * currentRow is the denotation of current row of input
+     */
     private int wordSize = 5, currentRow = 0;
+
+    /**
+     * Game start time and end time in system time
+     */
     private long begin, end;
 
+    /**
+     * back to start panel when pressed
+     */
     private final JStyleButton backBtn = new JStyleButton("Back", JStyleButton.PINK);
+
+    /**
+     * Reset all the data in game panel(restart a game)
+     */
     private final JStyleButton resetBtn = new JStyleButton("Reset", JStyleButton.PINK);
 
     /**
@@ -45,7 +75,14 @@ public class GamePanel extends JPanel implements KeyListener {
      */
     private final JStyleLabel[][] table = new JStyleLabel[6][5];
 
+    /**
+     * Center panel to display user inputs and results
+     */
     private JPanel centerPanel;
+
+    /**
+     * North Panel to provide the two button concerned above
+     */
     private JPanel northPanel;
 
     /**
@@ -76,7 +113,7 @@ public class GamePanel extends JPanel implements KeyListener {
     private void initialise() {
         resourceReader = new ResourceReader();
         inputProcessor = new InputProcessor(wordSize, resourceReader);
-        wordleLogic = new WordleLogic(resourceReader.wordle);
+        wordleLogic = new WordleLogic(resourceReader.getWordle());
         actionListener  = new GamePanelActionListener(this);
         this.addKeyListener(this);
         this.setLayout(new BorderLayout());

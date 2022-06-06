@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="更新了英文说明入口">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="软件包名改为小写，刚才改漏了俩子包">
+      <change beforePath="$PROJECT_DIR$/src/components/VerSpacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VerSpacer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,7 @@
   </component>
   <component name="RunManager" selected="应用程序.Wordle">
     <configuration name="InputProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Supporter.InputProcessor" />
+      <option name="MAIN_CLASS_NAME" value="supporter.InputProcessor" />
       <module name="Wordle" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,7 +118,7 @@
       <list>
         <item itemvalue="应用程序.Wordle" />
         <item itemvalue="应用程序.Wordle (1)" />
-        <item itemvalue="应用程序.InputProcessor" />
+        <item itemvalue="应用程序.supporter.InputProcessor" />
       </list>
     </recent_temporary>
   </component>
@@ -130,20 +130,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653575895986</updated>
-    </task>
-    <task id="LOCAL-00020" summary="移动到了supporter包，新增了存储当前待处理猜测单词的变量guess&#10;初始化方法也也新增了待猜测单词wordle的初始化&#10;新增了猜测单词guess的设置和获取方法">
-      <created>1654181681283</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1654181681283</updated>
-    </task>
-    <task id="LOCAL-00021" summary="小修改：删除了一些无用注释，保存了一些改名变动">
-      <created>1654181755993</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1654181755993</updated>
     </task>
     <task id="LOCAL-00022" summary="彻底删除了WordleMemory">
       <created>1654182005205</created>
@@ -474,7 +460,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654499322307</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="软件包名改为小写">
+      <created>1654500057644</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1654500057644</updated>
+    </task>
+    <task id="LOCAL-00070" summary="软件包名改为小写，刚才改漏了俩子包">
+      <created>1654500220931</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1654500220932</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -489,8 +489,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="更改了位置" />
-    <MESSAGE value="新建了一个gui界面" />
     <MESSAGE value="新增了占位符HorSpacer&#10;&#10;清空了测试字符串在label中的创建&#10;&#10;InputProcessor现在自动填充' '（空格），而不是0&#10;&#10;JStyleLabel现在有了Arial Black 24号加粗字体和黑色外框线&#10;&#10;StartPanel现在有了更多按钮，并且有了标题，结构更完善" />
     <MESSAGE value="新增了垂直占位符VerSpacer及其三种构造方法" />
     <MESSAGE value="新增了返回按钮的图片，新增了两个界面的各种占位符用法" />
@@ -514,13 +512,15 @@
     <MESSAGE value="更新了中文说明" />
     <MESSAGE value="更新了英文说明" />
     <MESSAGE value="更新了英文说明入口" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新了英文说明入口" />
+    <MESSAGE value="软件包名改为小写" />
+    <MESSAGE value="软件包名改为小写，刚才改漏了俩子包" />
+    <option name="LAST_COMMIT_MESSAGE" value="软件包名改为小写，刚才改漏了俩子包" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Containers/GamePanel.java</url>
+          <url>file://$PROJECT_DIR$/src/containers/GamePanel.java</url>
           <line>204</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>

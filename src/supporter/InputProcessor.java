@@ -13,12 +13,30 @@ import java.util.Arrays;
  * to generate suitable input to the core logic processing class.
  **/
 public class InputProcessor {
-    // Operation Codes
+    /**
+     * Operation Codes
+     */
     public final int NO_OPERATION = 0, SET_A_CHARACTER = 1, REMOVE_A_CHARACTER = 2,
             NOT_A_WORD = 12, NOT_ENOUGH = 13, EMPTY = 14, IS_A_WORD = 15;
+
+    /**
+     * user input
+     */
     private final char[] input;
+
+    /**
+     * target word
+     */
     public char[] wordle;
+
+    /**
+     * resourceReader to get dictionary
+     */
     private final ResourceReader resourceReader;
+
+    /**
+     * current input index
+     */
     private int idx = 0;
 
     public InputProcessor(int size, ResourceReader reader) {

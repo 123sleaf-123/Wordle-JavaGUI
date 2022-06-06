@@ -13,7 +13,14 @@ import java.util.Arrays;
  **/
 public class HorSpacer extends JPanel {
 
+    /**
+     * A filler to modify the size of the panel
+     */
     private char[] filler;
+
+    /**
+     * unit to decide size of filler
+     */
     private int unit = 40;
 
     /**

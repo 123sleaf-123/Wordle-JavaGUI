@@ -17,9 +17,19 @@ import java.util.Random;
  **/
 public class ResourceReader {
 
-    public char[] wordle;
+    /**
+     * target word
+     */
+    private char[] wordle;
+
+    /**
+     * ArrayList to store words read from files
+     */
     private final ArrayList<String> dictionary = new ArrayList<>();
 
+    /**
+     * Default Constructor method
+     */
     public ResourceReader() {
         queryWords();
         generateWordle();

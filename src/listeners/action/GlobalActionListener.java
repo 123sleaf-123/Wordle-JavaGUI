@@ -22,7 +22,11 @@ public class GlobalActionListener implements ActionListener {
     private final WordleFrame frame;
     private StartPanel startPanel;
     private GamePanel gamePanel;
-    
+
+    /**
+     * Generator to get the frame to listen
+     * @param frame in this program is always WordleFrame
+     */
     public GlobalActionListener(WordleFrame frame) {
         this.frame = frame;
         initialise();
@@ -89,14 +93,22 @@ public class GlobalActionListener implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        // If pressed start button in StartPanel
         if (e.getSource() == startPanel.getStartBtn()) {
             gameStart();
         }
+
+        // If pressed exit button in StartPanel
         if (e.getSource() == startPanel.getExitBtn()) {
+
+            // A dialog to decide exit or not
             int choice = JOptionPane.showConfirmDialog(startPanel, "Do you confirm to exit?", "EXIT",
                     JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (choice == 0) gameExit();
         }
+
+        // // If pressed back button in GamePanel
         if (e.getSource() == gamePanel.getBackBtn()) backToStart();
     }
 }

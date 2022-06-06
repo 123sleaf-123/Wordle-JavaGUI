@@ -12,10 +12,26 @@ import java.util.Arrays;
  * @description The core judgement algorithm of the Wordle game.
  **/
 public class WordleLogic {
-    private int wordSize = 5; // The size (or length) of the word of the current Wordle game
-    private char[] guess; // The word that the player guessed.
-    private char[] wordle; // The target word to guess.
-    private Color[] colourRes; // The result (colour) of a right input.
+
+    /**
+     * The size (or length) of the word of the current Wordle game
+     */
+    private int wordSize = 5;
+
+    /**
+     * The word that the player guessed.
+     */
+    private char[] guess;
+
+    /**
+     * The target word to guess.
+     */
+    private char[] wordle;
+
+    /**
+     * The result (colour) of a right input.
+     */
+    private Color[] colourRes;
 
     /**
      * A private constructor that invoke the constructor without parameters first,

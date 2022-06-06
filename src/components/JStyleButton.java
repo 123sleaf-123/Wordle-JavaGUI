@@ -12,7 +12,14 @@ import java.awt.*;
  * @description A Button extending from JButton class with special design.
  **/
 public class JStyleButton extends JButton {
+    /**
+     * Colour code constance
+     */
     public static final int NON = 0, PINK = 1;
+
+    /**
+     * Colour code to use
+     */
     private int colorCode = NON;
 
     /**
