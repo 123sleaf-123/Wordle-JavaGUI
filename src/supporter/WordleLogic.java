@@ -103,7 +103,7 @@ public class WordleLogic {
 
     /**
      * Reset the game runtime variable to initial state.
-     * @param wordle
+     * @param wordle reset target word
      */
     public void reset(char[] wordle) {
         this.wordle = wordle;

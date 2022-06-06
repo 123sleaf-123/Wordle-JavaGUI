@@ -7,10 +7,6 @@ import java.io.IOException;
 /**
  * Title:        StartPanelPlayer.java
  * Copyright:    Copyright(c) 2022
- *
- * @author Zhiye Huang
- * @version 1.0
- * @description Music player.
  **/
 public class StartPanelPlayer {
     protected String path = "src/resources/music/rambling_pleat.wav";
@@ -188,7 +184,7 @@ public class StartPanelPlayer {
 
     /**
      * get audio path
-     * @return
+     * @return audio path
      */
     public String getPath()
     {
@@ -200,7 +196,7 @@ public class StartPanelPlayer {
 
     /**
      * get play progress
-     * @return
+     * @return progress
      */
     public int getPlayed()
     {
@@ -212,7 +208,7 @@ public class StartPanelPlayer {
 
     /**
      * get play time
-     * @return
+     * @return play time
      */
     public float getSecLength()
     {

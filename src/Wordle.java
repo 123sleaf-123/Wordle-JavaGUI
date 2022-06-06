@@ -10,6 +10,10 @@ import musicPlayer.StartPanelPlayer;
  * @description The main program of Wordle.
  **/
 public class Wordle {
+    /**
+     * main function to run the frame and the music player.
+     * @param args input args
+     */
     public static void main(String[] args) {
         Runnable r1 = () -> {
             WordleFrame frame = new WordleFrame();
