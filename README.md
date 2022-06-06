@@ -5,6 +5,9 @@
 一个利用java实现的具有可视化界面的单机Wordle小游戏，希望你能喜欢，也欢迎参考借鉴！
 （其实就是一个小作业）
 
+#### English Version
+[README.en.md](README.en.md)
+
 #### 软件架构
 
 ![img.png](README_IMGs/img.png)软件架构说明
@@ -16,7 +19,8 @@
 #### 安装教程
 
 1. git clone 本仓库
-2. 用Wordle.java运行
+2. 用IDEA打开文件夹
+3. 点击Wordle.java运行
 
 #### 使用说明
 
