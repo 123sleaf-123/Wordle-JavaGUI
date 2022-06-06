@@ -127,7 +127,7 @@ public class GamePanel extends JPanel implements KeyListener {
         this.add(BorderLayout.WEST, westHorSpacer);
         eastHorSpacer = new HorSpacer(20);
         this.add(BorderLayout.EAST, eastHorSpacer);
-        southVerSpacer = new VerSpacer(this, 2, 20);
+        southVerSpacer = new VerSpacer(2, 20);
         this.add(BorderLayout.SOUTH, southVerSpacer);
 
         // backBtn Icon Settings

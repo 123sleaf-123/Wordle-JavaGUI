@@ -1,4 +1,4 @@
-# Wordle-java
+# Wordle
 
 #### Description
 

@@ -25,19 +25,17 @@ public class VerSpacer extends JPanel {
 
     /**
      * Default spacer with 2 unit and 100 per(unit)Len.
-     * @param owner
      */
-    public VerSpacer(JPanel owner) {
+    public VerSpacer() {
         initialise();
     }
 
     /**
      * Spacer with indicated number of unit and 100 per(unit)Len.
      *
-     * @param owner
      * @param unit len unit to be set
      */
-    public VerSpacer(JPanel owner, int unit) {
+    public VerSpacer(int unit) {
         this.unit = unit;
         initialise();
     }
@@ -45,11 +43,10 @@ public class VerSpacer extends JPanel {
     /**
      * Spacer with indicated number of unit and indicated per(unit)Len.
      *
-     * @param owner
-     * @param unit len unit to be set
+     * @param unit   len unit to be set
      * @param perLen per unit length to be set
      */
-    public VerSpacer(JPanel owner, int unit, int perLen) {
+    public VerSpacer(int unit, int perLen) {
         this.unit = unit;
         this.perLen = perLen;
         initialise();

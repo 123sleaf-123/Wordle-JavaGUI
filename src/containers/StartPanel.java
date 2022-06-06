@@ -87,7 +87,7 @@ public class StartPanel extends JPanel {
 //        centerPanel.setMinimumSize(new Dimension(100, 150));
         centerPanel.setMaximumSize(new Dimension(100, 150));
         centerPanel.setLayout(new GridLayout(5, 1, 10, 15));
-        centerPanel.add(new VerSpacer(this, 2, 50));
+        centerPanel.add(new VerSpacer(2, 50));
         centerPanel.add(startBtn);
         centerPanel.add(settingBtn);
         centerPanel.add(rankBtn);
@@ -99,7 +99,7 @@ public class StartPanel extends JPanel {
         this.add(BorderLayout.WEST, westHorSpacer);
         eastHorSpacer = new HorSpacer();
         this.add(BorderLayout.EAST, eastHorSpacer);
-        southVerSpacer = new VerSpacer(this);
+        southVerSpacer = new VerSpacer();
         this.add(BorderLayout.SOUTH, southVerSpacer);
 
         // Set Opaque false
