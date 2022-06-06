@@ -1,7 +1,7 @@
-package Supporter;
+package supporter;
 
-import Containers.GamePanel;
-import DataClass.Record;
+import containers.GamePanel;
+import dataClass.Record;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -59,7 +59,7 @@ public class ResourceReader {
     public double readRecord(int duration) {
         int recordNum = 0, winNum = 0;
         double rankPercent = 1.0;
-        File df = new File("src/GameData/data.txt");
+        File df = new File("src/gameData/data.txt");
         try {
             FileReader dfr = new FileReader(df);
             BufferedReader dfBfr = new BufferedReader(dfr);
@@ -82,7 +82,7 @@ public class ResourceReader {
      * Write game message to the file
      */
     public void endRecord(boolean isWin, GamePanel gamePanel, Record record) {
-        File df = new File("src/GameData/data.txt");
+        File df = new File("src/gameData/data.txt");
         try {
             FileWriter dfw = new FileWriter(df, true);
             String begin = "begin: " + gamePanel.getBegin();

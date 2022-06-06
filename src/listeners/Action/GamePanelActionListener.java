@@ -1,8 +1,7 @@
-package Listeners.Action;
+package listeners.Action;
 
-import Containers.GamePanel;
+import containers.GamePanel;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

@@ -1,5 +1,5 @@
-import Containers.WordleFrame;
-import MusicPlayer.StartPanelPlayer;
+import containers.WordleFrame;
+import musicPlayer.StartPanelPlayer;
 
 /**
  * Title:        Wordle.java

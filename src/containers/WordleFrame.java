@@ -1,6 +1,6 @@
-package Containers;
+package containers;
 
-import Listeners.Action.GlobalActionListener;
+import listeners.Action.GlobalActionListener;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Title:        Containers.WordleFrame.java
+ * Title:        containers.WordleFrame.java
  * Copyright:    Copyright(c) 2022
  *
  * @author Zhiye Huang
@@ -49,7 +49,7 @@ public class WordleFrame extends JFrame {
     }
 
     /**
-     * Initialisation of the Containers.WordleFrame instance.
+     * Initialisation of the containers.WordleFrame instance.
      */
     public void initFrame() {
         // Set the size and position of the frame

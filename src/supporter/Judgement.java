@@ -1,6 +1,6 @@
-package Supporter;
+package supporter;
 
-import Components.JStyleLabel;
+import components.JStyleLabel;
 
 import java.awt.*;
 

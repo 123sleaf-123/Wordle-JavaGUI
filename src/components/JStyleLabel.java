@@ -1,11 +1,11 @@
-package Components;
+package components;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
 /**
- * Title:        Components.JStyleLabel.java
+ * Title:        components.JStyleLabel.java
  * Copyright:    Copyright(c) 2022
  *
  * @author Zhiye Huang

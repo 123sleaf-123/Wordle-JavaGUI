@@ -1,9 +1,9 @@
-package Listeners.Action;
+package listeners.Action;
 
-import Components.JStyleButton;
-import Containers.GamePanel;
-import Containers.StartPanel;
-import Containers.WordleFrame;
+import components.JStyleButton;
+import containers.GamePanel;
+import containers.StartPanel;
+import containers.WordleFrame;
 
 import javax.swing.*;
 import java.awt.*;

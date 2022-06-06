@@ -1,14 +1,14 @@
-package Containers;
+package containers;
 
-import Components.HorSpacer;
-import Components.JStyleButton;
-import Components.VerSpacer;
+import components.HorSpacer;
+import components.JStyleButton;
+import components.VerSpacer;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Title:        Containers.StartPanel.java
+ * Title:        containers.StartPanel.java
  * Copyright:    Copyright(c) 2022
  *
  * @author Zhiye Huang

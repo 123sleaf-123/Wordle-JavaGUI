@@ -1,15 +1,15 @@
-package Containers;
+package containers;
 
-import Components.HorSpacer;
-import Components.JStyleButton;
-import Components.JStyleLabel;
-import Components.VerSpacer;
-import DataClass.Record;
-import Listeners.Action.GamePanelActionListener;
-import Supporter.InputProcessor;
-import Supporter.Judgement;
-import Supporter.ResourceReader;
-import Supporter.WordleLogic;
+import components.HorSpacer;
+import components.JStyleButton;
+import components.JStyleLabel;
+import components.VerSpacer;
+import dataClass.Record;
+import listeners.Action.GamePanelActionListener;
+import supporter.InputProcessor;
+import supporter.Judgement;
+import supporter.ResourceReader;
+import supporter.WordleLogic;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

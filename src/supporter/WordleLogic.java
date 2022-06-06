@@ -1,10 +1,10 @@
-package Supporter;
+package supporter;
 
 import java.awt.*;
 import java.util.Arrays;
 
 /**
- * Title:        Supporter.WordleLogic.java
+ * Title:        supporter.WordleLogic.java
  * Copyright:    Copyright(c) 2022
  *
  * @author Zhiye Huang
@@ -46,10 +46,10 @@ public class WordleLogic {
     }
 
     /**
-     * Accept the valid input filtered by Supporter.InputProcessor class,
+     * Accept the valid input filtered by supporter.InputProcessor class,
      * and calculate the result of an input word.
      *
-     * @param input A valid input filtered by Supporter.InputProcessor class.
+     * @param input A valid input filtered by supporter.InputProcessor class.
      */
     public void logicCore(char[] input) {
         Boolean[] inputFlag, wordleFlag;

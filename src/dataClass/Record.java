@@ -1,4 +1,4 @@
-package DataClass;
+package dataClass;
 
 /**
  * Title:        Record.java
@@ -32,7 +32,7 @@ public class Record {
         String rows = content[idx++].substring("rows: ".length());
         setRows(Integer.parseInt(rows));
         setState(content[idx++].substring("state: ".length()));
-        setStateBool(getState() == "win");
+        setStateBool(getState().equals("win"));
     }
 
     public long getBegin() {

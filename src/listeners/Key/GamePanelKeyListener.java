@@ -1,7 +1,7 @@
-package Listeners.Key;
+package listeners.Key;
 
-import Containers.GamePanel;
-import Supporter.Judgement;
+import containers.GamePanel;
+import supporter.Judgement;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;

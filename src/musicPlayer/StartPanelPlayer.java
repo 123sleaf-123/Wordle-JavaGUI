@@ -1,4 +1,4 @@
-package MusicPlayer;
+package musicPlayer;
 
 import javax.sound.sampled.*;
 import java.io.File;

@@ -1,10 +1,10 @@
-package Supporter;
+package supporter;
 
 import java.awt.event.KeyEvent;
 import java.util.Arrays;
 
 /**
- * Title:        Supporter.InputProcessor.java
+ * Title:        supporter.InputProcessor.java
  * Copyright:    Copyright(c) 2022
  *
  * @author Zhiye Huang
