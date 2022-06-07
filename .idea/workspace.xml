@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Wordle:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="软件包名改为小写，刚才改漏了俩子包">
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="小改动">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Wordle_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.en.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.en.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/supporter/ResourceReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supporter/ResourceReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +66,10 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/课件/大二/下/Java/MiniProject/wordle-java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Documents/WeChat Files/wxid_kvf2143knak612/FileStorage/MsgAttach/6b3072934d714cdfd59525270f0609df/File/2022-06/Wordle&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
@@ -76,7 +86,7 @@
       <recent name="E:\课件\大二\下\Java\MiniProject\Wordle\README_IMGs" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.InputProcessor">
+  <component name="RunManager" selected="Application.Wordle">
     <configuration name="InputProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="supporter.InputProcessor" />
       <module name="Wordle" />
@@ -111,12 +121,26 @@
       </method>
     </configuration>
     <configuration name="Wordle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/openjdk/jdk-11" />
       <option name="MAIN_CLASS_NAME" value="Wordle" />
       <module name="Wordle" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.InputProcessor" />
+      <item itemvalue="Application.Supporter.WordleMemory" />
+      <item itemvalue="Application.WarningDialog" />
+      <item itemvalue="Application.Wordle" />
+      <item itemvalue="Application.Wordle (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Wordle" />
+        <item itemvalue="Application.InputProcessor" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -126,20 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653575895986</updated>
-    </task>
-    <task id="LOCAL-00022" summary="彻底删除了WordleMemory">
-      <created>1654182005205</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1654182005205</updated>
-    </task>
-    <task id="LOCAL-00023" summary="InputProcessor中关于文件读取，内容提取，查询内容的部分现在拆分到ResourceReader中，并独立维持一个ResourceReader实体来维持功能。">
-      <created>1654182878138</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1654182878138</updated>
     </task>
     <task id="LOCAL-00024" summary="完善了removeOperation功能及其提示">
       <created>1654183980423</created>
@@ -470,7 +480,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654500220932</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="小改动">
+      <created>1654516523075</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1654516523076</updated>
+    </task>
+    <task id="LOCAL-00072" summary="小改动">
+      <created>1654516676612</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1654516676612</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -485,7 +509,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="新增了占位符HorSpacer&#10;&#10;清空了测试字符串在label中的创建&#10;&#10;InputProcessor现在自动填充' '（空格），而不是0&#10;&#10;JStyleLabel现在有了Arial Black 24号加粗字体和黑色外框线&#10;&#10;StartPanel现在有了更多按钮，并且有了标题，结构更完善" />
     <MESSAGE value="新增了垂直占位符VerSpacer及其三种构造方法" />
     <MESSAGE value="新增了返回按钮的图片，新增了两个界面的各种占位符用法" />
     <MESSAGE value="修改了占位符类型的方法，为未来的自适应奠定基础" />
@@ -510,16 +533,12 @@
     <MESSAGE value="更新了英文说明入口" />
     <MESSAGE value="软件包名改为小写" />
     <MESSAGE value="软件包名改为小写，刚才改漏了俩子包" />
-    <option name="LAST_COMMIT_MESSAGE" value="软件包名改为小写，刚才改漏了俩子包" />
+    <MESSAGE value="小改动" />
+    <option name="LAST_COMMIT_MESSAGE" value="小改动" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/containers/GamePanel.java</url>
-          <line>204</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="10" />

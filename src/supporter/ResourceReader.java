@@ -60,11 +60,12 @@ public class ResourceReader {
     public void generateWordle() {
         Random random = new Random();
         wordle = dictionary.get(random.nextInt(0, dictionary.size())).toCharArray();
-        wordle = "GREEN".toCharArray();
     }
 
     /**
      * Read the file to decide player's level
+     * @param duration
+     * @return
      */
     public double readRecord(int duration) {
         int recordNum = 0, winNum = 0;
@@ -90,6 +91,9 @@ public class ResourceReader {
 
     /**
      * Write game message to the file
+     * @param isWin
+     * @param gamePanel
+     * @param record
      */
     public void endRecord(boolean isWin, GamePanel gamePanel, Record record) {
         File df = new File("src/gameData/data.txt");
