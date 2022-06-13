@@ -6,13 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="小改动">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Wordle_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9645f99b-b7a5-4e6a-970b-84b882e13aa8" name="Changes" comment="之前随机生成功能被我人为禁止了，现在改回来">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supporter/ResourceReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supporter/ResourceReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listeners/key/GamePanelKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/listeners/key/GamePanelKeyListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,8 +129,8 @@
       <item itemvalue="Application.InputProcessor" />
       <item itemvalue="Application.Supporter.WordleMemory" />
       <item itemvalue="Application.WarningDialog" />
-      <item itemvalue="Application.Wordle" />
       <item itemvalue="Application.Wordle (1)" />
+      <item itemvalue="Application.Wordle" />
     </list>
     <recent_temporary>
       <list>
@@ -150,13 +147,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653575895986</updated>
-    </task>
-    <task id="LOCAL-00024" summary="完善了removeOperation功能及其提示">
-      <created>1654183980423</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1654183980423</updated>
     </task>
     <task id="LOCAL-00025" summary="设置了主窗口的大小和位置">
       <created>1654186953574</created>
@@ -494,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654516676612</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="之前随机生成功能被我人为禁止了，现在改回来">
+      <created>1654604220329</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1654604220329</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -509,7 +506,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="新增了垂直占位符VerSpacer及其三种构造方法" />
     <MESSAGE value="新增了返回按钮的图片，新增了两个界面的各种占位符用法" />
     <MESSAGE value="修改了占位符类型的方法，为未来的自适应奠定基础" />
     <MESSAGE value="实现了监听从Frame到GamePanel的转移，并且自动清空内容（返回主界面以后），实现重新开始" />
@@ -534,7 +530,8 @@
     <MESSAGE value="软件包名改为小写" />
     <MESSAGE value="软件包名改为小写，刚才改漏了俩子包" />
     <MESSAGE value="小改动" />
-    <option name="LAST_COMMIT_MESSAGE" value="小改动" />
+    <MESSAGE value="之前随机生成功能被我人为禁止了，现在改回来" />
+    <option name="LAST_COMMIT_MESSAGE" value="之前随机生成功能被我人为禁止了，现在改回来" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

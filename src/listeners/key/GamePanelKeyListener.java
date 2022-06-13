@@ -1,6 +1,8 @@
 package listeners.key;
 
 import containers.GamePanel;
+import containers.WordleFrame;
+import dataClass.Record;
 import supporter.Judgement;
 
 import javax.swing.*;
@@ -17,6 +19,13 @@ import java.awt.event.KeyListener;
  **/
 public class GamePanelKeyListener implements KeyListener {
     private GamePanel gamePanel;
+
+    public GamePanelKeyListener() {}
+
+    public GamePanelKeyListener(GamePanel owner) {
+        setGamePanel(owner);
+        getGamePanel().addKeyListener(this);
+    }
 
     /**
      * Invoked when a key has been typed.
@@ -54,12 +63,22 @@ public class GamePanelKeyListener implements KeyListener {
 
     }
 
+
+
+    public GamePanel getGamePanel() {
+        return gamePanel;
+    }
+
+    public void setGamePanel(GamePanel gamePanel) {
+        this.gamePanel = gamePanel;
+    }
+
     /**
      * actions depend on return operation codes
      *
      * @param actionCode return operation codes from InputProcessor
      */
-    private void actionDependOnInput(int actionCode) {
+    public void actionDependOnInput(int actionCode) {
         switch (actionCode) {
             case 0:
                 break;
@@ -75,35 +94,65 @@ public class GamePanelKeyListener implements KeyListener {
             }
             case 13: {
                 String title = "Not Enough Characters!";
-                JOptionPane.showMessageDialog(gamePanel, null, title, JOptionPane.INFORMATION_MESSAGE);
+                String text = "Current input is " + String.valueOf(gamePanel.getInputProcessor().getInput()) +
+                        ", length is " + gamePanel.getInputProcessor().getIdx() + ".\n" + title;
+                JOptionPane.showMessageDialog(gamePanel,
+                        text, title, JOptionPane.INFORMATION_MESSAGE);
                 break;
             }
             case 14: {
                 String title = "Empty Input!";
                 String text = "Please type your keyboard to input.";
-//                emptyInputWarning = new WordleDialog((Frame) this.getTopLevelAncestor(), title, text);
                 JOptionPane.showMessageDialog(gamePanel, text, title, JOptionPane.INFORMATION_MESSAGE);
                 break;
             }
             case 15: {
                 gamePanel.getWordleLogic().logicCore(gamePanel.getInputProcessor().getInput());
                 gamePanel.lineRefresh();
-                if (Judgement.isPlayerWin(gamePanel.getTable(), gamePanel.getCurrentRow())) {
-                    String winMessage = "Game win in " + gamePanel.getCurrentRow() + " rows";
-//                    winDialog = new WordleDialog((JFrame) this.getTopLevelAncestor(), winMessage, "Cheers!");
-//                    int choice = JOptionPane.showConfirmDialog(gamePanel,
-//                            winMessage, "Cheers!", JOptionPane.PLAIN_MESSAGE);
+                if (! gamePanel.keyListener.endJudge()) {
+                    gamePanel.getInputProcessor().clearOperation();
+                    gamePanel.setCurrentRow(gamePanel.getCurrentRow() + 1);
                 }
-
-                if (Judgement.isFocusEnd(gamePanel.getCurrentRow())) {
-//                    int choice = JOptionPane.showConfirmDialog(gamePanel,
-//                            "Wordle: " + String.valueOf(gamePanel.getWordleLogic().getWordle()) +
-//                                    ".    Level: Gamer", "Game lost", JOptionPane.PLAIN_MESSAGE);
-                }
-                gamePanel.getInputProcessor().clearOperation();
-                gamePanel.setCurrentRow(gamePanel.getCurrentRow() + 1);
                 break;
             }
         }
+    }
+
+    /**
+     * Use Judgement to judge whether a game has ended.
+     *
+     * @return whether to do continue operation.
+     */
+    public boolean endJudge() {
+        if (Judgement.isPlayerWin(gamePanel.getTable(), gamePanel.getCurrentRow())) {
+            gamePanel.setEnd(System.currentTimeMillis());
+            int duration = (int) ((gamePanel.getEnd() - gamePanel.getBegin()) / 1000);
+            Record winRecord = new Record();
+            gamePanel.getResourceReader().endRecord(true, gamePanel, winRecord);
+            String winMessage = "Game win in " + (gamePanel.getCurrentRow() + 1) + " row(s) within " +
+                    duration + "s.\n" + "You have beaten " +
+                    ((Double) (gamePanel.getResourceReader().readRecord(duration) * 100)).intValue() +
+                    " percentages of players";
+            String title = "Cheers!";
+            int choice = JOptionPane.showConfirmDialog(gamePanel,
+                    winMessage, title, JOptionPane.YES_NO_OPTION);
+            ((WordleFrame) gamePanel.getTopLevelAncestor()).getGlobalActionListener().backToStart();
+            gamePanel.clear();
+            return true;
+        }
+
+        if (Judgement.isFocusEnd(gamePanel.getCurrentRow())) {
+            gamePanel.setEnd(System.currentTimeMillis());
+            Record lostRecord = new Record();
+            gamePanel.getResourceReader().endRecord(false, gamePanel, lostRecord);
+            String lostMessage = "Wordle: " + String.valueOf(gamePanel.getWordleLogic().getWordle()) +
+                    ".\nLevel: Gamer.\n Game Lost.";
+            int choice = JOptionPane.showConfirmDialog(gamePanel,
+                    lostMessage, "Game lost", JOptionPane.YES_NO_OPTION);
+            ((WordleFrame) gamePanel.getTopLevelAncestor()).getGlobalActionListener().backToStart();
+            gamePanel.clear();
+            return true;
+        }
+        return false;
     }
 }
